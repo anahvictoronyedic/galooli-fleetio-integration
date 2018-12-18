@@ -16,3 +16,26 @@ error message, date time
 
 settings table
 settings name, settings value
+
+endpoint to push to fleetio: POST methods
+https://secure.fleetio.com/api/v1/location_entries  -- to set location[latitude,longitude]
+sample request data
+{
+    "vehicle_id": 555,
+    "contact_id": 21685,
+    "date": "2018-12-03",
+    "latitude": "5.66666",
+    "longitude": "0.5656565"
+}
+
+
+https://secure.fleetio.com/api/v1/meter_entries  --  to set odometer/distance
+sample request data:
+{
+    "vehicle_id": 5,
+    "date": "2018-12-03",
+    "meter_type": set as secondary if you wanna set engine hours, or blank if odometer/distance
+    "value": "500",
+    "void": set true if value is not incremental - not necesary
+}
+
