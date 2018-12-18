@@ -1,0 +1,95 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+nav ul a,
+nav .brand-logo {
+  color: #444;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.sidenav-trigger {
+  color: #26a69a;
+}
+
+.parallax-container {
+  min-height: 464px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+
+.sign-up-background {
+  min-height: 954px;
+}
+
+.parallax-container .section {
+  width: 100%;
+}
+
+.parallax-container .parallax img {
+  opacity: 1 !important;
+}
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}
+
+.card-action {
+  padding: 34px 24px !important;
+}
+
+.carousel .carousel-item{
+  width:100%;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+  margin-right: 2px !important;
+}
+
+.orange-color {
+  background-color: #f8822c;
+}
+
+img {
+  height: 65px;
+}
+
+.white-background {
+  background-color: white !important;
+  color: black !important;
+}
+
+.page-footer {
+   padding-top: 0;
+}
