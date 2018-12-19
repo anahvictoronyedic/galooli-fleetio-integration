@@ -1,5 +1,14 @@
 <?php
 
+require_once "ProcessData.php";
+
+echo "Running Script ... ";
+$processData = new ProcessData();
+
+$responseData = $processData->pullDataFromGalooli();
+
+echo "Response Data: ".$responseData;
+
 /*
 TODO: initialize call to galooli api and get data
 */
