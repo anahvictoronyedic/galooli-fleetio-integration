@@ -45,7 +45,9 @@
           </div>
         </div>
       </div>
+      <br/>
       <div class="row">
+        <h5 class="center-align">Last Data Sent to Fleetio Management App</h5>
         <div class="col s12">
           <table class="highlight responsive-table">
             <thead>
