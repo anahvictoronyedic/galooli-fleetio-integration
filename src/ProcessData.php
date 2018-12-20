@@ -16,9 +16,11 @@ class ProcessData {
 
     function pullDataFromGalooli()
     {
-        echo "Pulling Data from galooli...<br/>";;
-        $this->apiURL = "https://sdk.galooli-systems.com/galooliSDKService.svc/json/Assets_Report?userName=matrixvtrack&password=matv123?&requestedPropertiesStr=ac.status,u.id,u.name,ac.latitude,ac.longitude,ac.distance_[km],ac.engine_hours_[num]&lastGmtUpdateTime=2000-01-01 2000:00:00";
-        
+
+        echo "Pulling Data from galooli...<br/>";
+        // $this->apiURL = "http://tqworksng.com/api/Items?SearchKeyword=cab&PageNumber=0&PageSize=20";
+        $this->apiURL = "https://sdk.galooli-systems.com/galooliSDKService.svc/json/Assets_Report?userName=matrixvtrack&password=matv123?&requestedPropertiesStr=ac.status,u.id,u.name,ac.latitude,ac.longitude,ac.distance_[km],ac.engine_hours_[num]&lastGmtUpdateTime=2000-01-01%202000:00:00";
+
         $get_data = $this->_apiService->callAPI('GET', $this->apiURL, false, 'galooli');
         $response = json_decode($get_data, true);
         echo 'Response: '.$get_data."<br/>";;
