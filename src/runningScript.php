@@ -1,5 +1,5 @@
 <?php
-
+require_once 'config.php';
 require_once "ProcessData.php";
 
 echo "Running Script ... ";

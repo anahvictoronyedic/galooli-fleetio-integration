@@ -1,0 +1,19 @@
+{
+    "name": "matrixvtrack/galooli-fleetio",
+    "description": "A matrixvtrack application for integrating galooli and fleetio apis",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Anah Victor",
+            "email": "anahvictoronyedic@gmail.com"
+        }
+    ],
+    "require": {
+        "yzalis/crontab": "^1.0"
+    },
+    "require-dev": {},
+    "autoload": {
+        "psr-4": {"src\\": "src/"}
+    },
+    "config": {}
+}
