@@ -32,17 +32,7 @@ require_once 'config.php';
         </div>
 
         <div class="col s12 m4">
-          <div>
-            <div class="input-field">
-              <select name="update_interval" 
-                  class="validate material_select">
-                  <option value="">Select Data Update Interval</option>
-                  <option value="30">30 Minutes</option>
-                  <option value="60">1 Hour</option>
-                  <option value="120">2 Hours</option>
-              </select>
-            </div>
-          </div>
+          
           <div class="icon-block">
             <h5 class="center teal-text">Data Updated from Galooli: <strong> 22, Nov 2018, 09:52:03</strong></h5>
             <br>
