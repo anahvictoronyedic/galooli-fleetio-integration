@@ -1,21 +1,15 @@
 <?php
+
+/*
+NB: Only run this once, when initializing Data, for proper synchronization
+*/
 require_once 'config.php';
 require_once "ProcessData.php";
 
-echo "Running Script ... ";
 $processData = new ProcessData();
 
-$responseData = $processData->pullDataFromGalooli();
+$responseData = $processData->pullDataFromGalooli(false);
 
-echo "Response Data: ".$responseData;
-
-/*
-TODO: initialize call to galooli api and get data
-*/
-
-/*
-TODO: process data gotten to check if eligible for a push to fleetio servers
-*/
 
 /*
 TODO: push data to fleetio server to fleetio servers

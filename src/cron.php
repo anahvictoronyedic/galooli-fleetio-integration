@@ -12,7 +12,9 @@ class Cron{
 	static $currentJob;
 	static $crontab = new Crontab();
 
-    function  __construct() {}
+    function  __construct() {
+
+    }
 
 	public static function updateCron(int $interval,$readOnly = false){
 		if(is_numeric($interval) && $interval > 0 ){
@@ -41,9 +43,8 @@ class Cron{
 
 	public static function buildCron(int $minutes){
 
-		$s = $minutes * 60;
+		$ss = $minutes * 60;
 
-		$s = $ss%60;
 		$m = floor(($ss%3600)/60);
 		$h = floor(($ss%86400)/3600);
 		$d = floor(($ss%2592000)/86400);
