@@ -1,6 +1,8 @@
 <?php
 
-//get Ids from fleetio
+/*
+NB: Only run this once, when initializing Data, for proper synchronization
+*/
 require_once "ProcessData.php";
 
 $processData = new ProcessData();
