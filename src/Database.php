@@ -2,7 +2,6 @@
 require_once 'db.php';
 
 class Database {
-    private $query;
 
     public static function selectFromTable($query)
     {

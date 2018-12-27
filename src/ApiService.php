@@ -13,6 +13,8 @@ class ApiService {
       $this->contactId = '';
     }
 
+    //If any API calls fails, log it, and show on the user interface for every 5 retrials
+
     function callAPI($method, $url, $data, $appType){
        try {
          $curl = curl_init();
@@ -39,6 +41,7 @@ class ApiService {
                'Account-Token: 1cfafff6e0',
                'Accept: */*',
                'Accept-Encoding: gzip, deflate',
+               'content-type: application/json'
             ];
             curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
          }
@@ -53,7 +56,8 @@ class ApiService {
          curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 10);
          curl_setopt($curl, CURLOPT_TIMEOUT, 10);
          $this->returnedData = curl_exec($curl);
-         if ($this->returnedData === false) $this->returnedData = curl_error($curl);
+         if ($this->returnedData === false) 
+            $this->returnedData = curl_error($curl);
       } catch(Exception $exception) {
          echo "Exception Occured: ".$exception."<br/>";
       }
