@@ -1,22 +1,21 @@
 <?php 
-require_once 'config.php';
+require_once 'utils.php';
+
+require_login();
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  
   <title>Galooli | Fleetio Integration Interface</title>
 
-  <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <?php require_once('partials/head.php'); ?>
 </head>
 <body>
+  <?php require_once('partials/header.php'); ?>
   <div class="container">
-    <h3 class="center-align">Galooli - Fleetio Integration Interface</h3>
+    
     <div class="section">
 
       <!--   Icon Section   -->
@@ -112,20 +111,6 @@ require_once 'config.php';
     </div>
   </div>
 
-
-  <footer class="page-footer teal">
-    <div class="footer-copyright">
-      <div class="container">
-      Made by <a class="brown-text text-lighten-3" href="http://ecagon.com">Ecagon</a>
-      </div>
-    </div>
-  </footer>
-
-
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
-
+    <?php require_once('partials/footer.php'); ?>
   </body>
 </html>

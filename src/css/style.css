@@ -15,6 +15,11 @@ p {
   line-height: 2rem;
 }
 
+body > div.container{
+  padding-top:20px;
+  min-height:calc(100vh - 90px);
+}
+
 .sidenav-trigger {
   color: #26a69a;
 }

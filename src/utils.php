@@ -19,3 +19,10 @@ function configuration($name,$value=false){
 	}
 	return false;
 }
+
+function require_login(){
+	if(!isset($_SESSION['logged_in'])){
+		header('Location: '.path('login.php'));
+		die();
+	}
+}
