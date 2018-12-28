@@ -7,7 +7,7 @@ require_once 'config.php';
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Galooli - Fleetio Integration Interface</title>
+  <title>Galooli | Fleetio Integration Interface</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -32,6 +32,7 @@ require_once 'config.php';
         </div>
 
         <div class="col s12 m4">
+          
           <div class="icon-block">
             <h5 class="center teal-text">Data Updated from Galooli: <strong> 22, Nov 2018, 09:52:03</strong></h5>
             <br>
