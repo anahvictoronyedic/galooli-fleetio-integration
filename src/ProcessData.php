@@ -3,6 +3,15 @@
 require_once "ApiService.php";
 require_once 'Database.php';
 
+if($_GET['call_function'] == 'pushfleetio') {
+    $processData = new ProcessData();
+    $processData->checkforChangeWithinLastHour();
+}
+else if($_GET['call_function']  == 'pullGalooli') {
+    $processData = new ProcessData();
+    $processData->pullDataFromGalooli(false);
+}
+
 class ProcessData {
     public $returnedData;
     public $apiURL;
@@ -10,10 +19,8 @@ class ProcessData {
     public $response;
     public $errors;
     private $currentDateTime;
-    private $currentModifiedDateTime;
-    private $galooliData;
-    private $fleetioData;
     private $isInitialization;
+    private $fleetioUpdate = false;
 
     function  __construct() {
         $this->_apiService = new ApiService();
@@ -23,6 +30,7 @@ class ProcessData {
     //CRON JOB: this function should run every ten minutes
     function pullDataFromGalooli($isInitialization)
     {
+
         $this->isInitialization = $isInitialization;
         //get last update time
         $query = "SELECT value from configuration where name = 'last_gmt_update_time'";
@@ -79,7 +87,6 @@ class ProcessData {
             }
                 
         }
-        
         return $this->returnedData;
     }
 
@@ -140,6 +147,15 @@ class ProcessData {
                     $this->processDataBeforePush($galooliTableRows[$i]); 
                 }
             }
+            if ($this->fleetioUpdate) {
+                $query = "UPDATE configuration SET value='".$this->currentDateTime."' where name = 'last_fleetio_push_time'";
+                if (Database::updateOrInsert($query)) {
+                    echo "LastGMTupdate time Record updated successfully<br>";
+                } else {
+                    echo "Error updating record: " . mysqli_error($GLOBALS['db_server'])."<br/>";
+                }
+                $this->fleetioUpdate = false;
+            }
         } else {
             echo "No data to update";
         }
@@ -150,9 +166,8 @@ class ProcessData {
 
     // CRON JOB: this function should run every one hour, and can be changed from user interface
     // to be anything of 30 mins interval
-    function checkforChangeWithinLastHour($currentModifiedDateTime) {
+    function checkforChangeWithinLastHour() {
         echo "Change has occured within last hour <br/>";
-        $this->currentDateTime = date("Y-m-d h:i:s");
         $query = "SELECT * from pull_report where modified_at >= DATE_SUB(NOW(), INTERVAL 1 HOUR)";
 
         $galooliTableRows = Database::selectFromTable($query);
@@ -161,6 +176,15 @@ class ProcessData {
                 //save to fleetio table
                 $this->saveToFleetioTable($galooliRow);
                 $this->processDataBeforePush($galooliRow);
+            }
+            if ($this->fleetioUpdate) {
+                $query = "UPDATE configuration SET value='".$this->currentDateTime."' where name = 'last_fleetio_push_time'";
+                if (Database::updateOrInsert($query)) {
+                    echo "LastGMTupdate time Record updated successfully<br>";
+                } else {
+                    echo "Error updating record: " . mysqli_error($GLOBALS['db_server'])."<br/>";
+                }
+                $this->fleetioUpdate = false;
             }
         }
     } 
@@ -201,6 +225,7 @@ class ProcessData {
             push fuel_report to /fuel_entries
         */
         if ($fleetioID != 0) {
+            $this->fleetioUpdate = true;
             $this->currentDateTime = date("Y-m-d");
             //PUSH Odometer
             $post_data_array = array('vehicle_id' => $fleetioID,
@@ -258,5 +283,15 @@ class ProcessData {
         // $return_data = $this->_apiService->callAPI('POST', $this->apiURL, $jsonDataArray, 'fleetio');
         // $response = json_decode($return_data, true);
         // var_dump($response);
+    }
+
+    function logError($errorData)
+    {
+        $updateErrorLog = "INSERT INTO error_log(message) VALUES('{$errorData}')";
+        if (Database::updateOrInsert($updateErrorLog)) {
+            echo "Error Log Updated<br>";
+        } else {
+            echo "Error updating record: " . mysqli_error($GLOBALS['db_server'])."<br/>";
+        }
     }
 }
