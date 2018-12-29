@@ -7,41 +7,50 @@ require_once 'utils.php';
 
 class Cron{
 
-	command = '';
+	public $command;
+	public $config_key;
 
-	static $currentJob;
-	static $crontab = new Crontab();
+	public $currentJob;
+	public $crontab;
 
-    function  __construct() {
+    public function  __construct($command,$config_key) {
+    	$this->command = $command;
+    	$this->config_key = $config_key;
 
+    	$this->crontab = new Crontab();
+
+		$interval = configuration($this->config_key);
+		$this->updateCron((int)$interval,true);
     }
 
-	public static function updateCron(int $interval,$readOnly = false){
-		if(is_numeric($interval) && $interval > 0 ){
+	public function updateCron(int $interval,$readOnly = false){
+		if(is_numeric($interval) ){
 			if(!$readOnly){
-				self::destroyCron();
+				$this->destroyCron();
 			}
-			self::$currentJob = Cron::buildCron($interval);
-			if(!$readOnly){
-				$crontab->addJob(self::$currentJob);
-				$crontab->write();
-				configuration('CRON_INTERVAL_MINUTES',$interval);
+
+			if($readOnly || $interval > 0) $this->currentJob = $this->buildCron($interval);
+
+			if(!$readOnly && $interval > 0){
+				$this->crontab->addJob($this->currentJob);
+				$this->crontab->write();
+				configuration($this->config_key,$interval);
 			}
 		}
 	}
 
-	public static function destroyCron(){
-		if( self::$currentJob ){
-			$crontab->removeJob(self::$currentJob);
-			$crontab->write();
+	public function destroyCron(){
+		if( $this->currentJob ){
+			$this->crontab->removeJob($this->currentJob);
+			$this->crontab->write();
 
-			configuration('CRON_INTERVAL_MINUTES',null);
+			configuration($this->config_key,null);
 
-			self::$currentJob = null;
+			$this->currentJob = null;
 		}
 	}
 
-	public static function buildCron(int $minutes){
+	private function buildCron(int $minutes){
 
 		$ss = $minutes * 60;
 
@@ -68,11 +77,9 @@ class Cron{
 			$job->setMonth($M);
 		}
 
-		$job->setCommand(self::command);
+		$job->setCommand($this->command);
 
 		return $job;
 	}
 }
 
-$interval = configuration('CRON_INTERVAL_MINUTES');
-Cron::updateCron((int)$interval,true);
