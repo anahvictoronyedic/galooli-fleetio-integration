@@ -1,13 +1,14 @@
-<?php 
+<?php
 require_once 'utils.php';
-
+require_once 'config.php';
+require_once 'Database.php';
 require_login();
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
+
   <title>Galooli | Fleetio Integration Interface</title>
 
   <?php require_once('partials/head.php'); ?>
@@ -15,7 +16,7 @@ require_login();
 <body>
   <?php require_once('partials/header.php'); ?>
   <div class="container">
-    
+
     <div class="section">
 
       <!--   Icon Section   -->
@@ -25,17 +26,25 @@ require_login();
             <p class="text-center red-text">
               Pull Error messages Appear here
             </p>
-            <button class="btn btn-large teal darken-4 waves-light waves-effect">Pull From Galooli</button>
+            <a class="btn btn-large teal darken-4 waves-light waves-effect"
+              href="ProcessData.php?call_function=pullGalooli">Pull From Galooli</a>
             <p><strong><i class="material-icons orange-text darken-4">warning</i>Only Use this manual update button if there is a pull error message</strong></p>
           </div>
         </div>
 
         <div class="col s12 m4">
-          
+        <?php
+          $query = "SELECT value from configuration where name = 'last_gmt_update_time'";
+          $tableRow = Database::getSingleRow($query);
+          $lastPullTime = $tableRow["value"];
+          $query = "SELECT value from configuration where name = 'last_fleetio_push_time'";
+          $tableRow = Database::getSingleRow($query);
+          $lastPushTime = $tableRow["value"];
+        ?>
           <div class="icon-block">
-            <h5 class="center teal-text">Data Updated from Galooli: <strong> 22, Nov 2018, 09:52:03</strong></h5>
+            <h5 class="center teal-text">Last Data Fetched from Galooli: <strong><?=$lastPullTime  ?></strong></h5>
             <br>
-            <h5 class="center teal-text">Data Updated to Fleetio: <strong> 22, Nov 2018, 09:52:03</strong></h5>
+            <h5 class="center teal-text">Last Data Updated to Fleetio: <strong><?=$lastPushTime  ?></strong></h5>
           </div>
         </div>
 
@@ -44,12 +53,18 @@ require_login();
             <p class="text-center red-text">
               Push Error messages Appear here
             </p>
-            <button class="btn btn-large orange darken-4 waves-light waves-effect">Push To Fleetio</button>
+            <a class="btn btn-large orange darken-4 waves-light waves-effect"
+              href="ProcessData.php?call_function=pushfleetio">Push To Fleetio</a>
             <p><strong><i class="material-icons orange-text darken-4">warning</i>Only Use this manual update button if there is a push error message</strong></p>
           </div>
         </div>
       </div>
       <br/>
+
+      <?php
+        $query = "SELECT * from pull_report";
+        $fleetioTableRows = Database::selectFromTable($query);
+      ?>
       <div class="row">
         <h5 class="center-align">Last Data Sent to Fleetio Management App</h5>
         <div class="col s12">
@@ -60,49 +75,29 @@ require_login();
               <th>Unit Name</th>
               <th>Active Status</th>
               <th>Latitude</th>
-              <th>longitude</th>
+              <th>Longitude</th>
               <th>Distance</th>
               <th>Engine Hours</th>
+              <th>Fuel Amount</th>
             </tr>
             </thead>
 
             <tbody>
-            <tr>
-              <td>Alvin</td>
-              <td>Eclair</td>
-              <td>$0.87</td>
-              <td>Alvin</td>
-              <td>Eclair</td>
-              <td>$0.87</td>
-              <td>$0.87</td>
-            </tr>
-            <tr>
-              <td>Alan</td>
-              <td>Jellybean</td>
-              <td>$3.76</td>
-              <td>Alan</td>
-              <td>Jellybean</td>
-              <td>$3.76</td>
-              <td>$3.76</td>
-            </tr>
-            <tr>
-              <td>Jonathan</td>
-              <td>Lollipop</td>
-              <td>$7.00</td>
-              <td>Jonathan</td>
-              <td>Lollipop</td>
-              <td>$7.00</td>
-              <td>$0.87</td>
-            </tr>
-            <tr>
-              <td>Alvin</td>
-              <td>Eclair</td>
-              <td>$0.87</td>
-              <td>Alvin</td>
-              <td>Eclair</td>
-              <td>$0.87</td>
-              <td>$0.87</td>
-            </tr>
+            <?php
+              foreach($fleetioTableRows as $fleetioRow) {
+                echo "<tr>
+                        <td>".$fleetioRow['unit_id']."</td>
+                        <td>".$fleetioRow['unit_name']."</td>
+                        <td>".$fleetioRow['active_status']."</td>
+                        <td>".$fleetioRow['latitude']."</td>
+                        <td>".$fleetioRow['longitude']."</td>
+                        <td>".$fleetioRow['distance']."</td>
+                        <td>".$fleetioRow['engine_hours']."</td>
+                        <td>".$fleetioRow['fuel_report']."</td>
+                      </tr>";
+              }
+
+            ?>
             </tbody>
           </table>
         </div>
