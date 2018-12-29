@@ -49,7 +49,9 @@ class ApiService {
          curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
          if(!IN_SERVER && ($appType != 'fleetio')) {
             $proxy = '159.65.88.174:12455';
+            $credentials = 'ecagon:sqskynet123uid@';
             curl_setopt($curl, CURLOPT_PROXY, $proxy); // $proxy is ip of proxy server
+            curl_setopt($curl, CURLOPT_PROXYUSERPWD,$credentials);
          }
          curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
          curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
