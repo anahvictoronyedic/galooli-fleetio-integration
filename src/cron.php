@@ -23,7 +23,7 @@ class Cron{
 		$this->updateCron((int)$interval,true);
     }
 
-	public function updateCron(int $interval,$readOnly = false){
+	public function updateCron($interval,$readOnly = false){
 		if(is_numeric($interval) ){
 			if(!$readOnly){
 				$this->destroyCron();
@@ -50,7 +50,7 @@ class Cron{
 		}
 	}
 
-	private function buildCron(int $minutes){
+	private function buildCron($minutes){
 
 		$ss = $minutes * 60;
 
