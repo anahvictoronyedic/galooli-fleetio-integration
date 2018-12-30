@@ -2,7 +2,7 @@
 require_once 'utils.php';
 
 if(isset($_POST['action'])){
-	if($_POST['username'] == 'galooli' && $_POST['password'] == 'galooli'){
+	if($_POST['username'] == LOGIN_USER && $_POST['password'] == LOGIN_PASSWORD){
 		$_SESSION['logged_in'] = true;
 		header('Location: '.path('index.php'));
 		die();
