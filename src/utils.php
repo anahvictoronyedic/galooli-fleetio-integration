@@ -1,6 +1,5 @@
 <?php
-
-require_once 'db.php';
+require_once 'Database.php';
 
 function configuration($name,$value=false){
 	global $db_server;

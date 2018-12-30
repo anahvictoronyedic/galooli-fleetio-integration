@@ -54,6 +54,10 @@ class ProcessData {
                 echo "Error updating record: " . mysqli_error($GLOBALS['db_server'])."<br/>";
             }
             $this->currentDateTime = date("Y-m-d H:i:s");
+            //update error time
+
+            $this->updateErrorData('pull_error_time', NULL);
+
             foreach($this->returnedData['CommonResult']['DataSet'] as $returnedData) {
                 if ($this->isInitialization) {
                     $updateRecordQuery = "INSERT INTO pull_report(unit_id, unit_name, active_status, latitude, longitude, distance, engine_hours, fuel_report, created_at) 
@@ -86,6 +90,9 @@ class ProcessData {
                 $this->checkforOdometerChange($this->currentDateTime);
             }
                 
+        } else {
+            $this->currentDateTime = date("Y-m-d H:i:s");
+            $this->updateErrorData('pull_error_time', $this->currentDateTime);
         }
         return $this->returnedData;
     }
@@ -99,6 +106,16 @@ class ProcessData {
         foreach($this->returnedData as $returnedData) {
             echo $returnedData['id']. ' ' . $returnedData['name'];
             $this->mapCorrespondingIds($returnedData['id'], $returnedData['name']);
+        }
+    }
+
+    function updateErrorData($name, $value)
+    {
+        $query = "UPDATE configuration SET value='".$value."' where name = '".$name."'";
+        if (Database::updateOrInsert($query)) {
+            echo "LastGMTupdate time Record updated successfully<br>";
+        } else {
+            echo "Error updating record: " . mysqli_error($GLOBALS['db_server'])."<br/>";
         }
     }
 
@@ -178,6 +195,7 @@ class ProcessData {
                 $this->processDataBeforePush($galooliRow);
             }
             if ($this->fleetioUpdate) {
+                $this->currentDateTime = date("Y-m-d H:i:s");
                 $query = "UPDATE configuration SET value='".$this->currentDateTime."' where name = 'last_fleetio_push_time'";
                 if (Database::updateOrInsert($query)) {
                     echo "LastGMTupdate time Record updated successfully<br>";
@@ -271,6 +289,14 @@ class ProcessData {
             echo "<br><br>Response From location entries: ";
             var_dump($response);
             echo '<br>';
+
+            if ($return_data == NULL) {
+                $this->updateErrorData('pull_error_time', $this->currentDateTime);
+            } else {
+                $this->updateErrorData('pull_error_time', NULL);
+            }
+
+
         }
         
 

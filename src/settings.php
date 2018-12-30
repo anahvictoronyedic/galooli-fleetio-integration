@@ -44,25 +44,32 @@ if(isset($_POST['action'])){
           <input id="last_name" type="text" class="validate">
           <label for="last_name">Last Name</label>
         </div>-->
-      <div class="row">
-        <div class="input-field col s6">
-        <select name="pull-interval">
-          <?= make_select_options( configuration('PULL_CRON_INTERVAL_MINUTES') ) ?>
-        </select>
-        <label>Pull Interval In Minutes</label>
-      </div><div class="input-field col s6">
-        <select name="check-change-interval">
-          <?= make_select_options( configuration('CHECK_CHANGE_CRON_INTERVAL_MINUTES') ) ?>
-        </select>
-        <label>Check Change Interval In Minutes</label>
-      </div>
-       
-      </div>
- <div class="row"style="padding-left:40px;">
-    <button class="btn waves-effect waves-light" type="submit" name="action">Update
-    </button>
-</div>
-    </form>
+        <div class="row">
+          <div class="input-field col s5">
+            <select name="pull-interval">
+              <?= make_select_options( configuration('PULL_CRON_INTERVAL_MINUTES') ) ?>
+            </select>
+            <label>Pull From Galooli Every</label>
+          </div>
+          <div class="col s1 padding-top">
+            Minutes
+          </div>
+          <div class="input-field col s5">
+            <select name="check-change-interval">
+              <?= make_select_options( configuration('CHECK_CHANGE_CRON_INTERVAL_MINUTES') ) ?>
+            </select>
+            <label>Push To Fleetio Every</label>
+          </div>
+          <div class="col s1 padding-top">
+            Minutes
+          </div>
+        </div>
+        <div class="row center-align" style="padding-left:40px;">
+          <button class="btn btn-large waves-effect waves-light" type="submit" name="action">
+            Update Intervals
+          </button>
+        </div>
+      </form>
     </div>
   </div>
   

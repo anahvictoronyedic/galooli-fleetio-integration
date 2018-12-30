@@ -98,3 +98,7 @@ img {
 .page-footer {
    padding-top: 0;
 }
+
+.padding-top {
+  padding-top: 3% !important;
+}

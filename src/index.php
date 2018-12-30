@@ -1,5 +1,7 @@
-<?php 
-require_once 'config.php';
+<?php
+require_once 'utils.php';
+require_once 'Database.php';
+require_login();
 ?>
 
 <!DOCTYPE html>
