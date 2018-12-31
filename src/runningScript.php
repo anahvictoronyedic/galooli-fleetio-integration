@@ -6,17 +6,9 @@ require_once "ProcessData.php";
 
 $processData = new ProcessData();
 
+echo '<div style="margin:auto; width: 800px">';
+echo "<a href='/galooli-fleetio-integration/'>Back To Home Page</a>";
 $responseData = $processData->pullDataFromGalooli(false);
-
-
-/*
-TODO: push data to fleetio server to fleetio servers
-
-*/
-
-/*
-TODO: indicate/ throw exception when a push or pull of data returns with an error message thrice
-
-*/
+echo "</div>";
 
 ?>

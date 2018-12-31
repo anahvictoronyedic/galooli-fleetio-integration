@@ -28,14 +28,14 @@ if(isset($_POST['action'])){
 if(isset($_POST['update_condition'])){
     $query = "UPDATE configuration SET value='".$_POST['odometer']."' where name = 'difference_in_odometer'";
     if (Database::updateOrInsert($query)) {
-        $toast_message = 'Difference In Odometer Updated';
+        $toast_message = 'Odometer And Fuel Readings Check Conditions Updated';
     } else {
         $toast_message = "Error updating record: " . mysqli_error($GLOBALS['db_server']);
     }
 
     $query = "UPDATE configuration SET value='".$_POST['fuel_update']."' where name = 'difference_in_fuel'";
     if (Database::updateOrInsert($query)) {
-        $toast_message = 'Difference In Fuel Readings Updated';
+      $toast_message = 'Odometer And Fuel Readings Check Conditions Updated';
     } else {
         $toast_message = "Error updating record: " . mysqli_error($GLOBALS['db_server']);
     }

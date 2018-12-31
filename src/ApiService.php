@@ -3,14 +3,8 @@
 
 class ApiService {
     public $returnedData;
-    public $apiToken;
-    private $accountToken;
-    private $contactId;
 
     function  __construct() {
-      $this->apiToken = '';
-      $this->accountToken = '';
-      $this->contactId = '';
     }
 
     //If any API calls fails, log it, and show on the user interface for every 5 retrials

@@ -4,10 +4,12 @@ require_once "ApiService.php";
 require_once 'Database.php';
 
 if($_GET['call_function'] == 'pushfleetio') {
+    echo "<a href='/galooli-fleetio-integration/'>Back To Home Page</a>";
     $processData = new ProcessData();
     $processData->checkforChangeWithinLastHour();
 }
 else if($_GET['call_function']  == 'pullGalooli') {
+    echo "<a href='/galooli-fleetio-integration/'>Back To Home Page</a>";
     $processData = new ProcessData();
     $processData->pullDataFromGalooli(false);
 }
@@ -24,7 +26,6 @@ class ProcessData {
 
     function  __construct() {
         $this->_apiService = new ApiService();
-        $this->_apiService->apiToken = "";
     }
 
     //CRON JOB: this function should run every ten minutes
@@ -37,8 +38,7 @@ class ProcessData {
         $tableRow = Database::getSingleRow($query);
         $lastPullTime = $tableRow["value"];
         // echo "lastPullTime : ".$lastPullTime;
-        $this->apiURL = "https://sdk.galooli-systems.com/galooliSDKService.svc/json/Assets_Report?userName=matrixvtrack&password=matv123?&requestedPropertiesStr=u.id,u.name,ac.status,ac.latitude,ac.longitude,ac.distance_[km],ac.engine_hours_[num],ac.main_fuel_tank_level_[liter]&lastGmtUpdateTime=".urlencode($lastPullTime);
-         
+        $this->apiURL = "https://sdk.galooli-systems.com/galooliSDKService.svc/json/Assets_Report?userName=matrixvtrack&password=matv123?&requestedPropertiesStr=u.id,u.name,ac.status,ac.latitude,ac.longitude,ac.distance,ac.main_fuel_tank_level,ac.engine_hours_[num]&lastGmtUpdateTime=".urlencode($lastPullTime);
         $get_data = $this->_apiService->callAPI('GET', $this->apiURL, false, 'galooli');
         $this->currentDateTime = date("Y-m-d h:i:s");
         $this->returnedData = json_decode($get_data, true);
@@ -49,7 +49,7 @@ class ProcessData {
             //update last update time
             $query = "UPDATE configuration SET value='".$this->currentDateTime."' where name = 'last_gmt_update_time'";
             if (Database::updateOrInsert($query)) {
-                echo "LastGMTupdate time Record updated successfully<br>";
+                echo "LastGMTupdate Time Record updated successfully<br/><br/>";
             } else {
                 echo "Error updating record: " . mysqli_error($GLOBALS['db_server'])."<br/>";
             }
@@ -60,7 +60,7 @@ class ProcessData {
 
             foreach($this->returnedData['CommonResult']['DataSet'] as $returnedData) {
                 if ($this->isInitialization) {
-                    $updateRecordQuery = "INSERT INTO pull_report(unit_id, unit_name, active_status, latitude, longitude, distance, engine_hours, fuel_report, created_at) 
+                    $updateRecordQuery = "INSERT INTO pull_report(unit_id, unit_name, active_status, latitude, longitude, distance, fuel_report, engine_hours, created_at) 
                             VALUES('".$returnedData['0']."','".$returnedData['1']."','".$returnedData['2']."','".$returnedData['3']."'
                             ,'".$returnedData['4']."','".$returnedData['5']."','".$returnedData['6']."','".$returnedData['7']."', NOW())";
 
@@ -76,13 +76,19 @@ class ProcessData {
                 } else {
                     $updateRecordQuery = "UPDATE pull_report SET active_status='".$returnedData['2']."', latitude = '".$returnedData['3']."', 
                         longitude = '".$returnedData['4']."', distance = '".$returnedData['5']."', 
-                        engine_hours = '".$returnedData['6']."', fuel_report = '".$returnedData['7']."', modified_at = '{$this->currentDateTime}' where unit_id = '".$returnedData['0']."'";
+                        fuel_report = '".$returnedData['6']."', engine_hours = '".$returnedData['7']."', modified_at = '{$this->currentDateTime}' where unit_id = '".$returnedData['0']."'";
                 }
+                $pullUpdated = 0;
                 if (Database::updateOrInsert($updateRecordQuery)) {
-                    echo "Pulled Data updated successfully  "; // this can be like logged
+                    $pullUpdated++;
                 } else {
                     echo "Error updating record: " . mysqli_error($GLOBALS['db_server'])."<br/>";
                 }
+            }
+            if ($pullUpdated > 0) {
+                echo "Pulled Data updated successfully<br/><br/>"; // this can be like logged
+            } else {
+                $this->logError("Error Saving Galooli Data To Database");
             }
             if ($this->isInitialization) 
                 $this->pullDataFromFleetio();
@@ -91,7 +97,7 @@ class ProcessData {
             }
                 
         } else {
-            echo "Data returned is Null";
+            echo "Data returned is Null<br/><br/>";
             $this->currentDateTime = date("Y-m-d H:i:s");
             $this->updateErrorData('pull_error_time', $this->currentDateTime);
         }
@@ -119,7 +125,7 @@ class ProcessData {
         }
 
         if (Database::updateOrInsert($query)) {
-            echo "Error Data Record updated successfully<br>";
+            echo "Error Data Record updated successfully<br/><br/>";
         } else {
             echo "Error updating record: " . mysqli_error($GLOBALS['db_server'])."<br/>";
         }
@@ -130,7 +136,7 @@ class ProcessData {
     {
         $mapIDQuery = "UPDATE id_mapping SET id_fleetio='{$vehicle_id}' where plate_number = '{$vehicle_name}'";
         if (Database::updateOrInsert($mapIDQuery)) {
-            echo "Id Mapped<br>";
+            echo "Id Mapped<br/><br/>";
         } else {
             echo "Error updating record: " . mysqli_error($GLOBALS['db_server'])."<br/>";
         }
@@ -145,7 +151,6 @@ class ProcessData {
 
     */
     function checkforOdometerChange($currentModifiedDateTime) {
-        echo "<br>checkforOdometerChange or fuel change over 5 litres<br/>";
         $query = "SELECT * from push_report";
         $fleetioTableRows = Database::selectFromTable($query);
         $query = "SELECT * from pull_report where modified_at = '{$currentModifiedDateTime}'";
@@ -163,15 +168,12 @@ class ProcessData {
             for($i = 0; $i < count($galooliTableRows);  $i++) {
                 $distanceTest = $galooliTableRows[$i]['distance'] - $fleetioTableRows[$i]['distance'];
                 $fuelTest = $galooliTableRows[$i]['fuel_report'] - $fleetioTableRows[$i]['fuel_report'];
-                echo "<br><br>Difference in odometer: ".$distanceTest;
-                echo "  Difference in fuel: ".$fuelTest."<br>";
-                if($galooliTableRows[$i]['fuel_report'] == 0)  {
-                    echo "Error in Galooli Data: fuel report is Zero";
-                    continue; 
-                }
+                // if($galooliTableRows[$i]['fuel_report'] == 0)  {
+                //     echo "Error in Galooli Data: fuel report is Zero";
+                //     continue; 
+                // }
                 if($distanceTest > $odometerDifference || $fuelTest > $fuelDifference || $fuelTest < -$fuelDifference)  {
                     //save to fleetio table
-                    echo "<br>Conditions Met<br>";
                     $this->saveToFleetioTable($galooliTableRows[$i]);
                     $this->processDataBeforePush($galooliTableRows[$i]); 
                 }
@@ -179,14 +181,15 @@ class ProcessData {
             if ($this->fleetioUpdate) {
                 $query = "UPDATE configuration SET value='".$this->currentDateTime."' where name = 'last_fleetio_push_time'";
                 if (Database::updateOrInsert($query)) {
-                    echo "LastGMTupdate time for fleetio updated successfully<br>";
+                    echo "Last Update time for fleetio Saved successfully<br/><br/>";
                 } else {
                     echo "Error updating record: " . mysqli_error($GLOBALS['db_server'])."<br/>";
                 }
                 $this->fleetioUpdate = false;
             }
         } else {
-            echo "No data to update";
+            echo "No data to update<br/><br/>";
+            $this->logError("Galooli Data Table or Fleetio Data Table is Empty, or Could not be fetched");
         }
     }  
     
@@ -208,7 +211,7 @@ class ProcessData {
                 $this->currentDateTime = date("Y-m-d H:i:s");
                 $query = "UPDATE configuration SET value='".$this->currentDateTime."' where name = 'last_fleetio_push_time'";
                 if (Database::updateOrInsert($query)) {
-                    echo "LastGMTupdate time for fleetio updated successfully<br>";
+                    echo "LastGMTupdate time for fleetio updated successfully<br/><br/>";
                 } else {
                     echo "Error updating record: " . mysqli_error($GLOBALS['db_server'])."<br/>";
                 }
@@ -219,8 +222,7 @@ class ProcessData {
 
     function saveToFleetioTable($galooliRow) {
         if ($this->isInitialization) {
-            echo "Inserting into push report";
-            $updateRecordQuery = "INSERT INTO push_report(unit_id, unit_name, active_status, latitude, longitude, distance, engine_hours, fuel_report, created_at) 
+            $updateRecordQuery = "INSERT INTO push_report(unit_id, unit_name, active_status, latitude, longitude, distance, fuel_report, engine_hours, created_at) 
                     VALUES('".$galooliRow['0']."','".$galooliRow['1']."','".$galooliRow['2']."','".$galooliRow['3']."'
                     ,'".$galooliRow['4']."','".$galooliRow['5']."','".$galooliRow['6']."','".$galooliRow['7']."', NOW())";
        
@@ -229,19 +231,23 @@ class ProcessData {
                 longitude = '".$galooliRow['longitude']."', distance = '".$galooliRow['distance']."', 
                 engine_hours = '".$galooliRow['engine_hours']."', fuel_report = '".$galooliRow['fuel_report']."', modified_at = NOW() where unit_id = '".$galooliRow['unit_id']."'";
         }
+        $pushUpdated = 0;
         if (Database::updateOrInsert($updateRecordQuery)) {
-            echo "Data updated successfully in push report [FLEETIO Table]<br>";
+            $pushUpdated++;
         } else {
             echo "Error updating record: " . mysqli_error($GLOBALS['db_server'])."<br/>";
+        }
+        if ($pushUpdated > 0) {
+            echo "Fleetio Table Data updated successfully<br/><br/>"; // this can be like logged
+        } else {
+            $this->logError("Error Saving New Data To Fleetio Table");
         }
     }
 
     function processDataBeforePush($dataToPush) {
-        echo "Data to update found <br/>";
         $query = "SELECT id_fleetio from id_mapping where id_galooli = '".$dataToPush['unit_id']."'";
         $tableRow = Database::getSingleRow($query);
         $fleetioID = $tableRow["id_fleetio"];
-        echo "Fleetio ID: ".$fleetioID;
         $this->pushDataToFeetio($dataToPush, $fleetioID);
     } 
 
@@ -260,29 +266,27 @@ class ProcessData {
                                 'date' => $this->currentDateTime,
                                 'value' => $data_array['distance']);
             $jsonDataArray = json_encode($post_data_array);
-            echo "<br><br>Encoded Json for odometer: ";
-            var_dump($jsonDataArray);
             $this->apiURL = "https://secure.fleetio.com/api/v1/meter_entries";
             $return_data = $this->_apiService->callAPI('POST', $this->apiURL, $jsonDataArray, 'fleetio');
             $response = json_decode($return_data, true);
-            echo "<br><br>Response From meter entries: ";
-            var_dump($response);
-            echo '<br>';
+            if($return_data) {
+                echo 'Odometer Data for '.$data_array['unit_name'].' updated successfully<br/><br/>';
+            }
 
             //PUSH Engine hours
-            $post_data_array = array('vehicle_id' => $fleetioID,
-                                'date' => $this->currentDateTime,
-                                'meter_type' => "secondary",
-                                'value' => $data_array['engine_hours']);
-            $jsonDataArray = json_encode($post_data_array);
-            echo "<br><br>Encoded Json for engine hours: ";
-            var_dump($jsonDataArray);
-            $this->apiURL = "https://secure.fleetio.com/api/v1/meter_entries";
-            $return_data = $this->_apiService->callAPI('POST', $this->apiURL, $jsonDataArray, 'fleetio');
-            $response = json_decode($return_data, true);
-            echo "<br><br>Response From meter entries: ";
-            var_dump($response);
-            echo '<br>';
+            // $post_data_array = array('vehicle_id' => $fleetioID,
+            //                     'date' => $this->currentDateTime,
+            //                     'meter_type' => "secondary",
+            //                     'value' => $data_array['engine_hours']);
+            // $jsonDataArray = json_encode($post_data_array);
+            // echo "<br><br>Encoded Json for engine hours: ";
+            // var_dump($jsonDataArray);
+            // $this->apiURL = "https://secure.fleetio.com/api/v1/meter_entries";
+            // $return_data = $this->_apiService->callAPI('POST', $this->apiURL, $jsonDataArray, 'fleetio');
+            // $response = json_decode($return_data, true);
+            // echo "<br><br>Response From meter entries: ";
+            // var_dump($response);
+            // echo '<br>';
 
             //PUSH LOCATION DATA
             $post_data_array = array('vehicle_id' => $fleetioID,
@@ -291,18 +295,14 @@ class ProcessData {
                                 'latitude' => $data_array['latitude'],
                                 'longitude' => $data_array['longitude']);
             $jsonDataArray = json_encode($post_data_array);
-            echo "<br><br>Encoded Json for location: ";
-            var_dump($jsonDataArray);
             $this->apiURL = "https://secure.fleetio.com/api/v1/location_entries";
             $return_data = $this->_apiService->callAPI('POST', $this->apiURL, $jsonDataArray, 'fleetio');
             $response = json_decode($return_data, true);
-            echo "<br><br>Response From location entries: ";
-            var_dump($response);
-            echo '<br>';
 
             if ($return_data == NULL) {
                 $this->updateErrorData('push_error_time', $this->currentDateTime);
             } else {
+                echo 'Location Data for '.$data_array['unit_name'].' updated successfully<br/><br/>';
                 $this->updateErrorData('push_error_time', 0);
             }
 
@@ -324,7 +324,7 @@ class ProcessData {
     {
         $updateErrorLog = "INSERT INTO error_log(message) VALUES('{$errorData}')";
         if (Database::updateOrInsert($updateErrorLog)) {
-            echo "Error Log Updated<br>";
+            echo "Error Occured : Error Log Updated<br><br>";
         } else {
             echo "Error updating record: " . mysqli_error($GLOBALS['db_server'])."<br/>";
         }
