@@ -56,7 +56,7 @@ class ProcessData {
             $this->currentDateTime = date("Y-m-d H:i:s");
             //update error time
 
-            $this->updateErrorData('pull_error_time', NULL);
+            $this->updateErrorData('pull_error_time', 0);
 
             foreach($this->returnedData['CommonResult']['DataSet'] as $returnedData) {
                 if ($this->isInitialization) {
@@ -91,6 +91,7 @@ class ProcessData {
             }
                 
         } else {
+            echo "Data returned is Null";
             $this->currentDateTime = date("Y-m-d H:i:s");
             $this->updateErrorData('pull_error_time', $this->currentDateTime);
         }
@@ -111,9 +112,14 @@ class ProcessData {
 
     function updateErrorData($name, $value)
     {
-        $query = "UPDATE configuration SET value='".$value."' where name = '".$name."'";
+        if ($value == NULL) {
+            $query = "UPDATE configuration SET value = '".$value."'  where name = '".$name."'";
+        } else {
+            $query = "UPDATE configuration SET value = value + 1  where name = '".$name."'";
+        }
+
         if (Database::updateOrInsert($query)) {
-            echo "LastGMTupdate time Record updated successfully<br>";
+            echo "Error Data Record updated successfully<br>";
         } else {
             echo "Error updating record: " . mysqli_error($GLOBALS['db_server'])."<br/>";
         }
@@ -148,6 +154,12 @@ class ProcessData {
         //Check if distance/odometer reading since last push is greater than 200km, or if fuel guage has dropped or
         //increased by 5 litres
         if($galooliTableRows && $fleetioTableRows) {
+            $query = "SELECT value from configuration where name = 'difference_in_odometer'";
+            $tableRow = Database::getSingleRow($query);
+            $odometerDifference = $tableRow["value"];
+            $query = "SELECT value from configuration where name = 'difference_in_fuel'";
+            $tableRow = Database::getSingleRow($query);
+            $fuelDifference = $tableRow["value"];
             for($i = 0; $i < count($galooliTableRows);  $i++) {
                 $distanceTest = $galooliTableRows[$i]['distance'] - $fleetioTableRows[$i]['distance'];
                 $fuelTest = $galooliTableRows[$i]['fuel_report'] - $fleetioTableRows[$i]['fuel_report'];
@@ -157,7 +169,7 @@ class ProcessData {
                     echo "Error in Galooli Data: fuel report is Zero";
                     continue; 
                 }
-                if($distanceTest > 200 || $fuelTest > 5 || $fuelTest < -5)  {
+                if($distanceTest > $odometerDifference || $fuelTest > $fuelDifference || $fuelTest < -$fuelDifference)  {
                     //save to fleetio table
                     echo "<br>Conditions Met<br>";
                     $this->saveToFleetioTable($galooliTableRows[$i]);
@@ -167,7 +179,7 @@ class ProcessData {
             if ($this->fleetioUpdate) {
                 $query = "UPDATE configuration SET value='".$this->currentDateTime."' where name = 'last_fleetio_push_time'";
                 if (Database::updateOrInsert($query)) {
-                    echo "LastGMTupdate time Record updated successfully<br>";
+                    echo "LastGMTupdate time for fleetio updated successfully<br>";
                 } else {
                     echo "Error updating record: " . mysqli_error($GLOBALS['db_server'])."<br/>";
                 }
@@ -176,8 +188,6 @@ class ProcessData {
         } else {
             echo "No data to update";
         }
-        
-
     }  
     
 
@@ -198,7 +208,7 @@ class ProcessData {
                 $this->currentDateTime = date("Y-m-d H:i:s");
                 $query = "UPDATE configuration SET value='".$this->currentDateTime."' where name = 'last_fleetio_push_time'";
                 if (Database::updateOrInsert($query)) {
-                    echo "LastGMTupdate time Record updated successfully<br>";
+                    echo "LastGMTupdate time for fleetio updated successfully<br>";
                 } else {
                     echo "Error updating record: " . mysqli_error($GLOBALS['db_server'])."<br/>";
                 }
@@ -291,11 +301,10 @@ class ProcessData {
             echo '<br>';
 
             if ($return_data == NULL) {
-                $this->updateErrorData('pull_error_time', $this->currentDateTime);
+                $this->updateErrorData('push_error_time', $this->currentDateTime);
             } else {
-                $this->updateErrorData('pull_error_time', NULL);
+                $this->updateErrorData('push_error_time', 0);
             }
-
 
         }
         

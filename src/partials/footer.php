@@ -12,22 +12,22 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
-<script>
+    <script>
 
-    $(document).ready(function() {
-      M.updateTextFields();
-    });
+        $(document).ready(function() {
+          M.updateTextFields();
+        });
 
-    $(document).ready(function(){
-      $('select').formSelect();
+        $(document).ready(function(){
+          $('select').formSelect();
 
-      <?php 
-if(isset($toast_message)){
-  ?>
-M.toast({html: "<?= $toast_message ?>"});
-  <?php
-}
-      ?>
-    });
+          <?php
+            if(isset($toast_message)){
+              ?>
+                M.toast({html: "<?= $toast_message ?>"});
+              <?php
+            }
+          ?>
+        });
 
-  </script>
+    </script>

@@ -2,7 +2,7 @@
   <nav>
     <div class="container">
       <div class="nav-wrapper">
-        <a href="javascript:void(0);" class="brand-logo white-text" style="padding-left:20px;">Galooli - Fleetio Integration Interface</a>
+        <a href="javascript:void(0);" class="brand-logo white-text flow-text" style="padding-left:20px;">Galooli - Fleetio Integration Interface</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <?php
 

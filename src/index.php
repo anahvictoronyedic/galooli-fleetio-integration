@@ -1,15 +1,17 @@
 <?php
-require_once 'utils.php';
-require_once 'Database.php';
-require_login();
+  require_once 'utils.php';
+  require_once 'Database.php';
+  require_login();
+
+  function formatDate($dateString) {
+    return date('g:ia j M, Y',strtotime($dateString));
+  } 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <title>Galooli | Fleetio Integration Interface</title>
-
   <?php require_once('partials/head.php'); ?>
 </head>
 <body>
@@ -21,36 +23,67 @@ require_login();
       <!--   Icon Section   -->
       <div class="row">
         <div class="col s12 m4">
-          <div class="icon-block">
-            <p class="text-center red-text">
-              Pull Error messages Appear here
-            </p>
+            <?php
+            $query = "SELECT value from configuration where name = 'pull_error_time'";
+            $tableRow = Database::getSingleRow($query);
+            $pullError = $tableRow["value"];
+            ?>
+            <div class="icon-block">
+                <p class="text-center orange-text">
+                    <?php
+                    if ($pullError != NULL && $pullError > 3) {
+                        echo "<i class=\"material-icons red-text darken-4\">warning</i>
+                        Error Fetching Data from Galooli Servers, 
+                        Wait for re-trial in Ten minutes or use the manual override button";
+                    } else {
+                        echo "No Fetch Errors";
+                    }
+                    ?>
+                </p>
             <a class="btn btn-large teal darken-4 waves-light waves-effect"
               href="ProcessData.php?call_function=pullGalooli">Pull From Galooli</a>
-            <p><strong><i class="material-icons orange-text darken-4">warning</i>Only Use this manual update button if there is a pull error message</strong></p>
+            <p>
+              <strong>
+                <i class="material-icons orange-text darken-4">warning</i>
+                Only Use this manual update button if there is a pull error message
+              </strong>
+            </p>
           </div>
         </div>
 
         <div class="col s12 m4">
-        <?php
-          $query = "SELECT value from configuration where name = 'last_gmt_update_time'";
-          $tableRow = Database::getSingleRow($query);
-          $lastPullTime = $tableRow["value"];
-          $query = "SELECT value from configuration where name = 'last_fleetio_push_time'";
-          $tableRow = Database::getSingleRow($query);
-          $lastPushTime = $tableRow["value"];
-        ?>
+          <?php
+            $query = "SELECT value from configuration where name = 'last_gmt_update_time'";
+            $tableRow = Database::getSingleRow($query);
+            $lastPullTime = $tableRow["value"];
+            $query = "SELECT value from configuration where name = 'last_fleetio_push_time'";
+            $tableRow = Database::getSingleRow($query);
+            $lastPushTime = $tableRow["value"];
+          ?>
           <div class="icon-block">
-            <h5 class="center teal-text">Last Data Fetched from Galooli: <strong><?=$lastPullTime  ?></strong></h5>
+            <h5 class="center teal-text">Last Data Fetched from Galooli: <strong><?=formatDate($lastPullTime)  ?></strong></h5>
             <br>
-            <h5 class="center teal-text">Last Data Updated to Fleetio: <strong><?=$lastPushTime  ?></strong></h5>
+            <h5 class="center teal-text">Last Data Updated to Fleetio: <strong><?=formatDate($lastPushTime)  ?></strong></h5>
           </div>
         </div>
 
         <div class="col s12 m4">
+          <?php
+              $query = "SELECT value from configuration where name = 'push_error_time'";
+              $tableRow = Database::getSingleRow($query);
+              $pushError = $tableRow["value"];
+          ?>
           <div class="icon-block">
-            <p class="text-center red-text">
-              Push Error messages Appear here
+            <p class="text-center orange-text">
+                <?php
+                    if ($pushError != NULL && $pushError > 3) {
+                        echo "<i class=\"material-icons red-text darken-4\">warning</i>
+                            Error Pushing Data to Fleetio Servers, 
+                            Wait for re-trial in Ten minutes or use the manual override button";
+                    } else {
+                        echo "No Update Errors";
+                    }
+                ?>
             </p>
             <a class="btn btn-large orange darken-4 waves-light waves-effect"
               href="ProcessData.php?call_function=pushfleetio">Push To Fleetio</a>
@@ -61,11 +94,11 @@ require_login();
       <br/>
 
       <?php
-        $query = "SELECT * from pull_report";
+        $query = "SELECT * from push_report";
         $fleetioTableRows = Database::selectFromTable($query);
       ?>
       <div class="row">
-        <h5 class="center-align">Last Data Sent to Fleetio Management App</h5>
+        <h5 class="center-align">Latest Data Sent to Fleetio Management App</h5>
         <div class="col s12">
           <table class="highlight responsive-table">
             <thead>
