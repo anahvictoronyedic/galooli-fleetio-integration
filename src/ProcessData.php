@@ -156,8 +156,7 @@ class ProcessData {
         $query = "SELECT * from pull_report where modified_at = '{$currentModifiedDateTime}'";
         $galooliTableRows = Database::selectFromTable($query);
 
-        //Check if distance/odometer reading since last push is greater than 200km, or if fuel guage has dropped or
-        //increased by 5 litres
+        //Check if distance/odometer reading since last push is above threshold value
         if($galooliTableRows && $fleetioTableRows) {
             $query = "SELECT value from configuration where name = 'difference_in_odometer'";
             $tableRow = Database::getSingleRow($query);
