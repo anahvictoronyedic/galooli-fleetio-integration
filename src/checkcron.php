@@ -7,4 +7,6 @@ if(php_sapi_name() === 'cli'){
 
     $processData = new ProcessData();
     $processData->checkforChangeWithinLastHour();
+
+    echo 'Cron Job executed';
 }
