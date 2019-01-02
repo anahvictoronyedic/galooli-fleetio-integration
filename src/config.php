@@ -1,8 +1,9 @@
 <?php
+if(php_sapi_name() != 'cli'){
+	session_start();
+}
 
-require_once '../vendor/autoload.php';
-
-session_start();
+require_once dirname(__FILE__) . '/../vendor/autoload.php';
 
 define('IN_SERVER',false);
 define('DEBUG_MODE',true);
