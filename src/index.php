@@ -39,7 +39,7 @@
                           href=\"ProcessData.php?call_function=pullGalooli\">Pull From Galooli</a>";
                     } else {
                         echo "No Fetch Errors";
-                        echo "<h6 class=\"teal-text\">All System Fetch Data up to date</h6>";
+                        echo "<h6 class=\"teal-text\">All Galooli Fetch Data up to date</h6>";
                     }
                     ?>
                 </p>
@@ -85,7 +85,7 @@
                             href=\"ProcessData.php?call_function=pushfleetio\">Push To Fleetio</a>";
                     } else {
                         echo "No Update Errors";
-                        echo "<h6 class=\"teal-text\">All System Update Data up to date</h6>";
+                        echo "<h6 class=\"teal-text\">All Fleetio Update Data up to date</h6>";
                     }
                 ?>
             </p>
