@@ -176,12 +176,10 @@ class ProcessData {
                 //     echo "Error in Galooli Data: fuel report is Zero";
                 //     continue; 
                 // }
-                $changeInFuel = 0;
                 if($distanceTest >= $odometerDifference || $fuelTest > $fuelDifference)  {
                     //save to fleetio table
                     $this->saveToFleetioTable($galooliTableRows[$i]);
-                    $this->processDataBeforePush($galooliTableRows[$i]); 
-                    $changeInFuel++;
+                    $this->processDataBeforePush($galooliTableRows[$i]);
                 } 
             }
             if ($this->fleetioUpdate) {
