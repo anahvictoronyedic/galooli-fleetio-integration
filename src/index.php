@@ -33,8 +33,8 @@
                     <?php
                     if ($pullError != NULL && $pullError > 3) {
                         echo "<i class=\"material-icons red-text darken-4\">warning</i>
-                        Error Fetching Data from Galooli Servers, 
-                        Wait for re-trial in Ten minutes or use the manual override button";
+                        Network or Server Error Occurred When Fetching Data from Galooli Servers, 
+                        Wait for re-trial or use the manual override button";
                     } else {
                         echo "No Fetch Errors";
                     }
@@ -45,7 +45,7 @@
             <p>
               <strong>
                 <i class="material-icons orange-text darken-4">warning</i>
-                Only Use this manual update button if there is a pull error message
+                Only Use this manual update button if there is a Galooli Data Fetch error message
               </strong>
             </p>
           </div>
@@ -78,8 +78,8 @@
                 <?php
                     if ($pushError != NULL && $pushError > 3) {
                         echo "<i class=\"material-icons red-text darken-4\">warning</i>
-                            Error Pushing Data to Fleetio Servers, 
-                            Wait for re-trial in Ten minutes or use the manual override button";
+                            Network or Server Error Occurred When Pushing Data to Fleetio Servers, 
+                            Wait for re-trial or use the manual override button";
                     } else {
                         echo "No Update Errors";
                     }
@@ -87,7 +87,10 @@
             </p>
             <a class="btn btn-large orange darken-4 waves-light waves-effect"
               href="ProcessData.php?call_function=pushfleetio">Push To Fleetio</a>
-            <p><strong><i class="material-icons orange-text darken-4">warning</i>Only Use this manual update button if there is a push error message</strong></p>
+            <p><strong>
+              <i class="material-icons orange-text darken-4">warning</i>
+              Only Use this manual update button if there is a Fleetio Update error message</strong>
+            </p>
           </div>
         </div>
       </div>

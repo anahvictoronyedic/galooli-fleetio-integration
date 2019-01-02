@@ -52,7 +52,7 @@ class ApiService {
          curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 10);
          curl_setopt($curl, CURLOPT_TIMEOUT, 10);
          $this->returnedData = curl_exec($curl);
-         if ($this->returnedData === false) 
+         if ($this->returnedData === false || $this->returnedData == null) 
             $this->returnedData = curl_error($curl);
       } catch(Exception $exception) {
          echo "Exception Occured: ".$exception."<br/>";
