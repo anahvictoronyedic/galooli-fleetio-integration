@@ -40,7 +40,7 @@
                     }
                     ?>
                 </p>
-            <a class="btn btn-large teal darken-4 waves-light waves-effect"
+            <a class="btn btn-large teal darken-4 waves-light waves-effect" target="_blank"
               href="ProcessData.php?call_function=pullGalooli">Pull From Galooli</a>
             <p>
               <strong>
@@ -85,7 +85,7 @@
                     }
                 ?>
             </p>
-            <a class="btn btn-large orange darken-4 waves-light waves-effect"
+            <a class="btn btn-large orange darken-4 waves-light waves-effect" target="_blank"
               href="ProcessData.php?call_function=pushfleetio">Push To Fleetio</a>
             <p><strong>
               <i class="material-icons orange-text darken-4">warning</i>

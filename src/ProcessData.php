@@ -25,6 +25,7 @@ class ProcessData {
     private $currentDateTime;
     private $isInitialization;
     private $fleetioUpdate = false;
+    private $pushUpdated = 0;
 
     function  __construct() {
         $this->_apiService = new ApiService();
@@ -40,7 +41,7 @@ class ProcessData {
         $tableRow = Database::getSingleRow($query);
         $lastPullTime = $tableRow["value"];
         // echo "lastPullTime : ".$lastPullTime;
-        $this->apiURL = "https://sdk.galooli-systems.com/galooliSDKService.svc/json/Assets_Report?userName=matrixvtrack&password=matv123?&requestedPropertiesStr=u.id,u.name,ac.status,ac.latitude,ac.longitude,ac.distance,ac.main_fuel_tank_level&lastGmtUpdateTime=2000-01-01%2000:00:00";
+        $this->apiURL = "https://sdk.galooli-systems.com/galooliSDKService.svc/json/Assets_Report?userName=matrixvtrack&password=matv123?&requestedPropertiesStr=u.id,u.name,ac.status,ac.latitude,ac.longitude,ac.distance,ac.main_fuel_tank_level&lastGmtUpdateTime=".str_replace(" ","%20",$lastPullTime);
         $get_data = $this->_apiService->callAPI('GET', $this->apiURL, false, 'galooli');
         $this->currentDateTime = date("Y-m-d h:i:s");
         $this->returnedData = json_decode($get_data, true);
@@ -89,7 +90,7 @@ class ProcessData {
                 }
             }
             if ($pullUpdated > 0) {
-                echo "Pulled Data updated successfully<br/><br/>"; // this can be like logged
+                echo "<p style='color: green'>Data From Galooli Saved to Databse</p><br/>";
             } else {
                 $this->logError("Error Saving Galooli Data To Database");
             }
@@ -129,7 +130,7 @@ class ProcessData {
         }
 
         if (Database::updateOrInsert($query)) {
-            echo "Error Data Record updated successfully<br/><br/>";
+            echo "Log Record updated successfully<br/><br/>";
         } else {
             echo "Error updating record: " . mysqli_error($GLOBALS['db_server'])."<br/>";
         }
@@ -214,7 +215,7 @@ class ProcessData {
                 $this->saveToFleetioTable($galooliRow);
                 $this->processDataBeforePush($galooliRow);
             }
-            if ($this->fleetioUpdate || $pushUpdated > 0) {
+            if ($this->fleetioUpdate || $this->pushUpdated > 0) {
                 $this->currentDateTime = date("Y-m-d H:i:s");
                 $query = "UPDATE configuration SET value='".$this->currentDateTime."' where name = 'last_fleetio_push_time'";
                 if (Database::updateOrInsert($query)) {
@@ -244,9 +245,9 @@ class ProcessData {
                 longitude = '".$galooliRow['longitude']."', distance = '".$galooliRow['distance']."', 
                 engine_hours = '".$galooliRow['engine_hours']."', fuel_report = '".$galooliRow['fuel_report']."', modified_at = NOW() where unit_id = '".$galooliRow['unit_id']."'";
         }
-        $pushUpdated = 0;
+        $this->pushUpdated = 0;
         if (Database::updateOrInsert($updateRecordQuery)) {
-            $pushUpdated++;
+            $this->pushUpdated++;
         } else {
             echo "Error updating record: " . mysqli_error($GLOBALS['db_server'])."<br/>";
         }
