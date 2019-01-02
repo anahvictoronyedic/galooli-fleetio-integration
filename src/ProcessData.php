@@ -177,7 +177,7 @@ class ProcessData {
                 //     continue; 
                 // }
                 $changeInFuel = 0;
-                if($fuelTest > $fuelDifference)  {
+                if($distanceTest >= $odometerDifference || $fuelTest > $fuelDifference)  {
                     //save to fleetio table
                     $this->saveToFleetioTable($galooliTableRows[$i]);
                     $this->processDataBeforePush($galooliTableRows[$i]); 
