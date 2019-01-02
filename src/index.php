@@ -82,12 +82,15 @@
                             Network or Server Error Occurred When Pushing Data to Fleetio Servers, 
                             Wait for re-trial or use the manual override button
                             <a class=\"btn btn-large orange darken-4 waves-light waves-effect\" target=\"_blank\"
-                            href=\"ProcessData.php?call_function=pushfleetio\">Push To Fleetio</a>";
+                            href=\"ProcessData.php?call_function=pushfleetio\">Push To Fleetio</a>
+                            Only use this manual update button if there is an error message";
                     } else {
                         echo "No Update Errors";
                         echo "<h6 class=\"teal-text\">All Fleetio Update Data up to date</h6>";
+
                     }
                 ?>
+
             </p>
             <p><strong>
               <i class="material-icons orange-text darken-4">warning</i>

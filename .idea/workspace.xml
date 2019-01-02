@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a0df0c98-8ca6-444a-bfbe-7a0f965b85e0" name="Default" comment="merged files with cron_logic">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.php" afterPath="$PROJECT_DIR$/src/index.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,7 +17,7 @@
       <file leaf-file-name="cron.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cron.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
+            <state relative-caret-position="0">
               <caret line="25" column="20" lean-forward="false" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
               <folding />
             </state>
@@ -38,8 +39,8 @@
       <file leaf-file-name="ProcessData.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ProcessData.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="207" column="79" lean-forward="true" selection-start-line="207" selection-start-column="79" selection-end-line="207" selection-end-column="79" />
+            <state relative-caret-position="-2">
+              <caret line="0" column="5" lean-forward="true" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
               <folding>
                 <marker date="1546435689997" expanded="true" signature="1068:1135" ph="SELECT value... configuration" />
                 <marker date="1546435689997" expanded="true" signature="2032:2127" ph="UPDATE confi... " />
@@ -73,8 +74,8 @@
       <file leaf-file-name="runningScript.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/runningScript.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state relative-caret-position="187">
+              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="2" />
               <folding>
                 <marker date="1546419337074" expanded="true" signature="120:145" ph="..." />
               </folding>
@@ -95,28 +96,18 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="87" column="65" lean-forward="false" selection-start-line="87" selection-start-column="65" selection-end-line="87" selection-end-column="65" />
+            <state relative-caret-position="472">
+              <caret line="95" column="68" lean-forward="false" selection-start-line="95" selection-start-column="61" selection-end-line="95" selection-end-column="68" />
               <folding>
-                <marker date="1546436856484" expanded="true" signature="575:637" ph="SELECT value... configuration" />
-                <marker date="1546436856484" expanded="true" signature="1305:1403" ph="..." />
-                <marker date="1546436856484" expanded="true" signature="2010:2077" ph="SELECT value... configuration" />
-                <marker date="1546436856484" expanded="true" signature="2206:2275" ph="SELECT value... configuration" />
-                <marker date="1546436856484" expanded="true" signature="2807:2869" ph="SELECT value... configuration" />
-                <marker date="1546436856484" expanded="true" signature="3540:3638" ph="..." />
-                <marker date="1546436856484" expanded="true" signature="4184:4209" ph="SELECT * fro... push_report" />
-                <marker date="1546436856484" expanded="true" signature="4939:5468" ph="..." />
+                <marker date="1546462867404" expanded="true" signature="575:637" ph="SELECT value... configuration" />
+                <marker date="1546462867404" expanded="true" signature="1305:1403" ph="..." />
+                <marker date="1546462867404" expanded="true" signature="2010:2077" ph="SELECT value... configuration" />
+                <marker date="1546462867404" expanded="true" signature="2206:2275" ph="SELECT value... configuration" />
+                <marker date="1546462867404" expanded="true" signature="2807:2869" ph="SELECT value... configuration" />
+                <marker date="1546462867404" expanded="true" signature="3540:3638" ph="..." />
+                <marker date="1546462867404" expanded="true" signature="4278:4303" ph="SELECT * fro... push_report" />
+                <marker date="1546462867404" expanded="true" signature="5033:5562" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="head.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/partials/head.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -345,7 +336,7 @@
       <workItem from="1546064434264" duration="912000" />
       <workItem from="1546109045075" duration="7895000" />
       <workItem from="1546419154187" duration="1435000" />
-      <workItem from="1546434650314" duration="2613000" />
+      <workItem from="1546434650314" duration="6903000" />
     </task>
     <task id="LOCAL-00001" summary="added error log functionality, and push time recording">
       <created>1546129539327</created>
@@ -403,11 +394,18 @@
       <option name="project" value="LOCAL" />
       <updated>1546437196686</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="merged files with cron_logic">
+      <created>1546437282010</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1546437282010</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22031000" />
+    <option name="totallyTimeSpent" value="26321000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -971,7 +969,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cron.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
+        <state relative-caret-position="0">
           <caret line="25" column="20" lean-forward="false" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
           <folding />
         </state>
@@ -989,14 +987,6 @@
             <marker date="1546437160676" expanded="true" signature="3344:3413" ph="SELECT value... configuration" />
             <marker date="1546437160676" expanded="true" signature="3549:3614" ph="SELECT value... configuration" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/partials/head.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1018,18 +1008,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/runningScript.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state relative-caret-position="187">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="2" />
           <folding>
             <marker date="1546419337074" expanded="true" signature="120:145" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/partials/head.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="26" lean-forward="true" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ProcessData.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="207" column="79" lean-forward="true" selection-start-line="207" selection-start-column="79" selection-end-line="207" selection-end-column="79" />
+        <state relative-caret-position="-2">
+          <caret line="0" column="5" lean-forward="true" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
           <folding>
             <marker date="1546435689997" expanded="true" signature="1068:1135" ph="SELECT value... configuration" />
             <marker date="1546435689997" expanded="true" signature="2032:2127" ph="UPDATE confi... " />
@@ -1061,17 +1059,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="87" column="65" lean-forward="false" selection-start-line="87" selection-start-column="65" selection-end-line="87" selection-end-column="65" />
+        <state relative-caret-position="472">
+          <caret line="95" column="68" lean-forward="false" selection-start-line="95" selection-start-column="61" selection-end-line="95" selection-end-column="68" />
           <folding>
-            <marker date="1546436856484" expanded="true" signature="575:637" ph="SELECT value... configuration" />
-            <marker date="1546436856484" expanded="true" signature="1305:1403" ph="..." />
-            <marker date="1546436856484" expanded="true" signature="2010:2077" ph="SELECT value... configuration" />
-            <marker date="1546436856484" expanded="true" signature="2206:2275" ph="SELECT value... configuration" />
-            <marker date="1546436856484" expanded="true" signature="2807:2869" ph="SELECT value... configuration" />
-            <marker date="1546436856484" expanded="true" signature="3540:3638" ph="..." />
-            <marker date="1546436856484" expanded="true" signature="4184:4209" ph="SELECT * fro... push_report" />
-            <marker date="1546436856484" expanded="true" signature="4939:5468" ph="..." />
+            <marker date="1546462867404" expanded="true" signature="575:637" ph="SELECT value... configuration" />
+            <marker date="1546462867404" expanded="true" signature="1305:1403" ph="..." />
+            <marker date="1546462867404" expanded="true" signature="2010:2077" ph="SELECT value... configuration" />
+            <marker date="1546462867404" expanded="true" signature="2206:2275" ph="SELECT value... configuration" />
+            <marker date="1546462867404" expanded="true" signature="2807:2869" ph="SELECT value... configuration" />
+            <marker date="1546462867404" expanded="true" signature="3540:3638" ph="..." />
+            <marker date="1546462867404" expanded="true" signature="4278:4303" ph="SELECT * fro... push_report" />
+            <marker date="1546462867404" expanded="true" signature="5033:5562" ph="..." />
           </folding>
         </state>
       </provider>
