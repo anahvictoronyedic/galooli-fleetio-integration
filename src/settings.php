@@ -7,7 +7,7 @@ function make_select_options($def = null){
     $_v = htmlspecialchars($v);
     $attr = isset($def) && $def == $v ? 'selected="selected"' : '';
     return "<option $attr value=\"".$v."\">".($_v < 1 ? ' --- STOP ---' : $_v )."</option>";
-  },range(0,150,10)), function($s,$v){
+  },range(0,150,DEBUG_MODE?1:10)), function($s,$v){
     return $s . $v;
   },'');
 }
