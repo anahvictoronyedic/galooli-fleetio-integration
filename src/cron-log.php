@@ -7,9 +7,11 @@ if(DEBUG_MODE){
 	$file = '/var/log/galooli-fleetio.log';
 clearstatcache();
 	if (file_exists($file)) {
-		readfile($file);
 		if( isset($_GET['reset']) ){
 			exec( ' > '.$file );
+		}
+		else{
+			readfile($file);
 		}
 	}
 }
