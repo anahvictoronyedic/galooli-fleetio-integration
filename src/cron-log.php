@@ -9,6 +9,7 @@ clearstatcache();
 	if (file_exists($file)) {
 		if( isset($_GET['reset']) ){
 			exec( ' > '.$file );
+			echo '<h4>Reset successful</h4>';
 		}
 		else{
 			readfile($file);
