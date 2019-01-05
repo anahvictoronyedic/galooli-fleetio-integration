@@ -7,10 +7,21 @@ function make_select_options($def = null){
     $_v = htmlspecialchars($v);
     $attr = isset($def) && $def == $v ? 'selected="selected"' : '';
     return "<option $attr value=\"".$v."\">".($_v < 1 ? ' --- STOP ---' : $_v )."</option>";
-  },range(0,150,10)), function($s,$v){
+  },range(0, 20, 1)), function($s,$v){
     return $s . $v;
   },'');
 }
+
+function makeSelectOptionsForPush($def = null){
+  return array_reduce(array_map(function($v) use($def){
+    $_v = htmlspecialchars($v);
+    $attr = isset($def) && $def == $v ? 'selected="selected"' : '';
+    return "<option $attr value=\"".$v."\">".($_v < 1 ? ' --- STOP ---' : $_v )."</option>";
+  },range(0, 450, 30)), function($s,$v){
+    return $s . $v;
+  },'');
+}
+
 
 require_login();
 
@@ -73,7 +84,7 @@ if(isset($_POST['update_condition'])){
           </div>
           <div class="input-field col s10 m4 offset-m2">
             <select name="check-change-interval">
-              <?= make_select_options( configuration('CHECK_CHANGE_CRON_INTERVAL_MINUTES') ) ?>
+              <?= makeSelectOptionsForPush( configuration('CHECK_CHANGE_CRON_INTERVAL_MINUTES') ) ?>
             </select>
             <label>Push To Fleetio Every</label>
           </div>
@@ -102,11 +113,11 @@ if(isset($_POST['update_condition'])){
           <form class="col s12" method="POST" action="settings.php">
               <div class="row">
                   <div class="input-field col s10 m4 offset-m1">
-                      <input name="odometer" value="<?=$odometerCheck  ?>">
+                      <input name="odometer" type="number"  value="<?=$odometerCheck  ?>">
                       <label class="active">Odometer Check Threshold(Kilometres)</label>
                   </div>
                   <div class="input-field col s10 m4 offset-m2">
-                      <input name="fuel_update" value="<?=$fuelCheck  ?>">
+                      <input name="fuel_update" type="number" value="<?=$fuelCheck  ?>">
                       <label class="active">Fuel Check Threshold(Litres)</label>
                   </div>
               </div>

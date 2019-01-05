@@ -58,7 +58,7 @@ class ProcessData {
                 echo "Error updating record: " . mysqli_error($GLOBALS['db_server'])."<br/>";
             }
             $this->currentDateTime = date("Y-m-d H:i:s");
-            //update error time
+            //update fetch status
 
             $this->updateErrorData('pull_error_time', 0);
 
@@ -102,11 +102,36 @@ class ProcessData {
                 
         } else {
             echo "Data returned is Null<br/><br/>";
-            $this->logError("Error Fetching Data From Galooli Servers");
+            $this->logError("Error Fetching Data From Galooli Servers, Network or Server Error");
             $this->currentDateTime = date("Y-m-d H:i:s");
             $this->updateErrorData('pull_error_time', $this->currentDateTime);
+            $this->sendErrorNotificationMail();
         }
         return $this->returnedData;
+    }
+
+    function sendErrorNotificationMail()
+    {
+        $to = "dokafor@matrixvtrack.com.ng";
+        $subject = "Error Encountered While Fetching Data From Galooli";
+        
+        $message = "<h3>A Network Error Occured during a get request from galooli server</h3>";
+        $message .= "<b><a href='https://project.matrixvtrack.com/app'>Login</a> 
+                        into the web interface to know the integration status
+                    </b>";
+        
+        $header = "From: tech@ecagon.com \r\n";
+        $header .= "Cc: cekpunobi@matrixvtrack.com.ng  \r\n";
+        $header .= "MIME-Version: 1.0\r\n";
+        $header .= "Content-type: text/html\r\n";
+        
+        $mailStatus = mail ($to, $subject, $message, $header);
+        
+        if( $mailStatus == true ) {
+        echo "Message sent successfully...";
+        }else {
+        echo "Message could not be sent...";
+        }
     }
 
     //NB: this is used for initialization
@@ -176,7 +201,12 @@ class ProcessData {
                 //     echo "Error in Galooli Data: fuel report is Zero";
                 //     continue; 
                 // }
-                if($distanceTest >= $odometerDifference || $fuelTest > $fuelDifference)  {
+                echo "<br><br>Status: ".$galooliTableRows[$i]['unit_name'];
+                echo "<br>Status: ".$galooliTableRows[$i]['active_status'];
+                echo "<br>Difference in odometer: ".$distanceTest;
+                if($distanceTest >= $odometerDifference &&
+                    strcasecmp($galooliTableRows[$i]['active_status'], "Off") == 0)  {
+                    echo "<br>Condition Met<br>";
                     //save to fleetio table
                     $this->saveToFleetioTable($galooliTableRows[$i]);
                     $this->processDataBeforePush($galooliTableRows[$i]);
@@ -203,6 +233,7 @@ class ProcessData {
     // CRON JOB: this function should run every one hour, and can be changed from user interface
     // to be anything of 30 mins interval
     function checkforChangeWithinLastHour() {
+        //NB: if decided that only changed rows should be pushed then use push_report table
         $query = "SELECT * from pull_report where modified_at >= DATE_SUB(NOW(), INTERVAL 1 HOUR)";
 
         $galooliTableRows = Database::selectFromTable($query);

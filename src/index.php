@@ -6,6 +6,10 @@
   function formatDate($dateString) {
     return date('g:ia j M, Y',strtotime($dateString));
   } 
+
+  $query = "SELECT value from configuration where name = 'PULL_CRON_INTERVAL_MINUTES'";
+  $tableRow = Database::getSingleRow($query);
+  $refreshTime = $tableRow["value"];
 ?>
 
 <!DOCTYPE html>
@@ -13,6 +17,7 @@
 <head>
   <title>Galooli | Fleetio Integration Interface</title>
   <?php require_once('partials/head.php'); ?>
+  <meta http-equiv="refresh" content="<?=$refreshTime * 60 ?>" > 
 </head>
 <body>
   <?php require_once('partials/header.php'); ?>
@@ -117,8 +122,8 @@
               <th>Latitude</th>
               <th>Longitude</th>
               <th>Distance</th>
-              <th>Engine Hours</th>
               <th>Fuel Amount</th>
+              <th>Last Updated</th>
             </tr>
             </thead>
 
@@ -132,8 +137,8 @@
                         <td>".$fleetioRow['latitude']."</td>
                         <td>".$fleetioRow['longitude']."</td>
                         <td>".$fleetioRow['distance']."</td>
-                        <td>".$fleetioRow['engine_hours']."</td>
                         <td>".$fleetioRow['fuel_report']."</td>
+                        <td>".formatDate($fleetioRow['modified_at'])."</td>
                       </tr>";
               }
 
