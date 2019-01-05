@@ -213,6 +213,7 @@ class ProcessData {
                 } 
             }
             if ($this->fleetioUpdate) {
+                $this->currentDateTime = date("Y-m-d H:i:s");
                 $query = "UPDATE configuration SET value='".$this->currentDateTime."' where name = 'last_fleetio_push_time'";
                 if (Database::updateOrInsert($query)) {
                     echo "Last Update time for fleetio Saved successfully<br/><br/>";
@@ -256,7 +257,7 @@ class ProcessData {
                 echo "Fleetio Table Data updated successfully<br/><br/>"; // this can be like logged
             }  else {
                 $this->logError("Error Saving New Data To Fleetio Table");
-                echo "<br/>No Change In Data to Update<br/>";
+                echo "<br/><p style='color: red'>No Change In Data to Update</p><br/>";
             }
         } else {
             echo "<br/><br/><p style='color: red'>No Change has occured within last hour </p><br/>";
