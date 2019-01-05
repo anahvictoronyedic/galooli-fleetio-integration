@@ -71,7 +71,7 @@ class ProcessData {
                     $saveIDQuery = "INSERT INTO id_mapping(id_galooli, plate_number) 
                             VALUES('".$returnedData['0']."','".$returnedData['1']."')";
                     if (Database::updateOrInsert($saveIDQuery)) {
-                        echo "IDs inserted into query<br>";
+                        echo "IDs inserted into query  ";
                     } else {
                         echo "Error updating record: " . mysqli_error($GLOBALS['db_server'])."<br/>";
                     }
@@ -144,6 +144,7 @@ class ProcessData {
             echo $returnedData['id']. ' ' . $returnedData['name'];
             $this->mapCorrespondingIds($returnedData['id'], $returnedData['name']);
         }
+        $this->checkforChangeWithinLastHour();
     }
 
     function updateErrorData($name, $value)
@@ -222,7 +223,7 @@ class ProcessData {
                 }
                 $this->fleetioUpdate = false;
             } else {
-                $this->logError("Error Saving New Data To Fleetio Table");
+                $this->logError("Error Saving New Data To Fleetio Table, No Data Available to be Pushed");
                 echo "<br/><p style='color: red'>No Data To Update to Fleetio Found </p><br/>";
             }
         } else {
@@ -235,7 +236,8 @@ class ProcessData {
     // to be anything of 30 mins interval
     function checkforChangeWithinLastHour() {
         //NB: if decided that only changed rows should be pushed then use push_report table
-        $query = "SELECT * from pull_report where modified_at >= DATE_SUB(NOW(), INTERVAL 1 HOUR)";
+        $query = "SELECT * from pull_report where modified_at >= DATE_SUB(NOW(), INTERVAL 1 HOUR) OR 
+                    created_at >= DATE_SUB(NOW(), INTERVAL 1 HOUR)";
 
         $galooliTableRows = Database::selectFromTable($query);
         if($galooliTableRows) {
@@ -363,7 +365,7 @@ class ProcessData {
     {
         $updateErrorLog = "INSERT INTO error_log(message) VALUES('{$errorData}')";
         if (Database::updateOrInsert($updateErrorLog)) {
-            echo "Error Occured : Error Log Updated<br><br>";
+            echo "<br>Error Log Updated<br><br>";
         } else {
             echo "Error updating record: " . mysqli_error($GLOBALS['db_server'])."<br/>";
         }
