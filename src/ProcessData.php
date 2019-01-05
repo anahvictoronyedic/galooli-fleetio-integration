@@ -105,7 +105,9 @@ class ProcessData {
             $this->logError("Error Fetching Data From Galooli Servers, Network or Server Error");
             $this->currentDateTime = date("Y-m-d H:i:s");
             $this->updateErrorData('pull_error_time', $this->currentDateTime);
-            $this->sendErrorNotificationMail();
+            if(IN_SERVER) {
+                $this->sendErrorNotificationMail();
+            }
         }
         return $this->returnedData;
     }
