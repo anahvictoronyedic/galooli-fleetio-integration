@@ -146,7 +146,6 @@ class ProcessData {
             echo $returnedData['id']. ' ' . $returnedData['name'];
             $this->mapCorrespondingIds($returnedData['id'], $returnedData['name']);
         }
-        $this->checkforChangeWithinLastHour();
     }
 
     function updateErrorData($name, $value)
