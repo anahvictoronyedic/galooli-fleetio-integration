@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a0df0c98-8ca6-444a-bfbe-7a0f965b85e0" name="Default" comment="">
+    <list default="true" id="a0df0c98-8ca6-444a-bfbe-7a0f965b85e0" name="Default" comment="New Prepared code to be server ready">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProcessData.php" afterPath="$PROJECT_DIR$/src/ProcessData.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.php" afterPath="$PROJECT_DIR$/src/index.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,8 +27,8 @@
       <file leaf-file-name="config.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="2" lean-forward="true" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
+            <state relative-caret-position="119">
+              <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -103,20 +103,18 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1700">
-              <caret line="100" column="68" lean-forward="false" selection-start-line="100" selection-start-column="68" selection-end-line="100" selection-end-column="68" />
+            <state relative-caret-position="390">
+              <caret line="154" column="34" lean-forward="false" selection-start-line="154" selection-start-column="34" selection-end-line="154" selection-end-column="34" />
               <folding>
-                <marker date="1546581509320" expanded="true" signature="5777:5811" ph="..." />
-                <marker date="1546581509320" expanded="true" signature="5777:5829" ph="..." />
-                <marker date="1546581509320" expanded="true" signature="5777:5844" ph="..." />
-                <marker date="1546581509320" expanded="true" signature="5777:5866" ph="..." />
-                <marker date="1546581509320" expanded="true" signature="5777:5885" ph="..." />
-                <marker date="1546581509320" expanded="true" signature="5777:5900" ph="..." />
-                <marker date="1546581509320" expanded="true" signature="5777:5913" ph="..." />
-                <marker date="1546581509320" expanded="true" signature="5777:5925" ph="..." />
-                <marker date="1546581509320" expanded="true" signature="5777:5934" ph="..." />
-                <marker date="1546581509320" expanded="true" signature="5777:5995" ph="..." />
-                <marker date="1546581509320" expanded="true" signature="5777:6003" ph="..." />
+                <marker date="1546852492679" expanded="true" signature="195:268" ph="SELECT value... configuration" />
+                <marker date="1546852492679" expanded="true" signature="813:875" ph="SELECT value... configuration" />
+                <marker date="1546852492679" expanded="true" signature="1543:1641" ph="..." />
+                <marker date="1546852492679" expanded="true" signature="2248:2315" ph="SELECT value... configuration" />
+                <marker date="1546852492679" expanded="true" signature="2444:2513" ph="SELECT value... configuration" />
+                <marker date="1546852492679" expanded="true" signature="3045:3107" ph="SELECT value... configuration" />
+                <marker date="1546852492679" expanded="true" signature="3778:3876" ph="..." />
+                <marker date="1546852492679" expanded="true" signature="4516:4541" ph="SELECT * fro... push_report" />
+                <marker date="1546852492679" expanded="true" signature="5348:5852" ph="..." />
               </folding>
             </state>
           </provider>
@@ -135,6 +133,7 @@
       <find>$toast_message</find>
       <find>$pushUpdated</find>
       <find>$changeInFuel</find>
+      <find>if</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -164,8 +163,8 @@
         <option value="$PROJECT_DIR$/src/partials/footer.php" />
         <option value="$PROJECT_DIR$/src/initializationScript.php" />
         <option value="$PROJECT_DIR$/src/runningScript.php" />
-        <option value="$PROJECT_DIR$/src/index.php" />
         <option value="$PROJECT_DIR$/src/ProcessData.php" />
+        <option value="$PROJECT_DIR$/src/index.php" />
         <option value="$PROJECT_DIR$/src/config.php" />
       </list>
     </option>
@@ -349,7 +348,7 @@
       <workItem from="1546419154187" duration="1435000" />
       <workItem from="1546434650314" duration="7077000" />
       <workItem from="1546463828197" duration="1116000" />
-      <workItem from="1546844991916" duration="3992000" />
+      <workItem from="1546844991916" duration="5379000" />
     </task>
     <task id="LOCAL-00001" summary="added error log functionality, and push time recording">
       <created>1546129539327</created>
@@ -449,11 +448,18 @@
       <option name="project" value="LOCAL" />
       <updated>1546846755404</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="New Prepared code to be server ready">
+      <created>1546849255410</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1546849255410</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31603000" />
+    <option name="totallyTimeSpent" value="32990000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -504,7 +510,8 @@
     <MESSAGE value="updates, checked and confirmed.. minor bug fixes" />
     <MESSAGE value="odometer and fuel condition checks updated" />
     <MESSAGE value="Prepared code to be server ready" />
-    <option name="LAST_COMMIT_MESSAGE" value="Prepared code to be server ready" />
+    <MESSAGE value="New Prepared code to be server ready" />
+    <option name="LAST_COMMIT_MESSAGE" value="New Prepared code to be server ready" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1034,26 +1041,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1700">
-          <caret line="100" column="68" lean-forward="false" selection-start-line="100" selection-start-column="68" selection-end-line="100" selection-end-column="68" />
-          <folding>
-            <marker date="1546581509320" expanded="true" signature="5777:5811" ph="..." />
-            <marker date="1546581509320" expanded="true" signature="5777:5829" ph="..." />
-            <marker date="1546581509320" expanded="true" signature="5777:5844" ph="..." />
-            <marker date="1546581509320" expanded="true" signature="5777:5866" ph="..." />
-            <marker date="1546581509320" expanded="true" signature="5777:5885" ph="..." />
-            <marker date="1546581509320" expanded="true" signature="5777:5900" ph="..." />
-            <marker date="1546581509320" expanded="true" signature="5777:5913" ph="..." />
-            <marker date="1546581509320" expanded="true" signature="5777:5925" ph="..." />
-            <marker date="1546581509320" expanded="true" signature="5777:5934" ph="..." />
-            <marker date="1546581509320" expanded="true" signature="5777:5995" ph="..." />
-            <marker date="1546581509320" expanded="true" signature="5777:6003" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ApiService.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="461">
@@ -1096,10 +1083,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="154" column="34" lean-forward="false" selection-start-line="154" selection-start-column="34" selection-end-line="154" selection-end-column="34" />
+          <folding>
+            <marker date="1546852492679" expanded="true" signature="195:268" ph="SELECT value... configuration" />
+            <marker date="1546852492679" expanded="true" signature="813:875" ph="SELECT value... configuration" />
+            <marker date="1546852492679" expanded="true" signature="1543:1641" ph="..." />
+            <marker date="1546852492679" expanded="true" signature="2248:2315" ph="SELECT value... configuration" />
+            <marker date="1546852492679" expanded="true" signature="2444:2513" ph="SELECT value... configuration" />
+            <marker date="1546852492679" expanded="true" signature="3045:3107" ph="SELECT value... configuration" />
+            <marker date="1546852492679" expanded="true" signature="3778:3876" ph="..." />
+            <marker date="1546852492679" expanded="true" signature="4516:4541" ph="SELECT * fro... push_report" />
+            <marker date="1546852492679" expanded="true" signature="5348:5852" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="2" lean-forward="true" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
+        <state relative-caret-position="119">
+          <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
           <folding />
         </state>
       </provider>

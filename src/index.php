@@ -109,10 +109,14 @@
       <?php
         $query = "SELECT * from push_report";
         $fleetioTableRows = Database::selectFromTable($query);
+
       ?>
       <div class="row">
         <h5 class="center-align">Latest Data Sent to Fleetio Management App</h5>
         <div class="col s12">
+            <?php
+            if ($fleetioTableRows) {
+            ?>
           <table class="highlight responsive-table">
             <thead>
             <tr>
@@ -129,22 +133,28 @@
 
             <tbody>
             <?php
-              foreach($fleetioTableRows as $fleetioRow) {
-                echo "<tr>
-                        <td>".$fleetioRow['unit_id']."</td>
-                        <td>".$fleetioRow['unit_name']."</td>
-                        <td>".$fleetioRow['active_status']."</td>
-                        <td>".$fleetioRow['latitude']."</td>
-                        <td>".$fleetioRow['longitude']."</td>
-                        <td>".$fleetioRow['distance']."</td>
-                        <td>".$fleetioRow['fuel_report']."</td>
-                        <td>".formatDate($fleetioRow['modified_at'])."</td>
-                      </tr>";
-              }
-
+                foreach($fleetioTableRows as $fleetioRow) {
+                    echo "<tr>
+                    <td>".$fleetioRow['unit_id']."</td>
+                    <td>".$fleetioRow['unit_name']."</td>
+                    <td>".$fleetioRow['active_status']."</td>
+                    <td>".$fleetioRow['latitude']."</td>
+                    <td>".$fleetioRow['longitude']."</td>
+                    <td>".$fleetioRow['distance']."</td>
+                    <td>".$fleetioRow['fuel_report']."</td>
+                    <td>".formatDate($fleetioRow['modified_at'])."</td>
+                  </tr>";
+                }
             ?>
             </tbody>
           </table>
+            <?php
+                }
+
+                else {
+                    echo "<br/><h3 class='orange-text center-align'>NO RECORDS UPDATED TO FLEETIO</h3>";
+                }
+            ?>
         </div>
       </div>
 
