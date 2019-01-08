@@ -65,8 +65,6 @@
             $query = "SELECT MAX(modified_at) MAX from push_report";
             $tableRow = Database::getSingleRow($query);
             $lastPushTime = $tableRow["MAX"];
-
-            echo "lastPushTime : ".$lastPushTime;
           ?>
           <div class="icon-block">
             <h5 class="center teal-text">Last Data Fetched from Galooli: <strong><?=formatDate($lastPullTime)  ?></strong></h5>
