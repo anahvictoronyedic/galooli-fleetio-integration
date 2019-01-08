@@ -31,8 +31,8 @@ class ApiService {
          
          if($appType == 'fleetio') {
             $headers = [
-               'Authorization: Token 59f181f3e1f421c05cc96660134e9b7d1e008520',
-               'Account-Token: a24faf79f8',
+               'Authorization: Token 855b72c85c06431a388dbda45155651ecc2f7d0e',
+               'Account-Token: 1cfafff6e0',
                'Accept: */*',
                'Accept-Encoding: gzip, deflate',
                'content-type: application/json'
