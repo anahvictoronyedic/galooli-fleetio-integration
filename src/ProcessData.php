@@ -208,7 +208,7 @@ class ProcessData {
                 echo "<br>Difference in odometer: ".$distanceTest;
                 if($distanceTest >= $odometerDifference &&
                     strcasecmp($galooliTableRows[$i]['active_status'], "Off") == 0)  {
-                    echo "<br>Condition Met<br>";
+                    echo "<br>Conditions Met<br>";
                     //save to fleetio table
                     $this->saveToFleetioTable($galooliTableRows[$i]);
                     $this->processDataBeforePush($galooliTableRows[$i]);
