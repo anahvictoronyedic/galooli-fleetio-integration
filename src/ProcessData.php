@@ -110,7 +110,6 @@ class ProcessData {
                 $this->sendErrorNotificationMail();
             }
         }
-        return $this->returnedData;
     }
 
     function sendErrorNotificationMail()
@@ -207,8 +206,8 @@ class ProcessData {
                 echo "<br><br>Status: ".$galooliTableRows[$i]['unit_name'];
                 echo "<br>Status: ".$galooliTableRows[$i]['active_status'];
                 echo "<br>Difference in odometer: ".$distanceTest;
-                if($distanceTest >= $odometerDifference &&
-                    strcasecmp($galooliTableRows[$i]['active_status'], "Off") == 0)  {
+                if(($distanceTest >= $odometerDifference) &&
+                    (strcasecmp($galooliTableRows[$i]['active_status'], "Off") == 0))  {
                     echo "<br>Conditions Met<br>";
                     //save to fleetio table
                     $this->saveToFleetioTable($galooliTableRows[$i]);
@@ -312,11 +311,14 @@ class ProcessData {
             $this->apiURL = "https://secure.fleetio.com/api/v1/meter_entries";
             $return_data = $this->_apiService->callAPI('POST', $this->apiURL, $jsonDataArray, 'fleetio');
             $response = json_decode($return_data, true);
-            if($return_data) {
-                $this->fleetioUpdate = true;
-                echo 'Odometer Data for '.$data_array['unit_name'].' updated successfully<br/><br/>';
-            } else {
+            if (isset($response['errors'])) {
                 $this->fleetioUpdate = false;
+                $this->logError("Meter Record For ".$data_array['unit_name']." could not be updated in Fleetio Servers");
+                $this->updateErrorData('push_error_time', $this->currentDateTime);
+            } else {
+                $this->fleetioUpdate = true;
+                echo 'Meter Data for '.$data_array['unit_name'].' updated successfully<br/><br/>';
+                $this->updateErrorData('push_error_time', 0);
             }
 
             //PUSH Engine hours
@@ -345,8 +347,9 @@ class ProcessData {
             $return_data = $this->_apiService->callAPI('POST', $this->apiURL, $jsonDataArray, 'fleetio');
             $response = json_decode($return_data, true);
 
-            if ($return_data == NULL) {
+            if (isset($response['errors'])) {
                 $this->fleetioUpdate = false;
+                $this->logError("Location Record For ".$data_array['unit_name']." could not be updated in Fleetio Servers");
                 $this->updateErrorData('push_error_time', $this->currentDateTime);
             } else {
                 $this->fleetioUpdate = true;
