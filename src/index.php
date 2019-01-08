@@ -62,9 +62,11 @@
             $query = "SELECT value from configuration where name = 'last_gmt_update_time'";
             $tableRow = Database::getSingleRow($query);
             $lastPullTime = $tableRow["value"];
-            $query = "SELECT MAX(modified_at) from push_report";
+            $query = "SELECT MAX(modified_at) MAX from push_report";
             $tableRow = Database::getSingleRow($query);
-            $lastPushTime = $tableRow["value"];
+            $lastPushTime = $tableRow["MAX"];
+
+            echo "lastPushTime : ".$lastPushTime;
           ?>
           <div class="icon-block">
             <h5 class="center teal-text">Last Data Fetched from Galooli: <strong><?=formatDate($lastPullTime)  ?></strong></h5>
