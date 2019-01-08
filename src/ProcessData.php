@@ -301,7 +301,6 @@ class ProcessData {
             push fuel_report to /fuel_entries
         */
         if ($fleetioID != 0) {
-            $this->fleetioUpdate = true;
             $this->currentDateTime = date("Y-m-d");
             //PUSH Odometer
             $post_data_array = array('vehicle_id' => $fleetioID,
@@ -312,7 +311,10 @@ class ProcessData {
             $return_data = $this->_apiService->callAPI('POST', $this->apiURL, $jsonDataArray, 'fleetio');
             $response = json_decode($return_data, true);
             if($return_data) {
+                $this->fleetioUpdate = true;
                 echo 'Odometer Data for '.$data_array['unit_name'].' updated successfully<br/><br/>';
+            } else {
+                $this->fleetioUpdate = false;
             }
 
             //PUSH Engine hours
@@ -342,8 +344,10 @@ class ProcessData {
             $response = json_decode($return_data, true);
 
             if ($return_data == NULL) {
+                $this->fleetioUpdate = false;
                 $this->updateErrorData('push_error_time', $this->currentDateTime);
             } else {
+                $this->fleetioUpdate = true;
                 echo 'Location Data for '.$data_array['unit_name'].' updated successfully<br/><br/>';
                 $this->updateErrorData('push_error_time', 0);
             }
