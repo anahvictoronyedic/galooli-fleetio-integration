@@ -62,7 +62,7 @@
             $query = "SELECT value from configuration where name = 'last_gmt_update_time'";
             $tableRow = Database::getSingleRow($query);
             $lastPullTime = $tableRow["value"];
-            $query = "SELECT value from configuration where name = 'last_fleetio_push_time'";
+            $query = "SELECT MAX(modified_at) from push_report";
             $tableRow = Database::getSingleRow($query);
             $lastPushTime = $tableRow["value"];
           ?>

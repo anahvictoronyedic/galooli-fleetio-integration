@@ -248,7 +248,7 @@ class ProcessData {
                 $this->saveToFleetioTable($galooliRow);
                 $this->processDataBeforePush($galooliRow);
             }
-            if ($this->fleetioUpdate || $this->pushUpdated > 0) {
+            if ($this->fleetioUpdate && $this->pushUpdated > 0) {
                 $this->currentDateTime = date("Y-m-d H:i:s");
                 $query = "UPDATE configuration SET value='".$this->currentDateTime."' where name = 'last_fleetio_push_time'";
                 if (Database::updateOrInsert($query)) {
@@ -258,6 +258,7 @@ class ProcessData {
                 }
                 $this->fleetioUpdate = false;
                 echo "Fleetio Table Data updated successfully<br/><br/>"; // this can be like logged
+                $this->pushUpdated = 0;
             }  else {
                 $this->logError("Error Saving New Data To Fleetio Table");
                 echo "<br/><p style='color: red'>No Change In Data to Update</p><br/>";
