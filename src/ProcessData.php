@@ -107,20 +107,21 @@ class ProcessData {
             $this->currentDateTime = date("Y-m-d H:i:s");
             $this->updateErrorData('pull_error_time', $this->currentDateTime);
             if(IN_SERVER) {
-                $this->sendErrorNotificationMail();
+                $this->sendErrorNotificationMail("A Network Error Occured during a get request from galooli server, 
+                Could Not Fetch Data, a re-trial will occur in 2 mins");
             }
         }
     }
 
-    function sendErrorNotificationMail()
+    function sendErrorNotificationMail($message)
     {
         $to = "dokafor@matrixvtrack.com.ng";
         $subject = "Error Encountered While Fetching Data From Galooli";
         
-        $message = "<h3>A Network Error Occured during a get request from galooli server</h3>";
+        $message = "<html><body><h3>{$message}</h3>";
         $message .= "<b><a href='https://project.matrixvtrack.com/app'>Login</a> 
                         into the web interface to know the integration status
-                    </b>";
+                    </b></body></html>";
         
         $header = "From: tech@ecagon.com \r\n";
         $header .= "Cc: cekpunobi@matrixvtrack.com.ng  \r\n";
@@ -224,7 +225,6 @@ class ProcessData {
                 }
                 $this->fleetioUpdate = false;
             } else {
-                $this->logError("Error Saving New Data To Fleetio Table, No Data Available to be Pushed");
                 echo "<br/><p style='color: red'>No Data To Update to Fleetio Found </p><br/>";
             }
         } else {
@@ -314,27 +314,16 @@ class ProcessData {
             if (isset($response['errors'])) {
                 $this->fleetioUpdate = false;
                 $this->logError("Meter Record For ".$data_array['unit_name']." could not be updated in Fleetio Servers");
+                if(IN_SERVER) {
+                    $this->sendErrorNotificationMail("Meter Record For ".$data_array['unit_name']."
+                         could not be updated in Fleetio Servers");
+                }
                 $this->updateErrorData('push_error_time', $this->currentDateTime);
             } else {
                 $this->fleetioUpdate = true;
                 echo 'Meter Data for '.$data_array['unit_name'].' updated successfully<br/><br/>';
                 $this->updateErrorData('push_error_time', 0);
             }
-
-            //PUSH Engine hours
-            // $post_data_array = array('vehicle_id' => $fleetioID,
-            //                     'date' => $this->currentDateTime,
-            //                     'meter_type' => "secondary",
-            //                     'value' => $data_array['engine_hours']);
-            // $jsonDataArray = json_encode($post_data_array);
-            // echo "<br><br>Encoded Json for engine hours: ";
-            // var_dump($jsonDataArray);
-            // $this->apiURL = "https://secure.fleetio.com/api/v1/meter_entries";
-            // $return_data = $this->_apiService->callAPI('POST', $this->apiURL, $jsonDataArray, 'fleetio');
-            // $response = json_decode($return_data, true);
-            // echo "<br><br>Response From meter entries: ";
-            // var_dump($response);
-            // echo '<br>';
 
             //PUSH LOCATION DATA
             $post_data_array = array('vehicle_id' => $fleetioID,
