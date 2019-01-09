@@ -313,10 +313,12 @@ class ProcessData {
             $response = json_decode($return_data, true);
             if (isset($response['errors'])) {
                 $this->fleetioUpdate = false;
-                $this->logError("Meter Record For ".$data_array['unit_name']." could not be updated in Fleetio Servers");
+                $message = "Meter Record For ".$data_array['unit_name']." 
+                            could not be updated in Fleetio Servers, Current odometer is ".$data_array['distance'];
+                echo "Error: <br>$message<br/>";
+                $this->logError($message);
                 if(IN_SERVER) {
-                    $this->sendErrorNotificationMail("Meter Record For ".$data_array['unit_name']."
-                         could not be updated in Fleetio Servers");
+                    $this->sendErrorNotificationMail($message);
                 }
                 $this->updateErrorData('push_error_time', $this->currentDateTime);
             } else {
