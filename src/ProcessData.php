@@ -124,7 +124,7 @@ class ProcessData {
                     </b></body></html>";
         
         $header = "From: tech@ecagon.com \r\n";
-        $header .= "Cc: cekpunobi@matrixvtrack.com.ng  \r\n";
+        $header .= "Cc: israelchukwuemeka@ecagon.com  \r\n";
         $header .= "MIME-Version: 1.0\r\n";
         $header .= "Content-type: text/html\r\n";
         
