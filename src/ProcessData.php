@@ -1,9 +1,5 @@
 <?php
 
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
 date_default_timezone_set("Africa/Lagos");
 error_reporting(-1);
 ini_set('display_errors', 'On');
@@ -12,6 +8,9 @@ set_error_handler("var_dump");
 require_once 'config.php';
 require_once "ApiService.php";
 require_once 'Database.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 
 if($_GET['call_function'] == 'pushfleetio') {
