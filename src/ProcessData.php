@@ -57,6 +57,7 @@ class ProcessData {
 
         //var_dump($this->returnedData['CommonResult']['DataSet']);
         echo "<br><br>";
+        $pullUpdated = 0;
         if($this->returnedData != null && count($this->returnedData) != 0) {
             
             //update last update time

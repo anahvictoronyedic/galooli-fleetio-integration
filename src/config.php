@@ -6,7 +6,7 @@ if(php_sapi_name() != 'cli'){
 require_once dirname(__FILE__) . '/../vendor/autoload.php';
 
 define('IN_SERVER',true);
-define('DEBUG_MODE',false);
+define('DEBUG_MODE',true);
 
 // WARNING: Take note of the trailing slash, its needed
 define('PARAM_ROOT_PATH','/app/');
