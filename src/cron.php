@@ -59,16 +59,21 @@ class Cron{
 		$d = floor(($ss%2592000)/86400);
 		$M = floor($ss/2592000);
 
-		$job = Job::parse(sprintf("%s %s %s %s %s %s",
+		$abs_command = sprintf("%s %s %s %s %s %s",
 
-			$m >= 1 ? '*/'.$m : ( $ss >= 3600 ? '0' : '*' ) , 
-			$h >= 1 ? '*/'.$h : ( $ss >= 86400 ? '0' : '*' ) , 
-			$d >= 1 ? '*/'. $d : ( $ss >= 2592000 ? '0' : '*' ) , 
-			'*',
+			$m >= 1 ? ( $ss >= 3600 ? '' : '*/' ) .$m : ( $ss >= 3600 ? '0' : '*' ) , 
+			$h >= 1 ? ( $ss >= 86400 ? '' : '*/' ) .$h : ( $ss >= 86400 ? '0' : '*' ) , 
+			$d >= 1 ? ( $ss >= 2592000 ? '' : '*/' ) . $d : ( $ss >= 2592000 ? '0' : '*' ) , 
+
+			// update conditions later
 			$M >= 1 ? '*/' . $M : '*',
-			$this->command,
+			'*',
 
-		));
+			$this->command
+
+		);
+
+		$job = Job::parse($abs_command);
 
 		return $job;
 	}

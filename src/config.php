@@ -5,7 +5,7 @@ if(php_sapi_name() != 'cli'){
 
 require_once dirname(__FILE__) . '/../vendor/autoload.php';
 
-define('IN_SERVER',true);
+define('IN_SERVER',false);
 define('DEBUG_MODE',true);
 
 // WARNING: Take note of the trailing slash, its needed
