@@ -9,8 +9,7 @@
         }
     ],
     "require": {
-        "yzalis/crontab": "^1.0",
-        "phpmailer/phpmailer": "^6.0"
+        "yzalis/crontab": "^1.0"
     },
     "require-dev": {},
     "autoload": {

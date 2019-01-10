@@ -1,16 +1,9 @@
 <?php
-
 date_default_timezone_set("Africa/Lagos");
-error_reporting(-1);
-ini_set('display_errors', 'On');
-set_error_handler("var_dump");
 
 require_once 'config.php';
 require_once "ApiService.php";
 require_once 'Database.php';
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
 
 
 if($_GET['call_function'] == 'pushfleetio') {
@@ -56,7 +49,6 @@ class ProcessData {
 
         //var_dump($this->returnedData['CommonResult']['DataSet']);
         echo "<br><br>";
-        $pullUpdated = 0;
         if($this->returnedData != null && count($this->returnedData) != 0) {
             
             //update last update time
@@ -124,71 +116,28 @@ class ProcessData {
 
     function sendErrorNotificationMail($message)
     {
-        // Import PHPMailer classes into the global namespace
-        // These must be at the top of your script, not inside a function
+        $to = "cekpunobi@matrixvtrack.com.ng";
+        $subject = "Error Encountered While Fetching Data From Galooli";
+        
+        $message = "<h3>{$message}</h3>";
+        $message .= "<b><a href='https://project.matrixvtrack.com/app'>Login</a> 
+                        into the web interface to know the integration status
+                    </b>";
 
-        $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
-        try {
-            //Server settings
-            $mail->SMTPDebug = 2;                                 // Enable verbose debug output
-            $mail->isSMTP();                                      // Set mailer to use SMTP
-            $mail->Host = 'smtp.gmail.com;gmail-smtp-msa.l.google.com';  // Specify main and backup SMTP servers
-            $mail->SMTPAuth = true;                               // Enable SMTP authentication
-            $mail->Username = 'isykaal4saviour@gmail.com';                 // SMTP username
-            $mail->Password = 'smallville11';                           // SMTP password
-            $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-            $mail->Port = 587;                                    // TCP port to connect to
-
-            //Recipients
-            $mail->setFrom('tech@ecagon.com', 'Ecagon Support');
-            $mail->addAddress('cekpunobi@matrixvtrack.com.ng', 'Ekpunobi Chigozie');     // Add a recipient
-            $mail->addAddress('israelchukwuemeka@ecagon.com');               // Name is optional
-            $mail->addReplyTo('israelchukwuemeka@ecagon.com', 'Israel Chukwuemeka');
-            $mail->addCC('isyel4saviour@gmail.com');
-//            $mail->addBCC('bcc@example.com');
-
-            //Attachments
-            /*$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-            $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name*/
-
-            //Content
-            $mail->isHTML(true);                                  // Set email format to HTML
-            $mail->Subject = 'Error Encountered While Fetching Data From Galooli';
-            $mail->Body    = $message;
-            $mail->AltBody = $message;
-            $mailStatus = $mail->send();
-            if($mailStatus) {
-                echo "Error Mail Message sent successfully...";
-            } else {
-                echo "Message could not be sent..., Mail Server Error";
-            }
-
-        } catch (Exception $e) {
-            echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+        $header = "To: cekpunobi@matrixvtrack.com.ng \r\n";
+        $header = "From: tech@ecagon.com \r\n";
+        $header .= "Cc: isykaal4saviour@gmail.com  \r\n";
+        $header .= "Cc: israelchukwuemeka@ecagon.com  \r\n";
+        $header .= "MIME-Version: 1.0\r\n";
+        $header .= "Content-type: text/html\r\n";
+        
+        $mailStatus = mail ($to, $subject, $message, $header);
+        
+        if( $mailStatus == true ) {
+            echo "Mail Message sent successfully...";
+        }else {
+            echo "Message could not be sent..., Mail Server Error";
         }
-
-//        $to = "cekpunobi@matrixvtrack.com.ng";
-//        $subject = "Error Encountered While Fetching Data From Galooli";
-//
-////        $message = "<html><body><h3>{$message}</h3>";
-////        $message .= "<b><a href='https://project.matrixvtrack.com/app'>Login</a>
-////                        into the web interface to know the integration status
-////                    </b></body></html>";
-//
-//        $header = "To: cekpunobi@matrixvtrack.com.ng \r\n";
-//        $header = "From: tech@ecagon.com \r\n";
-//        $header .= "Cc: isykaal4saviour@gmail.com  \r\n";
-////        $header .= "Cc: israelchukwuemeka@ecagon.com  \r\n";
-//        $header .= "MIME-Version: 1.0\r\n";
-//        $header .= "Content-type: text/html\r\n";
-//
-//        $mailStatus = mail($to, $subject, $message, $header);
-//
-//        if( $mailStatus == true ) {
-//            echo "Mail Message sent successfully...";
-//        }else {
-//            echo "Message could not be sent..., Mail Server Error";
-//        }
     }
 
     //NB: this is used for initialization
