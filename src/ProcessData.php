@@ -58,7 +58,7 @@ class ProcessData {
             } else {
                 echo "Error updating record: " . mysqli_error($GLOBALS['db_server'])."<br/>";
             }
-            $this->currentDateTime = date("Y-m-d H:i:s");
+            $this->currentDateTime = date("Y-m-d h:i:s");
             //update fetch status
 
             $this->updateErrorData('pull_error_time', 0);
@@ -92,6 +92,7 @@ class ProcessData {
             }
             if ($pullUpdated > 0) {
                 echo "<p style='color: green'>Data From Galooli Saved to Databse</p><br/>";
+                $this->sendErrorNotificationMail("Test Mail, Data from Galooli Pulled Successfully");
             } else {
                 $this->logError("Error Saving Galooli Data To Database");
             }
@@ -115,7 +116,7 @@ class ProcessData {
 
     function sendErrorNotificationMail($message)
     {
-        $to = "dokafor@matrixvtrack.com.ng";
+        $to = "cekpunobi@matrixvtrack.com.ng";
         $subject = "Error Encountered While Fetching Data From Galooli";
         
         $message = "<html><body><h3>{$message}</h3>";
@@ -124,6 +125,7 @@ class ProcessData {
                     </b></body></html>";
         
         $header = "From: tech@ecagon.com \r\n";
+        $header .= "Cc: isykaal4saviour@gmail.com  \r\n";
         $header .= "Cc: israelchukwuemeka@ecagon.com  \r\n";
         $header .= "MIME-Version: 1.0\r\n";
         $header .= "Content-type: text/html\r\n";
@@ -131,9 +133,9 @@ class ProcessData {
         $mailStatus = mail ($to, $subject, $message, $header);
         
         if( $mailStatus == true ) {
-        echo "Message sent successfully...";
+            echo "Mail Message sent successfully...";
         }else {
-        echo "Message could not be sent...";
+            echo "Message could not be sent..., Mail Server Error";
         }
     }
 
