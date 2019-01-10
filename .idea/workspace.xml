@@ -4,7 +4,6 @@
     <list default="true" id="a0df0c98-8ca6-444a-bfbe-7a0f965b85e0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProcessData.php" afterPath="$PROJECT_DIR$/src/ProcessData.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/config.php" afterPath="$PROJECT_DIR$/src/config.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,34 +38,34 @@
         <entry file="file://$PROJECT_DIR$/src/ProcessData.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="2" selection-end-line="5" selection-end-column="32" />
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="5" selection-end-column="30" />
               <folding>
-                <element signature="e#230#264#0#PHP" expanded="true" />
-                <marker date="1547134620796" expanded="true" signature="1274:1341" ph="SELECT value... configuration" />
-                <marker date="1547134620796" expanded="true" signature="2264:2359" ph="UPDATE confi... " />
-                <marker date="1547134620796" expanded="true" signature="2952:3353" ph="INSERT INTO pull_report... " />
-                <marker date="1547134620796" expanded="true" signature="3393:3528" ph="INSERT INTO id_mapping... " />
-                <marker date="1547134620796" expanded="true" signature="3953:4299" ph="UPDATE pull_... " />
-                <marker date="1547134620796" expanded="true" signature="4681:4693" ph="..." />
-                <marker date="1547134620796" expanded="true" signature="8374:8541" ph="..." />
-                <marker date="1547134620796" expanded="true" signature="9796:9867" ph="UPDATE confi... " />
-                <marker date="1547134620796" expanded="true" signature="9909:9977" ph="UPDATE confi... " />
-                <marker date="1547134620796" expanded="true" signature="10357:10444" ph="UPDATE id_ma... " />
-                <marker date="1547134620796" expanded="true" signature="11112:11137" ph="SELECT * fro... push_report" />
-                <marker date="1547134620796" expanded="true" signature="11221:11295" ph="SELECT * fro... pull_report" />
-                <marker date="1547134620796" expanded="true" signature="11523:11592" ph="SELECT value... configuration" />
-                <marker date="1547134620796" expanded="true" signature="11727:11792" ph="SELECT value... configuration" />
-                <marker date="1547134620796" expanded="true" signature="13138:13235" ph="UPDATE confi... " />
-                <marker date="1547134620796" expanded="true" signature="13625:13635" ph="..." />
-                <marker date="1547134620796" expanded="true" signature="14141:14291" ph="SELECT * fro... pull_report" />
-                <marker date="1547134620796" expanded="true" signature="14428:14440" ph="..." />
-                <marker date="1547134620796" expanded="true" signature="14869:14966" ph="UPDATE confi... " />
-                <marker date="1547134620796" expanded="true" signature="15577:15587" ph="..." />
-                <marker date="1547134620796" expanded="true" signature="15697:15707" ph="..." />
-                <marker date="1547134620796" expanded="true" signature="15898:16267" ph="INSERT INTO push_report... " />
-                <marker date="1547134620796" expanded="true" signature="16329:16726" ph="UPDATE push_... " />
-                <marker date="1547134620796" expanded="true" signature="17057:17138" ph="SELECT id_fl... id_mapping" />
-                <marker date="1547134620796" expanded="true" signature="20905:20958" ph="INSERT INTO error_log... " />
+                <element signature="e#224#258#0#PHP" expanded="true" />
+                <marker date="1547134869636" expanded="true" signature="1268:1335" ph="SELECT value... configuration" />
+                <marker date="1547134869636" expanded="true" signature="2258:2353" ph="UPDATE confi... " />
+                <marker date="1547134869636" expanded="true" signature="2946:3347" ph="INSERT INTO pull_report... " />
+                <marker date="1547134869636" expanded="true" signature="3387:3522" ph="INSERT INTO id_mapping... " />
+                <marker date="1547134869636" expanded="true" signature="3947:4293" ph="UPDATE pull_... " />
+                <marker date="1547134869636" expanded="true" signature="4675:4687" ph="..." />
+                <marker date="1547134869636" expanded="true" signature="8368:8535" ph="..." />
+                <marker date="1547134869636" expanded="true" signature="9790:9861" ph="UPDATE confi... " />
+                <marker date="1547134869636" expanded="true" signature="9903:9971" ph="UPDATE confi... " />
+                <marker date="1547134869636" expanded="true" signature="10351:10438" ph="UPDATE id_ma... " />
+                <marker date="1547134869636" expanded="true" signature="11106:11131" ph="SELECT * fro... push_report" />
+                <marker date="1547134869636" expanded="true" signature="11215:11289" ph="SELECT * fro... pull_report" />
+                <marker date="1547134869636" expanded="true" signature="11517:11586" ph="SELECT value... configuration" />
+                <marker date="1547134869636" expanded="true" signature="11721:11786" ph="SELECT value... configuration" />
+                <marker date="1547134869636" expanded="true" signature="13132:13229" ph="UPDATE confi... " />
+                <marker date="1547134869636" expanded="true" signature="13619:13629" ph="..." />
+                <marker date="1547134869636" expanded="true" signature="14135:14285" ph="SELECT * fro... pull_report" />
+                <marker date="1547134869636" expanded="true" signature="14422:14434" ph="..." />
+                <marker date="1547134869636" expanded="true" signature="14863:14960" ph="UPDATE confi... " />
+                <marker date="1547134869636" expanded="true" signature="15571:15581" ph="..." />
+                <marker date="1547134869636" expanded="true" signature="15691:15701" ph="..." />
+                <marker date="1547134869636" expanded="true" signature="15892:16261" ph="INSERT INTO push_report... " />
+                <marker date="1547134869636" expanded="true" signature="16323:16720" ph="UPDATE push_... " />
+                <marker date="1547134869636" expanded="true" signature="17051:17132" ph="SELECT id_fl... id_mapping" />
+                <marker date="1547134869636" expanded="true" signature="20899:20952" ph="INSERT INTO error_log... " />
               </folding>
             </state>
           </provider>
@@ -384,7 +383,7 @@
       <workItem from="1546434650314" duration="7077000" />
       <workItem from="1546463828197" duration="1116000" />
       <workItem from="1546844991916" duration="5723000" />
-      <workItem from="1547116119454" duration="8926000" />
+      <workItem from="1547116119454" duration="9189000" />
     </task>
     <task id="LOCAL-00001" summary="added error log functionality, and push time recording">
       <created>1546129539327</created>
@@ -568,11 +567,18 @@
       <option name="project" value="LOCAL" />
       <updated>1547133897302</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Mail debugging">
+      <created>1547134635680</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1547134635680</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42260000" />
+    <option name="totallyTimeSpent" value="42523000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -662,32 +668,32 @@
         <state relative-caret-position="459">
           <caret line="27" column="39" lean-forward="false" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
           <folding>
-            <element signature="e#230#264#0#PHP" expanded="true" />
-            <marker date="1547134620796" expanded="true" signature="1274:1341" ph="SELECT value... configuration" />
-            <marker date="1547134620796" expanded="true" signature="2264:2359" ph="UPDATE confi... " />
-            <marker date="1547134620796" expanded="true" signature="2952:3353" ph="INSERT INTO pull_report... " />
-            <marker date="1547134620796" expanded="true" signature="3393:3528" ph="INSERT INTO id_mapping... " />
-            <marker date="1547134620796" expanded="true" signature="3953:4299" ph="UPDATE pull_... " />
-            <marker date="1547134620796" expanded="true" signature="4681:4693" ph="..." />
-            <marker date="1547134620796" expanded="true" signature="8374:8541" ph="..." />
-            <marker date="1547134620796" expanded="true" signature="9796:9867" ph="UPDATE confi... " />
-            <marker date="1547134620796" expanded="true" signature="9909:9977" ph="UPDATE confi... " />
-            <marker date="1547134620796" expanded="true" signature="10357:10444" ph="UPDATE id_ma... " />
-            <marker date="1547134620796" expanded="true" signature="11112:11137" ph="SELECT * fro... push_report" />
-            <marker date="1547134620796" expanded="true" signature="11221:11295" ph="SELECT * fro... pull_report" />
-            <marker date="1547134620796" expanded="true" signature="11523:11592" ph="SELECT value... configuration" />
-            <marker date="1547134620796" expanded="true" signature="11727:11792" ph="SELECT value... configuration" />
-            <marker date="1547134620796" expanded="true" signature="13138:13235" ph="UPDATE confi... " />
-            <marker date="1547134620796" expanded="true" signature="13625:13635" ph="..." />
-            <marker date="1547134620796" expanded="true" signature="14141:14291" ph="SELECT * fro... pull_report" />
-            <marker date="1547134620796" expanded="true" signature="14428:14440" ph="..." />
-            <marker date="1547134620796" expanded="true" signature="14869:14966" ph="UPDATE confi... " />
-            <marker date="1547134620796" expanded="true" signature="15577:15587" ph="..." />
-            <marker date="1547134620796" expanded="true" signature="15697:15707" ph="..." />
-            <marker date="1547134620796" expanded="true" signature="15898:16267" ph="INSERT INTO push_report... " />
-            <marker date="1547134620796" expanded="true" signature="16329:16726" ph="UPDATE push_... " />
-            <marker date="1547134620796" expanded="true" signature="17057:17138" ph="SELECT id_fl... id_mapping" />
-            <marker date="1547134620796" expanded="true" signature="20905:20958" ph="INSERT INTO error_log... " />
+            <element signature="e#224#258#0#PHP" expanded="true" />
+            <marker date="1547134869636" expanded="true" signature="1268:1335" ph="SELECT value... configuration" />
+            <marker date="1547134869636" expanded="true" signature="2258:2353" ph="UPDATE confi... " />
+            <marker date="1547134869636" expanded="true" signature="2946:3347" ph="INSERT INTO pull_report... " />
+            <marker date="1547134869636" expanded="true" signature="3387:3522" ph="INSERT INTO id_mapping... " />
+            <marker date="1547134869636" expanded="true" signature="3947:4293" ph="UPDATE pull_... " />
+            <marker date="1547134869636" expanded="true" signature="4675:4687" ph="..." />
+            <marker date="1547134869636" expanded="true" signature="8368:8535" ph="..." />
+            <marker date="1547134869636" expanded="true" signature="9790:9861" ph="UPDATE confi... " />
+            <marker date="1547134869636" expanded="true" signature="9903:9971" ph="UPDATE confi... " />
+            <marker date="1547134869636" expanded="true" signature="10351:10438" ph="UPDATE id_ma... " />
+            <marker date="1547134869636" expanded="true" signature="11106:11131" ph="SELECT * fro... push_report" />
+            <marker date="1547134869636" expanded="true" signature="11215:11289" ph="SELECT * fro... pull_report" />
+            <marker date="1547134869636" expanded="true" signature="11517:11586" ph="SELECT value... configuration" />
+            <marker date="1547134869636" expanded="true" signature="11721:11786" ph="SELECT value... configuration" />
+            <marker date="1547134869636" expanded="true" signature="13132:13229" ph="UPDATE confi... " />
+            <marker date="1547134869636" expanded="true" signature="13619:13629" ph="..." />
+            <marker date="1547134869636" expanded="true" signature="14135:14285" ph="SELECT * fro... pull_report" />
+            <marker date="1547134869636" expanded="true" signature="14422:14434" ph="..." />
+            <marker date="1547134869636" expanded="true" signature="14863:14960" ph="UPDATE confi... " />
+            <marker date="1547134869636" expanded="true" signature="15571:15581" ph="..." />
+            <marker date="1547134869636" expanded="true" signature="15691:15701" ph="..." />
+            <marker date="1547134869636" expanded="true" signature="15892:16261" ph="INSERT INTO push_report... " />
+            <marker date="1547134869636" expanded="true" signature="16323:16720" ph="UPDATE push_... " />
+            <marker date="1547134869636" expanded="true" signature="17051:17132" ph="SELECT id_fl... id_mapping" />
+            <marker date="1547134869636" expanded="true" signature="20899:20952" ph="INSERT INTO error_log... " />
           </folding>
         </state>
       </provider>
@@ -743,32 +749,32 @@
         <state relative-caret-position="404">
           <caret line="158" column="42" lean-forward="false" selection-start-line="158" selection-start-column="42" selection-end-line="158" selection-end-column="42" />
           <folding>
-            <element signature="e#230#264#0#PHP" expanded="true" />
-            <marker date="1547134620796" expanded="true" signature="1274:1341" ph="SELECT value... configuration" />
-            <marker date="1547134620796" expanded="true" signature="2264:2359" ph="UPDATE confi... " />
-            <marker date="1547134620796" expanded="true" signature="2952:3353" ph="INSERT INTO pull_report... " />
-            <marker date="1547134620796" expanded="true" signature="3393:3528" ph="INSERT INTO id_mapping... " />
-            <marker date="1547134620796" expanded="true" signature="3953:4299" ph="UPDATE pull_... " />
-            <marker date="1547134620796" expanded="true" signature="4681:4693" ph="..." />
-            <marker date="1547134620796" expanded="true" signature="8374:8541" ph="..." />
-            <marker date="1547134620796" expanded="true" signature="9796:9867" ph="UPDATE confi... " />
-            <marker date="1547134620796" expanded="true" signature="9909:9977" ph="UPDATE confi... " />
-            <marker date="1547134620796" expanded="true" signature="10357:10444" ph="UPDATE id_ma... " />
-            <marker date="1547134620796" expanded="true" signature="11112:11137" ph="SELECT * fro... push_report" />
-            <marker date="1547134620796" expanded="true" signature="11221:11295" ph="SELECT * fro... pull_report" />
-            <marker date="1547134620796" expanded="true" signature="11523:11592" ph="SELECT value... configuration" />
-            <marker date="1547134620796" expanded="true" signature="11727:11792" ph="SELECT value... configuration" />
-            <marker date="1547134620796" expanded="true" signature="13138:13235" ph="UPDATE confi... " />
-            <marker date="1547134620796" expanded="true" signature="13625:13635" ph="..." />
-            <marker date="1547134620796" expanded="true" signature="14141:14291" ph="SELECT * fro... pull_report" />
-            <marker date="1547134620796" expanded="true" signature="14428:14440" ph="..." />
-            <marker date="1547134620796" expanded="true" signature="14869:14966" ph="UPDATE confi... " />
-            <marker date="1547134620796" expanded="true" signature="15577:15587" ph="..." />
-            <marker date="1547134620796" expanded="true" signature="15697:15707" ph="..." />
-            <marker date="1547134620796" expanded="true" signature="15898:16267" ph="INSERT INTO push_report... " />
-            <marker date="1547134620796" expanded="true" signature="16329:16726" ph="UPDATE push_... " />
-            <marker date="1547134620796" expanded="true" signature="17057:17138" ph="SELECT id_fl... id_mapping" />
-            <marker date="1547134620796" expanded="true" signature="20905:20958" ph="INSERT INTO error_log... " />
+            <element signature="e#224#258#0#PHP" expanded="true" />
+            <marker date="1547134869636" expanded="true" signature="1268:1335" ph="SELECT value... configuration" />
+            <marker date="1547134869636" expanded="true" signature="2258:2353" ph="UPDATE confi... " />
+            <marker date="1547134869636" expanded="true" signature="2946:3347" ph="INSERT INTO pull_report... " />
+            <marker date="1547134869636" expanded="true" signature="3387:3522" ph="INSERT INTO id_mapping... " />
+            <marker date="1547134869636" expanded="true" signature="3947:4293" ph="UPDATE pull_... " />
+            <marker date="1547134869636" expanded="true" signature="4675:4687" ph="..." />
+            <marker date="1547134869636" expanded="true" signature="8368:8535" ph="..." />
+            <marker date="1547134869636" expanded="true" signature="9790:9861" ph="UPDATE confi... " />
+            <marker date="1547134869636" expanded="true" signature="9903:9971" ph="UPDATE confi... " />
+            <marker date="1547134869636" expanded="true" signature="10351:10438" ph="UPDATE id_ma... " />
+            <marker date="1547134869636" expanded="true" signature="11106:11131" ph="SELECT * fro... push_report" />
+            <marker date="1547134869636" expanded="true" signature="11215:11289" ph="SELECT * fro... pull_report" />
+            <marker date="1547134869636" expanded="true" signature="11517:11586" ph="SELECT value... configuration" />
+            <marker date="1547134869636" expanded="true" signature="11721:11786" ph="SELECT value... configuration" />
+            <marker date="1547134869636" expanded="true" signature="13132:13229" ph="UPDATE confi... " />
+            <marker date="1547134869636" expanded="true" signature="13619:13629" ph="..." />
+            <marker date="1547134869636" expanded="true" signature="14135:14285" ph="SELECT * fro... pull_report" />
+            <marker date="1547134869636" expanded="true" signature="14422:14434" ph="..." />
+            <marker date="1547134869636" expanded="true" signature="14863:14960" ph="UPDATE confi... " />
+            <marker date="1547134869636" expanded="true" signature="15571:15581" ph="..." />
+            <marker date="1547134869636" expanded="true" signature="15691:15701" ph="..." />
+            <marker date="1547134869636" expanded="true" signature="15892:16261" ph="INSERT INTO push_report... " />
+            <marker date="1547134869636" expanded="true" signature="16323:16720" ph="UPDATE push_... " />
+            <marker date="1547134869636" expanded="true" signature="17051:17132" ph="SELECT id_fl... id_mapping" />
+            <marker date="1547134869636" expanded="true" signature="20899:20952" ph="INSERT INTO error_log... " />
           </folding>
         </state>
       </provider>
@@ -817,32 +823,32 @@
         <state relative-caret-position="2686">
           <caret line="158" column="42" lean-forward="false" selection-start-line="158" selection-start-column="42" selection-end-line="158" selection-end-column="42" />
           <folding>
-            <element signature="e#230#264#0#PHP" expanded="true" />
-            <marker date="1547134620796" expanded="true" signature="1274:1341" ph="SELECT value... configuration" />
-            <marker date="1547134620796" expanded="true" signature="2264:2359" ph="UPDATE confi... " />
-            <marker date="1547134620796" expanded="true" signature="2952:3353" ph="INSERT INTO pull_report... " />
-            <marker date="1547134620796" expanded="true" signature="3393:3528" ph="INSERT INTO id_mapping... " />
-            <marker date="1547134620796" expanded="true" signature="3953:4299" ph="UPDATE pull_... " />
-            <marker date="1547134620796" expanded="true" signature="4681:4693" ph="..." />
-            <marker date="1547134620796" expanded="true" signature="8374:8541" ph="..." />
-            <marker date="1547134620796" expanded="true" signature="9796:9867" ph="UPDATE confi... " />
-            <marker date="1547134620796" expanded="true" signature="9909:9977" ph="UPDATE confi... " />
-            <marker date="1547134620796" expanded="true" signature="10357:10444" ph="UPDATE id_ma... " />
-            <marker date="1547134620796" expanded="true" signature="11112:11137" ph="SELECT * fro... push_report" />
-            <marker date="1547134620796" expanded="true" signature="11221:11295" ph="SELECT * fro... pull_report" />
-            <marker date="1547134620796" expanded="true" signature="11523:11592" ph="SELECT value... configuration" />
-            <marker date="1547134620796" expanded="true" signature="11727:11792" ph="SELECT value... configuration" />
-            <marker date="1547134620796" expanded="true" signature="13138:13235" ph="UPDATE confi... " />
-            <marker date="1547134620796" expanded="true" signature="13625:13635" ph="..." />
-            <marker date="1547134620796" expanded="true" signature="14141:14291" ph="SELECT * fro... pull_report" />
-            <marker date="1547134620796" expanded="true" signature="14428:14440" ph="..." />
-            <marker date="1547134620796" expanded="true" signature="14869:14966" ph="UPDATE confi... " />
-            <marker date="1547134620796" expanded="true" signature="15577:15587" ph="..." />
-            <marker date="1547134620796" expanded="true" signature="15697:15707" ph="..." />
-            <marker date="1547134620796" expanded="true" signature="15898:16267" ph="INSERT INTO push_report... " />
-            <marker date="1547134620796" expanded="true" signature="16329:16726" ph="UPDATE push_... " />
-            <marker date="1547134620796" expanded="true" signature="17057:17138" ph="SELECT id_fl... id_mapping" />
-            <marker date="1547134620796" expanded="true" signature="20905:20958" ph="INSERT INTO error_log... " />
+            <element signature="e#224#258#0#PHP" expanded="true" />
+            <marker date="1547134869636" expanded="true" signature="1268:1335" ph="SELECT value... configuration" />
+            <marker date="1547134869636" expanded="true" signature="2258:2353" ph="UPDATE confi... " />
+            <marker date="1547134869636" expanded="true" signature="2946:3347" ph="INSERT INTO pull_report... " />
+            <marker date="1547134869636" expanded="true" signature="3387:3522" ph="INSERT INTO id_mapping... " />
+            <marker date="1547134869636" expanded="true" signature="3947:4293" ph="UPDATE pull_... " />
+            <marker date="1547134869636" expanded="true" signature="4675:4687" ph="..." />
+            <marker date="1547134869636" expanded="true" signature="8368:8535" ph="..." />
+            <marker date="1547134869636" expanded="true" signature="9790:9861" ph="UPDATE confi... " />
+            <marker date="1547134869636" expanded="true" signature="9903:9971" ph="UPDATE confi... " />
+            <marker date="1547134869636" expanded="true" signature="10351:10438" ph="UPDATE id_ma... " />
+            <marker date="1547134869636" expanded="true" signature="11106:11131" ph="SELECT * fro... push_report" />
+            <marker date="1547134869636" expanded="true" signature="11215:11289" ph="SELECT * fro... pull_report" />
+            <marker date="1547134869636" expanded="true" signature="11517:11586" ph="SELECT value... configuration" />
+            <marker date="1547134869636" expanded="true" signature="11721:11786" ph="SELECT value... configuration" />
+            <marker date="1547134869636" expanded="true" signature="13132:13229" ph="UPDATE confi... " />
+            <marker date="1547134869636" expanded="true" signature="13619:13629" ph="..." />
+            <marker date="1547134869636" expanded="true" signature="14135:14285" ph="SELECT * fro... pull_report" />
+            <marker date="1547134869636" expanded="true" signature="14422:14434" ph="..." />
+            <marker date="1547134869636" expanded="true" signature="14863:14960" ph="UPDATE confi... " />
+            <marker date="1547134869636" expanded="true" signature="15571:15581" ph="..." />
+            <marker date="1547134869636" expanded="true" signature="15691:15701" ph="..." />
+            <marker date="1547134869636" expanded="true" signature="15892:16261" ph="INSERT INTO push_report... " />
+            <marker date="1547134869636" expanded="true" signature="16323:16720" ph="UPDATE push_... " />
+            <marker date="1547134869636" expanded="true" signature="17051:17132" ph="SELECT id_fl... id_mapping" />
+            <marker date="1547134869636" expanded="true" signature="20899:20952" ph="INSERT INTO error_log... " />
           </folding>
         </state>
       </provider>
@@ -884,32 +890,32 @@
         <state relative-caret-position="391">
           <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
           <folding>
-            <element signature="e#230#264#0#PHP" expanded="true" />
-            <marker date="1547134620796" expanded="true" signature="1274:1341" ph="SELECT value... configuration" />
-            <marker date="1547134620796" expanded="true" signature="2264:2359" ph="UPDATE confi... " />
-            <marker date="1547134620796" expanded="true" signature="2952:3353" ph="INSERT INTO pull_report... " />
-            <marker date="1547134620796" expanded="true" signature="3393:3528" ph="INSERT INTO id_mapping... " />
-            <marker date="1547134620796" expanded="true" signature="3953:4299" ph="UPDATE pull_... " />
-            <marker date="1547134620796" expanded="true" signature="4681:4693" ph="..." />
-            <marker date="1547134620796" expanded="true" signature="8374:8541" ph="..." />
-            <marker date="1547134620796" expanded="true" signature="9796:9867" ph="UPDATE confi... " />
-            <marker date="1547134620796" expanded="true" signature="9909:9977" ph="UPDATE confi... " />
-            <marker date="1547134620796" expanded="true" signature="10357:10444" ph="UPDATE id_ma... " />
-            <marker date="1547134620796" expanded="true" signature="11112:11137" ph="SELECT * fro... push_report" />
-            <marker date="1547134620796" expanded="true" signature="11221:11295" ph="SELECT * fro... pull_report" />
-            <marker date="1547134620796" expanded="true" signature="11523:11592" ph="SELECT value... configuration" />
-            <marker date="1547134620796" expanded="true" signature="11727:11792" ph="SELECT value... configuration" />
-            <marker date="1547134620796" expanded="true" signature="13138:13235" ph="UPDATE confi... " />
-            <marker date="1547134620796" expanded="true" signature="13625:13635" ph="..." />
-            <marker date="1547134620796" expanded="true" signature="14141:14291" ph="SELECT * fro... pull_report" />
-            <marker date="1547134620796" expanded="true" signature="14428:14440" ph="..." />
-            <marker date="1547134620796" expanded="true" signature="14869:14966" ph="UPDATE confi... " />
-            <marker date="1547134620796" expanded="true" signature="15577:15587" ph="..." />
-            <marker date="1547134620796" expanded="true" signature="15697:15707" ph="..." />
-            <marker date="1547134620796" expanded="true" signature="15898:16267" ph="INSERT INTO push_report... " />
-            <marker date="1547134620796" expanded="true" signature="16329:16726" ph="UPDATE push_... " />
-            <marker date="1547134620796" expanded="true" signature="17057:17138" ph="SELECT id_fl... id_mapping" />
-            <marker date="1547134620796" expanded="true" signature="20905:20958" ph="INSERT INTO error_log... " />
+            <element signature="e#224#258#0#PHP" expanded="true" />
+            <marker date="1547134869636" expanded="true" signature="1268:1335" ph="SELECT value... configuration" />
+            <marker date="1547134869636" expanded="true" signature="2258:2353" ph="UPDATE confi... " />
+            <marker date="1547134869636" expanded="true" signature="2946:3347" ph="INSERT INTO pull_report... " />
+            <marker date="1547134869636" expanded="true" signature="3387:3522" ph="INSERT INTO id_mapping... " />
+            <marker date="1547134869636" expanded="true" signature="3947:4293" ph="UPDATE pull_... " />
+            <marker date="1547134869636" expanded="true" signature="4675:4687" ph="..." />
+            <marker date="1547134869636" expanded="true" signature="8368:8535" ph="..." />
+            <marker date="1547134869636" expanded="true" signature="9790:9861" ph="UPDATE confi... " />
+            <marker date="1547134869636" expanded="true" signature="9903:9971" ph="UPDATE confi... " />
+            <marker date="1547134869636" expanded="true" signature="10351:10438" ph="UPDATE id_ma... " />
+            <marker date="1547134869636" expanded="true" signature="11106:11131" ph="SELECT * fro... push_report" />
+            <marker date="1547134869636" expanded="true" signature="11215:11289" ph="SELECT * fro... pull_report" />
+            <marker date="1547134869636" expanded="true" signature="11517:11586" ph="SELECT value... configuration" />
+            <marker date="1547134869636" expanded="true" signature="11721:11786" ph="SELECT value... configuration" />
+            <marker date="1547134869636" expanded="true" signature="13132:13229" ph="UPDATE confi... " />
+            <marker date="1547134869636" expanded="true" signature="13619:13629" ph="..." />
+            <marker date="1547134869636" expanded="true" signature="14135:14285" ph="SELECT * fro... pull_report" />
+            <marker date="1547134869636" expanded="true" signature="14422:14434" ph="..." />
+            <marker date="1547134869636" expanded="true" signature="14863:14960" ph="UPDATE confi... " />
+            <marker date="1547134869636" expanded="true" signature="15571:15581" ph="..." />
+            <marker date="1547134869636" expanded="true" signature="15691:15701" ph="..." />
+            <marker date="1547134869636" expanded="true" signature="15892:16261" ph="INSERT INTO push_report... " />
+            <marker date="1547134869636" expanded="true" signature="16323:16720" ph="UPDATE push_... " />
+            <marker date="1547134869636" expanded="true" signature="17051:17132" ph="SELECT id_fl... id_mapping" />
+            <marker date="1547134869636" expanded="true" signature="20899:20952" ph="INSERT INTO error_log... " />
           </folding>
         </state>
       </provider>
@@ -951,32 +957,32 @@
         <state relative-caret-position="459">
           <caret line="27" column="39" lean-forward="false" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
           <folding>
-            <element signature="e#230#264#0#PHP" expanded="true" />
-            <marker date="1547134620796" expanded="true" signature="1274:1341" ph="SELECT value... configuration" />
-            <marker date="1547134620796" expanded="true" signature="2264:2359" ph="UPDATE confi... " />
-            <marker date="1547134620796" expanded="true" signature="2952:3353" ph="INSERT INTO pull_report... " />
-            <marker date="1547134620796" expanded="true" signature="3393:3528" ph="INSERT INTO id_mapping... " />
-            <marker date="1547134620796" expanded="true" signature="3953:4299" ph="UPDATE pull_... " />
-            <marker date="1547134620796" expanded="true" signature="4681:4693" ph="..." />
-            <marker date="1547134620796" expanded="true" signature="8374:8541" ph="..." />
-            <marker date="1547134620796" expanded="true" signature="9796:9867" ph="UPDATE confi... " />
-            <marker date="1547134620796" expanded="true" signature="9909:9977" ph="UPDATE confi... " />
-            <marker date="1547134620796" expanded="true" signature="10357:10444" ph="UPDATE id_ma... " />
-            <marker date="1547134620796" expanded="true" signature="11112:11137" ph="SELECT * fro... push_report" />
-            <marker date="1547134620796" expanded="true" signature="11221:11295" ph="SELECT * fro... pull_report" />
-            <marker date="1547134620796" expanded="true" signature="11523:11592" ph="SELECT value... configuration" />
-            <marker date="1547134620796" expanded="true" signature="11727:11792" ph="SELECT value... configuration" />
-            <marker date="1547134620796" expanded="true" signature="13138:13235" ph="UPDATE confi... " />
-            <marker date="1547134620796" expanded="true" signature="13625:13635" ph="..." />
-            <marker date="1547134620796" expanded="true" signature="14141:14291" ph="SELECT * fro... pull_report" />
-            <marker date="1547134620796" expanded="true" signature="14428:14440" ph="..." />
-            <marker date="1547134620796" expanded="true" signature="14869:14966" ph="UPDATE confi... " />
-            <marker date="1547134620796" expanded="true" signature="15577:15587" ph="..." />
-            <marker date="1547134620796" expanded="true" signature="15697:15707" ph="..." />
-            <marker date="1547134620796" expanded="true" signature="15898:16267" ph="INSERT INTO push_report... " />
-            <marker date="1547134620796" expanded="true" signature="16329:16726" ph="UPDATE push_... " />
-            <marker date="1547134620796" expanded="true" signature="17057:17138" ph="SELECT id_fl... id_mapping" />
-            <marker date="1547134620796" expanded="true" signature="20905:20958" ph="INSERT INTO error_log... " />
+            <element signature="e#224#258#0#PHP" expanded="true" />
+            <marker date="1547134869636" expanded="true" signature="1268:1335" ph="SELECT value... configuration" />
+            <marker date="1547134869636" expanded="true" signature="2258:2353" ph="UPDATE confi... " />
+            <marker date="1547134869636" expanded="true" signature="2946:3347" ph="INSERT INTO pull_report... " />
+            <marker date="1547134869636" expanded="true" signature="3387:3522" ph="INSERT INTO id_mapping... " />
+            <marker date="1547134869636" expanded="true" signature="3947:4293" ph="UPDATE pull_... " />
+            <marker date="1547134869636" expanded="true" signature="4675:4687" ph="..." />
+            <marker date="1547134869636" expanded="true" signature="8368:8535" ph="..." />
+            <marker date="1547134869636" expanded="true" signature="9790:9861" ph="UPDATE confi... " />
+            <marker date="1547134869636" expanded="true" signature="9903:9971" ph="UPDATE confi... " />
+            <marker date="1547134869636" expanded="true" signature="10351:10438" ph="UPDATE id_ma... " />
+            <marker date="1547134869636" expanded="true" signature="11106:11131" ph="SELECT * fro... push_report" />
+            <marker date="1547134869636" expanded="true" signature="11215:11289" ph="SELECT * fro... pull_report" />
+            <marker date="1547134869636" expanded="true" signature="11517:11586" ph="SELECT value... configuration" />
+            <marker date="1547134869636" expanded="true" signature="11721:11786" ph="SELECT value... configuration" />
+            <marker date="1547134869636" expanded="true" signature="13132:13229" ph="UPDATE confi... " />
+            <marker date="1547134869636" expanded="true" signature="13619:13629" ph="..." />
+            <marker date="1547134869636" expanded="true" signature="14135:14285" ph="SELECT * fro... pull_report" />
+            <marker date="1547134869636" expanded="true" signature="14422:14434" ph="..." />
+            <marker date="1547134869636" expanded="true" signature="14863:14960" ph="UPDATE confi... " />
+            <marker date="1547134869636" expanded="true" signature="15571:15581" ph="..." />
+            <marker date="1547134869636" expanded="true" signature="15691:15701" ph="..." />
+            <marker date="1547134869636" expanded="true" signature="15892:16261" ph="INSERT INTO push_report... " />
+            <marker date="1547134869636" expanded="true" signature="16323:16720" ph="UPDATE push_... " />
+            <marker date="1547134869636" expanded="true" signature="17051:17132" ph="SELECT id_fl... id_mapping" />
+            <marker date="1547134869636" expanded="true" signature="20899:20952" ph="INSERT INTO error_log... " />
           </folding>
         </state>
       </provider>
@@ -1198,34 +1204,34 @@
     <entry file="file://$PROJECT_DIR$/src/ProcessData.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="2" selection-end-line="5" selection-end-column="32" />
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="5" selection-end-column="30" />
           <folding>
-            <element signature="e#230#264#0#PHP" expanded="true" />
-            <marker date="1547134620796" expanded="true" signature="1274:1341" ph="SELECT value... configuration" />
-            <marker date="1547134620796" expanded="true" signature="2264:2359" ph="UPDATE confi... " />
-            <marker date="1547134620796" expanded="true" signature="2952:3353" ph="INSERT INTO pull_report... " />
-            <marker date="1547134620796" expanded="true" signature="3393:3528" ph="INSERT INTO id_mapping... " />
-            <marker date="1547134620796" expanded="true" signature="3953:4299" ph="UPDATE pull_... " />
-            <marker date="1547134620796" expanded="true" signature="4681:4693" ph="..." />
-            <marker date="1547134620796" expanded="true" signature="8374:8541" ph="..." />
-            <marker date="1547134620796" expanded="true" signature="9796:9867" ph="UPDATE confi... " />
-            <marker date="1547134620796" expanded="true" signature="9909:9977" ph="UPDATE confi... " />
-            <marker date="1547134620796" expanded="true" signature="10357:10444" ph="UPDATE id_ma... " />
-            <marker date="1547134620796" expanded="true" signature="11112:11137" ph="SELECT * fro... push_report" />
-            <marker date="1547134620796" expanded="true" signature="11221:11295" ph="SELECT * fro... pull_report" />
-            <marker date="1547134620796" expanded="true" signature="11523:11592" ph="SELECT value... configuration" />
-            <marker date="1547134620796" expanded="true" signature="11727:11792" ph="SELECT value... configuration" />
-            <marker date="1547134620796" expanded="true" signature="13138:13235" ph="UPDATE confi... " />
-            <marker date="1547134620796" expanded="true" signature="13625:13635" ph="..." />
-            <marker date="1547134620796" expanded="true" signature="14141:14291" ph="SELECT * fro... pull_report" />
-            <marker date="1547134620796" expanded="true" signature="14428:14440" ph="..." />
-            <marker date="1547134620796" expanded="true" signature="14869:14966" ph="UPDATE confi... " />
-            <marker date="1547134620796" expanded="true" signature="15577:15587" ph="..." />
-            <marker date="1547134620796" expanded="true" signature="15697:15707" ph="..." />
-            <marker date="1547134620796" expanded="true" signature="15898:16267" ph="INSERT INTO push_report... " />
-            <marker date="1547134620796" expanded="true" signature="16329:16726" ph="UPDATE push_... " />
-            <marker date="1547134620796" expanded="true" signature="17057:17138" ph="SELECT id_fl... id_mapping" />
-            <marker date="1547134620796" expanded="true" signature="20905:20958" ph="INSERT INTO error_log... " />
+            <element signature="e#224#258#0#PHP" expanded="true" />
+            <marker date="1547134869636" expanded="true" signature="1268:1335" ph="SELECT value... configuration" />
+            <marker date="1547134869636" expanded="true" signature="2258:2353" ph="UPDATE confi... " />
+            <marker date="1547134869636" expanded="true" signature="2946:3347" ph="INSERT INTO pull_report... " />
+            <marker date="1547134869636" expanded="true" signature="3387:3522" ph="INSERT INTO id_mapping... " />
+            <marker date="1547134869636" expanded="true" signature="3947:4293" ph="UPDATE pull_... " />
+            <marker date="1547134869636" expanded="true" signature="4675:4687" ph="..." />
+            <marker date="1547134869636" expanded="true" signature="8368:8535" ph="..." />
+            <marker date="1547134869636" expanded="true" signature="9790:9861" ph="UPDATE confi... " />
+            <marker date="1547134869636" expanded="true" signature="9903:9971" ph="UPDATE confi... " />
+            <marker date="1547134869636" expanded="true" signature="10351:10438" ph="UPDATE id_ma... " />
+            <marker date="1547134869636" expanded="true" signature="11106:11131" ph="SELECT * fro... push_report" />
+            <marker date="1547134869636" expanded="true" signature="11215:11289" ph="SELECT * fro... pull_report" />
+            <marker date="1547134869636" expanded="true" signature="11517:11586" ph="SELECT value... configuration" />
+            <marker date="1547134869636" expanded="true" signature="11721:11786" ph="SELECT value... configuration" />
+            <marker date="1547134869636" expanded="true" signature="13132:13229" ph="UPDATE confi... " />
+            <marker date="1547134869636" expanded="true" signature="13619:13629" ph="..." />
+            <marker date="1547134869636" expanded="true" signature="14135:14285" ph="SELECT * fro... pull_report" />
+            <marker date="1547134869636" expanded="true" signature="14422:14434" ph="..." />
+            <marker date="1547134869636" expanded="true" signature="14863:14960" ph="UPDATE confi... " />
+            <marker date="1547134869636" expanded="true" signature="15571:15581" ph="..." />
+            <marker date="1547134869636" expanded="true" signature="15691:15701" ph="..." />
+            <marker date="1547134869636" expanded="true" signature="15892:16261" ph="INSERT INTO push_report... " />
+            <marker date="1547134869636" expanded="true" signature="16323:16720" ph="UPDATE push_... " />
+            <marker date="1547134869636" expanded="true" signature="17051:17132" ph="SELECT id_fl... id_mapping" />
+            <marker date="1547134869636" expanded="true" signature="20899:20952" ph="INSERT INTO error_log... " />
           </folding>
         </state>
       </provider>
