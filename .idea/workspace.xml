@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a0df0c98-8ca6-444a-bfbe-7a0f965b85e0" name="Default" comment="">
+    <list default="true" id="a0df0c98-8ca6-444a-bfbe-7a0f965b85e0" name="Default" comment="email code modification">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProcessData.php" afterPath="$PROJECT_DIR$/src/ProcessData.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.php" afterPath="$PROJECT_DIR$/src/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/partials/footer.php" afterPath="$PROJECT_DIR$/src/partials/footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/partials/header.php" afterPath="$PROJECT_DIR$/src/partials/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/settings.php" afterPath="$PROJECT_DIR$/src/settings.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,8 +27,8 @@
       <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state relative-caret-position="187">
+              <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -41,29 +37,55 @@
       <file leaf-file-name="ProcessData.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ProcessData.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="54" column="13" lean-forward="true" selection-start-line="49" selection-start-column="12" selection-end-line="54" selection-end-column="13" />
+            <state relative-caret-position="204">
+              <caret line="83" column="16" lean-forward="true" selection-start-line="83" selection-start-column="16" selection-end-line="94" selection-end-column="17" />
               <folding>
-                <marker date="1546134289513" expanded="true" signature="921:988" ph="SELECT value... configuration" />
-                <marker date="1546134289513" expanded="true" signature="1876:1971" ph="UPDATE confi... " />
-                <marker date="1546134289513" expanded="true" signature="2556:2957" ph="INSERT INTO pull_report... " />
-                <marker date="1546134289513" expanded="true" signature="2997:3132" ph="INSERT INTO id_mapping... " />
-                <marker date="1546134289513" expanded="true" signature="3559:3946" ph="UPDATE pull_... " />
-                <marker date="1546134289513" expanded="true" signature="5366:5437" ph="UPDATE confi... " />
-                <marker date="1546134289513" expanded="true" signature="5479:5547" ph="UPDATE confi... " />
-                <marker date="1546134289513" expanded="true" signature="5928:6015" ph="UPDATE id_ma... " />
-                <marker date="1546134289513" expanded="true" signature="6754:6779" ph="SELECT * fro... push_report" />
-                <marker date="1546134289513" expanded="true" signature="6863:6937" ph="SELECT * fro... pull_report" />
-                <marker date="1546134289513" expanded="true" signature="7227:7296" ph="SELECT value... configuration" />
-                <marker date="1546134289513" expanded="true" signature="7431:7496" ph="SELECT value... configuration" />
-                <marker date="1546134289513" expanded="true" signature="8656:8753" ph="UPDATE confi... " />
-                <marker date="1546134289513" expanded="true" signature="9447:9526" ph="SELECT * fro... pull_report" />
-                <marker date="1546134289513" expanded="true" signature="9978:10075" ph="UPDATE confi... " />
-                <marker date="1546134289513" expanded="true" signature="10604:10973" ph="INSERT INTO push_report... " />
-                <marker date="1546134289513" expanded="true" signature="11035:11432" ph="UPDATE push_... " />
-                <marker date="1546134289513" expanded="true" signature="11821:11902" ph="SELECT id_fl... id_mapping" />
-                <marker date="1546134289513" expanded="true" signature="15850:15903" ph="INSERT INTO error_log... " />
+                <marker date="1547115113796" expanded="true" signature="1111:1178" ph="SELECT value... configuration" />
+                <marker date="1547115113796" expanded="true" signature="2075:2170" ph="UPDATE confi... " />
+                <marker date="1547115113796" expanded="true" signature="2763:3164" ph="INSERT INTO pull_report... " />
+                <marker date="1547115113796" expanded="true" signature="3204:3339" ph="INSERT INTO id_mapping... " />
+                <marker date="1547115113796" expanded="true" signature="3764:4110" ph="UPDATE pull_... " />
+                <marker date="1547115113796" expanded="true" signature="4492:4504" ph="..." />
+                <marker date="1547115113796" expanded="true" signature="5786:5946" ph="..." />
+                <marker date="1547115113796" expanded="true" signature="7134:7205" ph="UPDATE confi... " />
+                <marker date="1547115113796" expanded="true" signature="7247:7315" ph="UPDATE confi... " />
+                <marker date="1547115113796" expanded="true" signature="7695:7782" ph="UPDATE id_ma... " />
+                <marker date="1547115113796" expanded="true" signature="8450:8475" ph="SELECT * fro... push_report" />
+                <marker date="1547115113796" expanded="true" signature="8559:8633" ph="SELECT * fro... pull_report" />
+                <marker date="1547115113796" expanded="true" signature="8861:8930" ph="SELECT value... configuration" />
+                <marker date="1547115113796" expanded="true" signature="9065:9130" ph="SELECT value... configuration" />
+                <marker date="1547115113796" expanded="true" signature="10476:10573" ph="UPDATE confi... " />
+                <marker date="1547115113796" expanded="true" signature="10963:10973" ph="..." />
+                <marker date="1547115113796" expanded="true" signature="11479:11629" ph="SELECT * fro... pull_report" />
+                <marker date="1547115113796" expanded="true" signature="11766:11778" ph="..." />
+                <marker date="1547115113796" expanded="true" signature="12207:12304" ph="UPDATE confi... " />
+                <marker date="1547115113796" expanded="true" signature="12915:12925" ph="..." />
+                <marker date="1547115113796" expanded="true" signature="13035:13045" ph="..." />
+                <marker date="1547115113796" expanded="true" signature="13236:13605" ph="INSERT INTO push_report... " />
+                <marker date="1547115113796" expanded="true" signature="13667:14064" ph="UPDATE push_... " />
+                <marker date="1547115113796" expanded="true" signature="14395:14476" ph="SELECT id_fl... id_mapping" />
+                <marker date="1547115113796" expanded="true" signature="18243:18296" ph="INSERT INTO error_log... " />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ApiService.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ApiService.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="833">
+              <caret line="49" column="12" lean-forward="false" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -71,64 +93,64 @@
       <file leaf-file-name="runningScript.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/runningScript.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+            <state relative-caret-position="340">
+              <caret line="20" column="0" lean-forward="false" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="initializationScript.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/initializationScript.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="26" lean-forward="false" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="33" column="8" lean-forward="false" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+            <state relative-caret-position="2618">
+              <caret line="154" column="34" lean-forward="false" selection-start-line="154" selection-start-column="34" selection-end-line="154" selection-end-column="34" />
               <folding>
-                <marker date="1546151111200" expanded="true" signature="473:535" ph="SELECT value... configuration" />
-                <marker date="1546151111200" expanded="true" signature="1606:1673" ph="SELECT value... configuration" />
-                <marker date="1546151111200" expanded="true" signature="1796:1865" ph="SELECT value... configuration" />
-                <marker date="1546151111200" expanded="true" signature="2371:2433" ph="SELECT value... configuration" />
-                <marker date="1546151111200" expanded="true" signature="3500:3525" ph="SELECT * fro... pull_report" />
-                <marker date="1546151111200" expanded="true" signature="4253:4782" ph="..." />
+                <marker date="1546939952112" expanded="true" signature="195:268" ph="SELECT value... configuration" />
+                <marker date="1546939952112" expanded="true" signature="813:875" ph="SELECT value... configuration" />
+                <marker date="1546939952112" expanded="true" signature="1543:1641" ph="..." />
+                <marker date="1546939952112" expanded="true" signature="2248:2315" ph="SELECT value... configuration" />
+                <marker date="1546939952112" expanded="true" signature="2444:2451" ph="SELECT value... configuration" />
+                <marker date="1546939952112" expanded="true" signature="2639:2927" ph="..." />
+                <marker date="1546939952112" expanded="true" signature="2725:2752" ph="..." />
+                <marker date="1546939952112" expanded="true" signature="2868:2895" ph="..." />
+                <marker date="1546939952112" expanded="true" signature="2976:4431" ph="..." />
+                <marker date="1546939952112" expanded="true" signature="2993:3198" ph="..." />
+                <marker date="1546939952112" expanded="true" signature="3018:3080" ph="SELECT value... configuration" />
+                <marker date="1546939952112" expanded="true" signature="3234:4416" ph="..." />
+                <marker date="1546939952112" expanded="true" signature="3282:4177" ph="..." />
+                <marker date="1546939952112" expanded="true" signature="3305:4158" ph="..." />
+                <marker date="1546939952112" expanded="true" signature="3369:3965" ph="..." />
+                <marker date="1546939952112" expanded="true" signature="3751:3849" ph="..." />
+                <marker date="1546939952112" expanded="true" signature="3973:4140" ph="..." />
+                <marker date="1546939952112" expanded="true" signature="4193:4399" ph="..." />
+                <marker date="1546939952112" expanded="true" signature="4201:4382" ph="..." />
+                <marker date="1546939952112" expanded="true" signature="4470:4587" ph="..." />
+                <marker date="1546939952112" expanded="true" signature="4489:4514" ph="SELECT * fro... push_report" />
+                <marker date="1546939952112" expanded="true" signature="4612:6126" ph="..." />
+                <marker date="1546939952112" expanded="true" signature="4723:6113" ph="..." />
+                <marker date="1546939952112" expanded="true" signature="4742:6097" ph="..." />
+                <marker date="1546939952112" expanded="true" signature="4779:5936" ph="..." />
+                <marker date="1546939952112" expanded="true" signature="4846:5900" ph="..." />
+                <marker date="1546939952112" expanded="true" signature="4866:5191" ph="..." />
+                <marker date="1546939952112" expanded="true" signature="4883:5170" ph="..." />
+                <marker date="1546939952112" expanded="true" signature="5212:5881" ph="..." />
+                <marker date="1546939952112" expanded="true" signature="5231:5859" ph="..." />
+                <marker date="1546939952112" expanded="true" signature="5291:5845" ph="..." />
+                <marker date="1546939952112" expanded="true" signature="5321:5825" ph="..." />
+                <marker date="1546939952112" expanded="true" signature="5961:6083" ph="..." />
+                <marker date="1546939952112" expanded="true" signature="6159:6197" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/partials/header.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="76" lean-forward="false" selection-start-line="4" selection-start-column="76" selection-end-line="4" selection-end-column="76" />
-              <folding>
-                <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#header#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/settings.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-              <folding>
-                <marker date="1546135121042" expanded="true" signature="992:1085" ph="UPDATE confi... " />
-                <marker date="1546135121042" expanded="true" signature="1315:1407" ph="UPDATE confi... " />
-                <marker date="1546135121042" expanded="true" signature="1777:1839" ph="..." />
-                <marker date="1546135121042" expanded="true" signature="3277:3346" ph="SELECT value... configuration" />
-                <marker date="1546135121042" expanded="true" signature="3482:3547" ph="SELECT value... configuration" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="head.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/partials/head.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -144,6 +166,9 @@
       <find>$this-&gt;fleetioUpdate</find>
       <find>LastGMTupdate</find>
       <find>$toast_message</find>
+      <find>$pushUpdated</find>
+      <find>$changeInFuel</find>
+      <find>if</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -163,18 +188,20 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/ApiService.php" />
-        <option value="$PROJECT_DIR$/src/runningScript.php" />
         <option value="$PROJECT_DIR$/src/Database.php" />
         <option value="$PROJECT_DIR$/src/cron.php" />
         <option value="$PROJECT_DIR$/src/checkcron.php" />
         <option value="$PROJECT_DIR$/src/pullcron.php" />
-        <option value="$PROJECT_DIR$/src/config.php" />
         <option value="$PROJECT_DIR$/src/partials/header.php" />
-        <option value="$PROJECT_DIR$/src/ProcessData.php" />
         <option value="$PROJECT_DIR$/src/settings.php" />
         <option value="$PROJECT_DIR$/src/utils.php" />
         <option value="$PROJECT_DIR$/src/partials/footer.php" />
+        <option value="$PROJECT_DIR$/src/initializationScript.php" />
+        <option value="$PROJECT_DIR$/src/runningScript.php" />
+        <option value="$PROJECT_DIR$/src/ProcessData.php" />
         <option value="$PROJECT_DIR$/src/index.php" />
+        <option value="$PROJECT_DIR$/src/config.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -185,10 +212,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-7" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="676" />
     <option name="width" value="697" />
-    <option name="height" value="391" />
+    <option name="height" value="392" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -206,8 +233,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -215,23 +241,13 @@
               <item name="galooli-fleetio-integration" type="b2602c69:ProjectViewProjectNode" />
               <item name="galooli-fleetio-integration" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="galooli-fleetio-integration" type="b2602c69:ProjectViewProjectNode" />
-              <item name="galooli-fleetio-integration" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="galooli-fleetio-integration" type="b2602c69:ProjectViewProjectNode" />
-              <item name="galooli-fleetio-integration" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="partials" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -354,6 +370,11 @@
       <workItem from="1545720651555" duration="1277000" />
       <workItem from="1546064434264" duration="912000" />
       <workItem from="1546109045075" duration="7895000" />
+      <workItem from="1546419154187" duration="1435000" />
+      <workItem from="1546434650314" duration="7077000" />
+      <workItem from="1546463828197" duration="1116000" />
+      <workItem from="1546844991916" duration="5723000" />
+      <workItem from="1547116119454" duration="545000" />
     </task>
     <task id="LOCAL-00001" summary="added error log functionality, and push time recording">
       <created>1546129539327</created>
@@ -369,14 +390,126 @@
       <option name="project" value="LOCAL" />
       <updated>1546130402432</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update of home page dynamic link">
+      <created>1546419409580</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1546419409581</updated>
+    </task>
+    <task id="LOCAL-00004" summary="merge of cron logic with master">
+      <created>1546419996084</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1546419996084</updated>
+    </task>
+    <task id="LOCAL-00005" summary="latest update change in workspace.xml">
+      <created>1546434706672</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1546434706672</updated>
+    </task>
+    <task id="LOCAL-00006" summary="minor bug changes">
+      <created>1546435717392</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1546435717392</updated>
+    </task>
+    <task id="LOCAL-00007" summary="minor bug changes">
+      <created>1546436357072</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1546436357072</updated>
+    </task>
+    <task id="LOCAL-00008" summary="merged files with cron_logic">
+      <created>1546437196686</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1546437196686</updated>
+    </task>
+    <task id="LOCAL-00009" summary="merged files with cron_logic">
+      <created>1546437282010</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1546437282010</updated>
+    </task>
+    <task id="LOCAL-00010" summary="updates, checked and confirmed.. minor bug fixes">
+      <created>1546463388103</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1546463388103</updated>
+    </task>
+    <task id="LOCAL-00011" summary="odometer and fuel condition checks updated">
+      <created>1546464137530</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1546464137530</updated>
+    </task>
+    <task id="LOCAL-00012" summary="odometer and fuel condition checks updated">
+      <created>1546464258145</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1546464258145</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Prepared code to be server ready">
+      <created>1546846549664</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1546846549664</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Prepared code to be server ready">
+      <created>1546846755404</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1546846755404</updated>
+    </task>
+    <task id="LOCAL-00015" summary="New Prepared code to be server ready">
+      <created>1546849255410</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1546849255410</updated>
+    </task>
+    <task id="LOCAL-00016" summary="New Prepared code to be server ready">
+      <created>1546852825986</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1546852825986</updated>
+    </task>
+    <task id="LOCAL-00017" summary="New Prepared code to be server ready">
+      <created>1547116442426</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1547116442426</updated>
+    </task>
+    <task id="LOCAL-00018" summary="New Prepared code to be server ready">
+      <created>1547116475681</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1547116475681</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17983000" />
+    <option name="totallyTimeSpent" value="33879000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -384,16 +517,15 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14506173" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15123457" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20347957" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21860817" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -405,6 +537,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -416,7 +549,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added error log functionality, and push time recording" />
     <MESSAGE value="merged with cron logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="merged with cron logic" />
+    <MESSAGE value="update of home page dynamic link" />
+    <MESSAGE value="merge of cron logic with master" />
+    <MESSAGE value="latest update change in workspace.xml" />
+    <MESSAGE value="minor bug changes" />
+    <MESSAGE value="merged files with cron_logic" />
+    <MESSAGE value="updates, checked and confirmed.. minor bug fixes" />
+    <MESSAGE value="odometer and fuel condition checks updated" />
+    <MESSAGE value="Prepared code to be server ready" />
+    <MESSAGE value="New Prepared code to be server ready" />
+    <option name="LAST_COMMIT_MESSAGE" value="New Prepared code to be server ready" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -436,25 +578,31 @@
         <state relative-caret-position="391">
           <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
           <folding>
-            <marker date="1546134289513" expanded="true" signature="921:988" ph="SELECT value... configuration" />
-            <marker date="1546134289513" expanded="true" signature="1876:1971" ph="UPDATE confi... " />
-            <marker date="1546134289513" expanded="true" signature="2556:2957" ph="INSERT INTO pull_report... " />
-            <marker date="1546134289513" expanded="true" signature="2997:3132" ph="INSERT INTO id_mapping... " />
-            <marker date="1546134289513" expanded="true" signature="3559:3946" ph="UPDATE pull_... " />
-            <marker date="1546134289513" expanded="true" signature="5366:5437" ph="UPDATE confi... " />
-            <marker date="1546134289513" expanded="true" signature="5479:5547" ph="UPDATE confi... " />
-            <marker date="1546134289513" expanded="true" signature="5928:6015" ph="UPDATE id_ma... " />
-            <marker date="1546134289513" expanded="true" signature="6754:6779" ph="SELECT * fro... push_report" />
-            <marker date="1546134289513" expanded="true" signature="6863:6937" ph="SELECT * fro... pull_report" />
-            <marker date="1546134289513" expanded="true" signature="7227:7296" ph="SELECT value... configuration" />
-            <marker date="1546134289513" expanded="true" signature="7431:7496" ph="SELECT value... configuration" />
-            <marker date="1546134289513" expanded="true" signature="8656:8753" ph="UPDATE confi... " />
-            <marker date="1546134289513" expanded="true" signature="9447:9526" ph="SELECT * fro... pull_report" />
-            <marker date="1546134289513" expanded="true" signature="9978:10075" ph="UPDATE confi... " />
-            <marker date="1546134289513" expanded="true" signature="10604:10973" ph="INSERT INTO push_report... " />
-            <marker date="1546134289513" expanded="true" signature="11035:11432" ph="UPDATE push_... " />
-            <marker date="1546134289513" expanded="true" signature="11821:11902" ph="SELECT id_fl... id_mapping" />
-            <marker date="1546134289513" expanded="true" signature="15850:15903" ph="INSERT INTO error_log... " />
+            <marker date="1547115113796" expanded="true" signature="1111:1178" ph="SELECT value... configuration" />
+            <marker date="1547115113796" expanded="true" signature="2075:2170" ph="UPDATE confi... " />
+            <marker date="1547115113796" expanded="true" signature="2763:3164" ph="INSERT INTO pull_report... " />
+            <marker date="1547115113796" expanded="true" signature="3204:3339" ph="INSERT INTO id_mapping... " />
+            <marker date="1547115113796" expanded="true" signature="3764:4110" ph="UPDATE pull_... " />
+            <marker date="1547115113796" expanded="true" signature="4492:4504" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="5786:5946" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="7134:7205" ph="UPDATE confi... " />
+            <marker date="1547115113796" expanded="true" signature="7247:7315" ph="UPDATE confi... " />
+            <marker date="1547115113796" expanded="true" signature="7695:7782" ph="UPDATE id_ma... " />
+            <marker date="1547115113796" expanded="true" signature="8450:8475" ph="SELECT * fro... push_report" />
+            <marker date="1547115113796" expanded="true" signature="8559:8633" ph="SELECT * fro... pull_report" />
+            <marker date="1547115113796" expanded="true" signature="8861:8930" ph="SELECT value... configuration" />
+            <marker date="1547115113796" expanded="true" signature="9065:9130" ph="SELECT value... configuration" />
+            <marker date="1547115113796" expanded="true" signature="10476:10573" ph="UPDATE confi... " />
+            <marker date="1547115113796" expanded="true" signature="10963:10973" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="11479:11629" ph="SELECT * fro... pull_report" />
+            <marker date="1547115113796" expanded="true" signature="11766:11778" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="12207:12304" ph="UPDATE confi... " />
+            <marker date="1547115113796" expanded="true" signature="12915:12925" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="13035:13045" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="13236:13605" ph="INSERT INTO push_report... " />
+            <marker date="1547115113796" expanded="true" signature="13667:14064" ph="UPDATE push_... " />
+            <marker date="1547115113796" expanded="true" signature="14395:14476" ph="SELECT id_fl... id_mapping" />
+            <marker date="1547115113796" expanded="true" signature="18243:18296" ph="INSERT INTO error_log... " />
           </folding>
         </state>
       </provider>
@@ -496,25 +644,31 @@
         <state relative-caret-position="459">
           <caret line="27" column="39" lean-forward="false" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
           <folding>
-            <marker date="1546134289513" expanded="true" signature="921:988" ph="SELECT value... configuration" />
-            <marker date="1546134289513" expanded="true" signature="1876:1971" ph="UPDATE confi... " />
-            <marker date="1546134289513" expanded="true" signature="2556:2957" ph="INSERT INTO pull_report... " />
-            <marker date="1546134289513" expanded="true" signature="2997:3132" ph="INSERT INTO id_mapping... " />
-            <marker date="1546134289513" expanded="true" signature="3559:3946" ph="UPDATE pull_... " />
-            <marker date="1546134289513" expanded="true" signature="5366:5437" ph="UPDATE confi... " />
-            <marker date="1546134289513" expanded="true" signature="5479:5547" ph="UPDATE confi... " />
-            <marker date="1546134289513" expanded="true" signature="5928:6015" ph="UPDATE id_ma... " />
-            <marker date="1546134289513" expanded="true" signature="6754:6779" ph="SELECT * fro... push_report" />
-            <marker date="1546134289513" expanded="true" signature="6863:6937" ph="SELECT * fro... pull_report" />
-            <marker date="1546134289513" expanded="true" signature="7227:7296" ph="SELECT value... configuration" />
-            <marker date="1546134289513" expanded="true" signature="7431:7496" ph="SELECT value... configuration" />
-            <marker date="1546134289513" expanded="true" signature="8656:8753" ph="UPDATE confi... " />
-            <marker date="1546134289513" expanded="true" signature="9447:9526" ph="SELECT * fro... pull_report" />
-            <marker date="1546134289513" expanded="true" signature="9978:10075" ph="UPDATE confi... " />
-            <marker date="1546134289513" expanded="true" signature="10604:10973" ph="INSERT INTO push_report... " />
-            <marker date="1546134289513" expanded="true" signature="11035:11432" ph="UPDATE push_... " />
-            <marker date="1546134289513" expanded="true" signature="11821:11902" ph="SELECT id_fl... id_mapping" />
-            <marker date="1546134289513" expanded="true" signature="15850:15903" ph="INSERT INTO error_log... " />
+            <marker date="1547115113796" expanded="true" signature="1111:1178" ph="SELECT value... configuration" />
+            <marker date="1547115113796" expanded="true" signature="2075:2170" ph="UPDATE confi... " />
+            <marker date="1547115113796" expanded="true" signature="2763:3164" ph="INSERT INTO pull_report... " />
+            <marker date="1547115113796" expanded="true" signature="3204:3339" ph="INSERT INTO id_mapping... " />
+            <marker date="1547115113796" expanded="true" signature="3764:4110" ph="UPDATE pull_... " />
+            <marker date="1547115113796" expanded="true" signature="4492:4504" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="5786:5946" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="7134:7205" ph="UPDATE confi... " />
+            <marker date="1547115113796" expanded="true" signature="7247:7315" ph="UPDATE confi... " />
+            <marker date="1547115113796" expanded="true" signature="7695:7782" ph="UPDATE id_ma... " />
+            <marker date="1547115113796" expanded="true" signature="8450:8475" ph="SELECT * fro... push_report" />
+            <marker date="1547115113796" expanded="true" signature="8559:8633" ph="SELECT * fro... pull_report" />
+            <marker date="1547115113796" expanded="true" signature="8861:8930" ph="SELECT value... configuration" />
+            <marker date="1547115113796" expanded="true" signature="9065:9130" ph="SELECT value... configuration" />
+            <marker date="1547115113796" expanded="true" signature="10476:10573" ph="UPDATE confi... " />
+            <marker date="1547115113796" expanded="true" signature="10963:10973" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="11479:11629" ph="SELECT * fro... pull_report" />
+            <marker date="1547115113796" expanded="true" signature="11766:11778" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="12207:12304" ph="UPDATE confi... " />
+            <marker date="1547115113796" expanded="true" signature="12915:12925" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="13035:13045" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="13236:13605" ph="INSERT INTO push_report... " />
+            <marker date="1547115113796" expanded="true" signature="13667:14064" ph="UPDATE push_... " />
+            <marker date="1547115113796" expanded="true" signature="14395:14476" ph="SELECT id_fl... id_mapping" />
+            <marker date="1547115113796" expanded="true" signature="18243:18296" ph="INSERT INTO error_log... " />
           </folding>
         </state>
       </provider>
@@ -570,25 +724,31 @@
         <state relative-caret-position="404">
           <caret line="158" column="42" lean-forward="false" selection-start-line="158" selection-start-column="42" selection-end-line="158" selection-end-column="42" />
           <folding>
-            <marker date="1546134289513" expanded="true" signature="921:988" ph="SELECT value... configuration" />
-            <marker date="1546134289513" expanded="true" signature="1876:1971" ph="UPDATE confi... " />
-            <marker date="1546134289513" expanded="true" signature="2556:2957" ph="INSERT INTO pull_report... " />
-            <marker date="1546134289513" expanded="true" signature="2997:3132" ph="INSERT INTO id_mapping... " />
-            <marker date="1546134289513" expanded="true" signature="3559:3946" ph="UPDATE pull_... " />
-            <marker date="1546134289513" expanded="true" signature="5366:5437" ph="UPDATE confi... " />
-            <marker date="1546134289513" expanded="true" signature="5479:5547" ph="UPDATE confi... " />
-            <marker date="1546134289513" expanded="true" signature="5928:6015" ph="UPDATE id_ma... " />
-            <marker date="1546134289513" expanded="true" signature="6754:6779" ph="SELECT * fro... push_report" />
-            <marker date="1546134289513" expanded="true" signature="6863:6937" ph="SELECT * fro... pull_report" />
-            <marker date="1546134289513" expanded="true" signature="7227:7296" ph="SELECT value... configuration" />
-            <marker date="1546134289513" expanded="true" signature="7431:7496" ph="SELECT value... configuration" />
-            <marker date="1546134289513" expanded="true" signature="8656:8753" ph="UPDATE confi... " />
-            <marker date="1546134289513" expanded="true" signature="9447:9526" ph="SELECT * fro... pull_report" />
-            <marker date="1546134289513" expanded="true" signature="9978:10075" ph="UPDATE confi... " />
-            <marker date="1546134289513" expanded="true" signature="10604:10973" ph="INSERT INTO push_report... " />
-            <marker date="1546134289513" expanded="true" signature="11035:11432" ph="UPDATE push_... " />
-            <marker date="1546134289513" expanded="true" signature="11821:11902" ph="SELECT id_fl... id_mapping" />
-            <marker date="1546134289513" expanded="true" signature="15850:15903" ph="INSERT INTO error_log... " />
+            <marker date="1547115113796" expanded="true" signature="1111:1178" ph="SELECT value... configuration" />
+            <marker date="1547115113796" expanded="true" signature="2075:2170" ph="UPDATE confi... " />
+            <marker date="1547115113796" expanded="true" signature="2763:3164" ph="INSERT INTO pull_report... " />
+            <marker date="1547115113796" expanded="true" signature="3204:3339" ph="INSERT INTO id_mapping... " />
+            <marker date="1547115113796" expanded="true" signature="3764:4110" ph="UPDATE pull_... " />
+            <marker date="1547115113796" expanded="true" signature="4492:4504" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="5786:5946" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="7134:7205" ph="UPDATE confi... " />
+            <marker date="1547115113796" expanded="true" signature="7247:7315" ph="UPDATE confi... " />
+            <marker date="1547115113796" expanded="true" signature="7695:7782" ph="UPDATE id_ma... " />
+            <marker date="1547115113796" expanded="true" signature="8450:8475" ph="SELECT * fro... push_report" />
+            <marker date="1547115113796" expanded="true" signature="8559:8633" ph="SELECT * fro... pull_report" />
+            <marker date="1547115113796" expanded="true" signature="8861:8930" ph="SELECT value... configuration" />
+            <marker date="1547115113796" expanded="true" signature="9065:9130" ph="SELECT value... configuration" />
+            <marker date="1547115113796" expanded="true" signature="10476:10573" ph="UPDATE confi... " />
+            <marker date="1547115113796" expanded="true" signature="10963:10973" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="11479:11629" ph="SELECT * fro... pull_report" />
+            <marker date="1547115113796" expanded="true" signature="11766:11778" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="12207:12304" ph="UPDATE confi... " />
+            <marker date="1547115113796" expanded="true" signature="12915:12925" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="13035:13045" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="13236:13605" ph="INSERT INTO push_report... " />
+            <marker date="1547115113796" expanded="true" signature="13667:14064" ph="UPDATE push_... " />
+            <marker date="1547115113796" expanded="true" signature="14395:14476" ph="SELECT id_fl... id_mapping" />
+            <marker date="1547115113796" expanded="true" signature="18243:18296" ph="INSERT INTO error_log... " />
           </folding>
         </state>
       </provider>
@@ -621,7 +781,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="31" lean-forward="true" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -638,25 +797,31 @@
         <state relative-caret-position="2686">
           <caret line="158" column="42" lean-forward="false" selection-start-line="158" selection-start-column="42" selection-end-line="158" selection-end-column="42" />
           <folding>
-            <marker date="1546134289513" expanded="true" signature="921:988" ph="SELECT value... configuration" />
-            <marker date="1546134289513" expanded="true" signature="1876:1971" ph="UPDATE confi... " />
-            <marker date="1546134289513" expanded="true" signature="2556:2957" ph="INSERT INTO pull_report... " />
-            <marker date="1546134289513" expanded="true" signature="2997:3132" ph="INSERT INTO id_mapping... " />
-            <marker date="1546134289513" expanded="true" signature="3559:3946" ph="UPDATE pull_... " />
-            <marker date="1546134289513" expanded="true" signature="5366:5437" ph="UPDATE confi... " />
-            <marker date="1546134289513" expanded="true" signature="5479:5547" ph="UPDATE confi... " />
-            <marker date="1546134289513" expanded="true" signature="5928:6015" ph="UPDATE id_ma... " />
-            <marker date="1546134289513" expanded="true" signature="6754:6779" ph="SELECT * fro... push_report" />
-            <marker date="1546134289513" expanded="true" signature="6863:6937" ph="SELECT * fro... pull_report" />
-            <marker date="1546134289513" expanded="true" signature="7227:7296" ph="SELECT value... configuration" />
-            <marker date="1546134289513" expanded="true" signature="7431:7496" ph="SELECT value... configuration" />
-            <marker date="1546134289513" expanded="true" signature="8656:8753" ph="UPDATE confi... " />
-            <marker date="1546134289513" expanded="true" signature="9447:9526" ph="SELECT * fro... pull_report" />
-            <marker date="1546134289513" expanded="true" signature="9978:10075" ph="UPDATE confi... " />
-            <marker date="1546134289513" expanded="true" signature="10604:10973" ph="INSERT INTO push_report... " />
-            <marker date="1546134289513" expanded="true" signature="11035:11432" ph="UPDATE push_... " />
-            <marker date="1546134289513" expanded="true" signature="11821:11902" ph="SELECT id_fl... id_mapping" />
-            <marker date="1546134289513" expanded="true" signature="15850:15903" ph="INSERT INTO error_log... " />
+            <marker date="1547115113796" expanded="true" signature="1111:1178" ph="SELECT value... configuration" />
+            <marker date="1547115113796" expanded="true" signature="2075:2170" ph="UPDATE confi... " />
+            <marker date="1547115113796" expanded="true" signature="2763:3164" ph="INSERT INTO pull_report... " />
+            <marker date="1547115113796" expanded="true" signature="3204:3339" ph="INSERT INTO id_mapping... " />
+            <marker date="1547115113796" expanded="true" signature="3764:4110" ph="UPDATE pull_... " />
+            <marker date="1547115113796" expanded="true" signature="4492:4504" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="5786:5946" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="7134:7205" ph="UPDATE confi... " />
+            <marker date="1547115113796" expanded="true" signature="7247:7315" ph="UPDATE confi... " />
+            <marker date="1547115113796" expanded="true" signature="7695:7782" ph="UPDATE id_ma... " />
+            <marker date="1547115113796" expanded="true" signature="8450:8475" ph="SELECT * fro... push_report" />
+            <marker date="1547115113796" expanded="true" signature="8559:8633" ph="SELECT * fro... pull_report" />
+            <marker date="1547115113796" expanded="true" signature="8861:8930" ph="SELECT value... configuration" />
+            <marker date="1547115113796" expanded="true" signature="9065:9130" ph="SELECT value... configuration" />
+            <marker date="1547115113796" expanded="true" signature="10476:10573" ph="UPDATE confi... " />
+            <marker date="1547115113796" expanded="true" signature="10963:10973" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="11479:11629" ph="SELECT * fro... pull_report" />
+            <marker date="1547115113796" expanded="true" signature="11766:11778" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="12207:12304" ph="UPDATE confi... " />
+            <marker date="1547115113796" expanded="true" signature="12915:12925" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="13035:13045" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="13236:13605" ph="INSERT INTO push_report... " />
+            <marker date="1547115113796" expanded="true" signature="13667:14064" ph="UPDATE push_... " />
+            <marker date="1547115113796" expanded="true" signature="14395:14476" ph="SELECT id_fl... id_mapping" />
+            <marker date="1547115113796" expanded="true" signature="18243:18296" ph="INSERT INTO error_log... " />
           </folding>
         </state>
       </provider>
@@ -698,25 +863,31 @@
         <state relative-caret-position="391">
           <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
           <folding>
-            <marker date="1546134289513" expanded="true" signature="921:988" ph="SELECT value... configuration" />
-            <marker date="1546134289513" expanded="true" signature="1876:1971" ph="UPDATE confi... " />
-            <marker date="1546134289513" expanded="true" signature="2556:2957" ph="INSERT INTO pull_report... " />
-            <marker date="1546134289513" expanded="true" signature="2997:3132" ph="INSERT INTO id_mapping... " />
-            <marker date="1546134289513" expanded="true" signature="3559:3946" ph="UPDATE pull_... " />
-            <marker date="1546134289513" expanded="true" signature="5366:5437" ph="UPDATE confi... " />
-            <marker date="1546134289513" expanded="true" signature="5479:5547" ph="UPDATE confi... " />
-            <marker date="1546134289513" expanded="true" signature="5928:6015" ph="UPDATE id_ma... " />
-            <marker date="1546134289513" expanded="true" signature="6754:6779" ph="SELECT * fro... push_report" />
-            <marker date="1546134289513" expanded="true" signature="6863:6937" ph="SELECT * fro... pull_report" />
-            <marker date="1546134289513" expanded="true" signature="7227:7296" ph="SELECT value... configuration" />
-            <marker date="1546134289513" expanded="true" signature="7431:7496" ph="SELECT value... configuration" />
-            <marker date="1546134289513" expanded="true" signature="8656:8753" ph="UPDATE confi... " />
-            <marker date="1546134289513" expanded="true" signature="9447:9526" ph="SELECT * fro... pull_report" />
-            <marker date="1546134289513" expanded="true" signature="9978:10075" ph="UPDATE confi... " />
-            <marker date="1546134289513" expanded="true" signature="10604:10973" ph="INSERT INTO push_report... " />
-            <marker date="1546134289513" expanded="true" signature="11035:11432" ph="UPDATE push_... " />
-            <marker date="1546134289513" expanded="true" signature="11821:11902" ph="SELECT id_fl... id_mapping" />
-            <marker date="1546134289513" expanded="true" signature="15850:15903" ph="INSERT INTO error_log... " />
+            <marker date="1547115113796" expanded="true" signature="1111:1178" ph="SELECT value... configuration" />
+            <marker date="1547115113796" expanded="true" signature="2075:2170" ph="UPDATE confi... " />
+            <marker date="1547115113796" expanded="true" signature="2763:3164" ph="INSERT INTO pull_report... " />
+            <marker date="1547115113796" expanded="true" signature="3204:3339" ph="INSERT INTO id_mapping... " />
+            <marker date="1547115113796" expanded="true" signature="3764:4110" ph="UPDATE pull_... " />
+            <marker date="1547115113796" expanded="true" signature="4492:4504" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="5786:5946" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="7134:7205" ph="UPDATE confi... " />
+            <marker date="1547115113796" expanded="true" signature="7247:7315" ph="UPDATE confi... " />
+            <marker date="1547115113796" expanded="true" signature="7695:7782" ph="UPDATE id_ma... " />
+            <marker date="1547115113796" expanded="true" signature="8450:8475" ph="SELECT * fro... push_report" />
+            <marker date="1547115113796" expanded="true" signature="8559:8633" ph="SELECT * fro... pull_report" />
+            <marker date="1547115113796" expanded="true" signature="8861:8930" ph="SELECT value... configuration" />
+            <marker date="1547115113796" expanded="true" signature="9065:9130" ph="SELECT value... configuration" />
+            <marker date="1547115113796" expanded="true" signature="10476:10573" ph="UPDATE confi... " />
+            <marker date="1547115113796" expanded="true" signature="10963:10973" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="11479:11629" ph="SELECT * fro... pull_report" />
+            <marker date="1547115113796" expanded="true" signature="11766:11778" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="12207:12304" ph="UPDATE confi... " />
+            <marker date="1547115113796" expanded="true" signature="12915:12925" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="13035:13045" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="13236:13605" ph="INSERT INTO push_report... " />
+            <marker date="1547115113796" expanded="true" signature="13667:14064" ph="UPDATE push_... " />
+            <marker date="1547115113796" expanded="true" signature="14395:14476" ph="SELECT id_fl... id_mapping" />
+            <marker date="1547115113796" expanded="true" signature="18243:18296" ph="INSERT INTO error_log... " />
           </folding>
         </state>
       </provider>
@@ -758,25 +929,31 @@
         <state relative-caret-position="459">
           <caret line="27" column="39" lean-forward="false" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
           <folding>
-            <marker date="1546134289513" expanded="true" signature="921:988" ph="SELECT value... configuration" />
-            <marker date="1546134289513" expanded="true" signature="1876:1971" ph="UPDATE confi... " />
-            <marker date="1546134289513" expanded="true" signature="2556:2957" ph="INSERT INTO pull_report... " />
-            <marker date="1546134289513" expanded="true" signature="2997:3132" ph="INSERT INTO id_mapping... " />
-            <marker date="1546134289513" expanded="true" signature="3559:3946" ph="UPDATE pull_... " />
-            <marker date="1546134289513" expanded="true" signature="5366:5437" ph="UPDATE confi... " />
-            <marker date="1546134289513" expanded="true" signature="5479:5547" ph="UPDATE confi... " />
-            <marker date="1546134289513" expanded="true" signature="5928:6015" ph="UPDATE id_ma... " />
-            <marker date="1546134289513" expanded="true" signature="6754:6779" ph="SELECT * fro... push_report" />
-            <marker date="1546134289513" expanded="true" signature="6863:6937" ph="SELECT * fro... pull_report" />
-            <marker date="1546134289513" expanded="true" signature="7227:7296" ph="SELECT value... configuration" />
-            <marker date="1546134289513" expanded="true" signature="7431:7496" ph="SELECT value... configuration" />
-            <marker date="1546134289513" expanded="true" signature="8656:8753" ph="UPDATE confi... " />
-            <marker date="1546134289513" expanded="true" signature="9447:9526" ph="SELECT * fro... pull_report" />
-            <marker date="1546134289513" expanded="true" signature="9978:10075" ph="UPDATE confi... " />
-            <marker date="1546134289513" expanded="true" signature="10604:10973" ph="INSERT INTO push_report... " />
-            <marker date="1546134289513" expanded="true" signature="11035:11432" ph="UPDATE push_... " />
-            <marker date="1546134289513" expanded="true" signature="11821:11902" ph="SELECT id_fl... id_mapping" />
-            <marker date="1546134289513" expanded="true" signature="15850:15903" ph="INSERT INTO error_log... " />
+            <marker date="1547115113796" expanded="true" signature="1111:1178" ph="SELECT value... configuration" />
+            <marker date="1547115113796" expanded="true" signature="2075:2170" ph="UPDATE confi... " />
+            <marker date="1547115113796" expanded="true" signature="2763:3164" ph="INSERT INTO pull_report... " />
+            <marker date="1547115113796" expanded="true" signature="3204:3339" ph="INSERT INTO id_mapping... " />
+            <marker date="1547115113796" expanded="true" signature="3764:4110" ph="UPDATE pull_... " />
+            <marker date="1547115113796" expanded="true" signature="4492:4504" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="5786:5946" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="7134:7205" ph="UPDATE confi... " />
+            <marker date="1547115113796" expanded="true" signature="7247:7315" ph="UPDATE confi... " />
+            <marker date="1547115113796" expanded="true" signature="7695:7782" ph="UPDATE id_ma... " />
+            <marker date="1547115113796" expanded="true" signature="8450:8475" ph="SELECT * fro... push_report" />
+            <marker date="1547115113796" expanded="true" signature="8559:8633" ph="SELECT * fro... pull_report" />
+            <marker date="1547115113796" expanded="true" signature="8861:8930" ph="SELECT value... configuration" />
+            <marker date="1547115113796" expanded="true" signature="9065:9130" ph="SELECT value... configuration" />
+            <marker date="1547115113796" expanded="true" signature="10476:10573" ph="UPDATE confi... " />
+            <marker date="1547115113796" expanded="true" signature="10963:10973" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="11479:11629" ph="SELECT * fro... pull_report" />
+            <marker date="1547115113796" expanded="true" signature="11766:11778" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="12207:12304" ph="UPDATE confi... " />
+            <marker date="1547115113796" expanded="true" signature="12915:12925" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="13035:13045" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="13236:13605" ph="INSERT INTO push_report... " />
+            <marker date="1547115113796" expanded="true" signature="13667:14064" ph="UPDATE push_... " />
+            <marker date="1547115113796" expanded="true" signature="14395:14476" ph="SELECT id_fl... id_mapping" />
+            <marker date="1547115113796" expanded="true" signature="18243:18296" ph="INSERT INTO error_log... " />
           </folding>
         </state>
       </provider>
@@ -792,7 +969,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="31" lean-forward="false" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -803,18 +979,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/db.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -822,7 +990,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="27" lean-forward="false" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -830,33 +997,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="29" lean-forward="false" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
-          <folding>
-            <marker date="1546130370444" expanded="true" signature="61:281" ph="..." />
-            <marker date="1546130370444" expanded="true" signature="318:1507" ph="..." />
-            <marker date="1546130370444" expanded="true" signature="325:421" ph="..." />
-            <marker date="1546130370444" expanded="true" signature="376:412" ph="..." />
-            <marker date="1546130370444" expanded="true" signature="428:1499" ph="..." />
-            <marker date="1546130370444" expanded="true" signature="437:475" ph="..." />
-            <marker date="1546130370444" expanded="true" signature="502:1423" ph="..." />
-            <marker date="1546130370444" expanded="true" signature="533:1256" ph="..." />
-            <marker date="1546130370444" expanded="true" signature="596:1250" ph="..." />
-            <marker date="1546130370444" expanded="true" signature="610:770" ph="..." />
-            <marker date="1546130370444" expanded="true" signature="796:1011" ph="..." />
-            <marker date="1546130370444" expanded="true" signature="838:998" ph="..." />
-            <marker date="1546130370444" expanded="true" signature="1035:1235" ph="..." />
-            <marker date="1546130370444" expanded="true" signature="1077:1222" ph="..." />
-            <marker date="1546130370444" expanded="false" signature="1282:1300" ph="..." />
-            <marker date="1546130370444" expanded="true" signature="1301:1400" ph="..." />
-            <marker date="1546130370444" expanded="true" signature="1446:1484" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/initializationScript.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -876,58 +1016,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ApiService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="49" column="12" lean-forward="true" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/runningScript.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ProcessData.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="54" column="13" lean-forward="true" selection-start-line="49" selection-start-column="12" selection-end-line="54" selection-end-column="13" />
-          <folding>
-            <marker date="1546134289513" expanded="true" signature="921:988" ph="SELECT value... configuration" />
-            <marker date="1546134289513" expanded="true" signature="1876:1971" ph="UPDATE confi... " />
-            <marker date="1546134289513" expanded="true" signature="2556:2957" ph="INSERT INTO pull_report... " />
-            <marker date="1546134289513" expanded="true" signature="2997:3132" ph="INSERT INTO id_mapping... " />
-            <marker date="1546134289513" expanded="true" signature="3559:3946" ph="UPDATE pull_... " />
-            <marker date="1546134289513" expanded="true" signature="5366:5437" ph="UPDATE confi... " />
-            <marker date="1546134289513" expanded="true" signature="5479:5547" ph="UPDATE confi... " />
-            <marker date="1546134289513" expanded="true" signature="5928:6015" ph="UPDATE id_ma... " />
-            <marker date="1546134289513" expanded="true" signature="6754:6779" ph="SELECT * fro... push_report" />
-            <marker date="1546134289513" expanded="true" signature="6863:6937" ph="SELECT * fro... pull_report" />
-            <marker date="1546134289513" expanded="true" signature="7227:7296" ph="SELECT value... configuration" />
-            <marker date="1546134289513" expanded="true" signature="7431:7496" ph="SELECT value... configuration" />
-            <marker date="1546134289513" expanded="true" signature="8656:8753" ph="UPDATE confi... " />
-            <marker date="1546134289513" expanded="true" signature="9447:9526" ph="SELECT * fro... pull_report" />
-            <marker date="1546134289513" expanded="true" signature="9978:10075" ph="UPDATE confi... " />
-            <marker date="1546134289513" expanded="true" signature="10604:10973" ph="INSERT INTO push_report... " />
-            <marker date="1546134289513" expanded="true" signature="11035:11432" ph="UPDATE push_... " />
-            <marker date="1546134289513" expanded="true" signature="11821:11902" ph="SELECT id_fl... id_mapping" />
-            <marker date="1546134289513" expanded="true" signature="15850:15903" ph="INSERT INTO error_log... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -942,7 +1030,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="32" column="4" lean-forward="false" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -956,22 +1043,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/settings.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
+        <state relative-caret-position="357">
           <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-          <folding>
-            <marker date="1546135121042" expanded="true" signature="992:1085" ph="UPDATE confi... " />
-            <marker date="1546135121042" expanded="true" signature="1315:1407" ph="UPDATE confi... " />
-            <marker date="1546135121042" expanded="true" signature="1777:1839" ph="..." />
-            <marker date="1546135121042" expanded="true" signature="3277:3346" ph="SELECT value... configuration" />
-            <marker date="1546135121042" expanded="true" signature="3482:3547" ph="SELECT value... configuration" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/partials/head.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -980,24 +1053,132 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="76" lean-forward="false" selection-start-line="4" selection-start-column="76" selection-end-line="4" selection-end-column="76" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#header#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/initializationScript.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="26" lean-forward="false" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/runningScript.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/partials/head.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="26" lean-forward="true" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ApiService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="49" column="12" lean-forward="false" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="33" column="8" lean-forward="false" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+        <state relative-caret-position="2618">
+          <caret line="154" column="34" lean-forward="false" selection-start-line="154" selection-start-column="34" selection-end-line="154" selection-end-column="34" />
           <folding>
-            <marker date="1546151111200" expanded="true" signature="473:535" ph="SELECT value... configuration" />
-            <marker date="1546151111200" expanded="true" signature="1606:1673" ph="SELECT value... configuration" />
-            <marker date="1546151111200" expanded="true" signature="1796:1865" ph="SELECT value... configuration" />
-            <marker date="1546151111200" expanded="true" signature="2371:2433" ph="SELECT value... configuration" />
-            <marker date="1546151111200" expanded="true" signature="3500:3525" ph="SELECT * fro... pull_report" />
-            <marker date="1546151111200" expanded="true" signature="4253:4782" ph="..." />
+            <marker date="1546939952112" expanded="true" signature="195:268" ph="SELECT value... configuration" />
+            <marker date="1546939952112" expanded="true" signature="813:875" ph="SELECT value... configuration" />
+            <marker date="1546939952112" expanded="true" signature="1543:1641" ph="..." />
+            <marker date="1546939952112" expanded="true" signature="2248:2315" ph="SELECT value... configuration" />
+            <marker date="1546939952112" expanded="true" signature="2444:2451" ph="SELECT value... configuration" />
+            <marker date="1546939952112" expanded="true" signature="2639:2927" ph="..." />
+            <marker date="1546939952112" expanded="true" signature="2725:2752" ph="..." />
+            <marker date="1546939952112" expanded="true" signature="2868:2895" ph="..." />
+            <marker date="1546939952112" expanded="true" signature="2976:4431" ph="..." />
+            <marker date="1546939952112" expanded="true" signature="2993:3198" ph="..." />
+            <marker date="1546939952112" expanded="true" signature="3018:3080" ph="SELECT value... configuration" />
+            <marker date="1546939952112" expanded="true" signature="3234:4416" ph="..." />
+            <marker date="1546939952112" expanded="true" signature="3282:4177" ph="..." />
+            <marker date="1546939952112" expanded="true" signature="3305:4158" ph="..." />
+            <marker date="1546939952112" expanded="true" signature="3369:3965" ph="..." />
+            <marker date="1546939952112" expanded="true" signature="3751:3849" ph="..." />
+            <marker date="1546939952112" expanded="true" signature="3973:4140" ph="..." />
+            <marker date="1546939952112" expanded="true" signature="4193:4399" ph="..." />
+            <marker date="1546939952112" expanded="true" signature="4201:4382" ph="..." />
+            <marker date="1546939952112" expanded="true" signature="4470:4587" ph="..." />
+            <marker date="1546939952112" expanded="true" signature="4489:4514" ph="SELECT * fro... push_report" />
+            <marker date="1546939952112" expanded="true" signature="4612:6126" ph="..." />
+            <marker date="1546939952112" expanded="true" signature="4723:6113" ph="..." />
+            <marker date="1546939952112" expanded="true" signature="4742:6097" ph="..." />
+            <marker date="1546939952112" expanded="true" signature="4779:5936" ph="..." />
+            <marker date="1546939952112" expanded="true" signature="4846:5900" ph="..." />
+            <marker date="1546939952112" expanded="true" signature="4866:5191" ph="..." />
+            <marker date="1546939952112" expanded="true" signature="4883:5170" ph="..." />
+            <marker date="1546939952112" expanded="true" signature="5212:5881" ph="..." />
+            <marker date="1546939952112" expanded="true" signature="5231:5859" ph="..." />
+            <marker date="1546939952112" expanded="true" signature="5291:5845" ph="..." />
+            <marker date="1546939952112" expanded="true" signature="5321:5825" ph="..." />
+            <marker date="1546939952112" expanded="true" signature="5961:6083" ph="..." />
+            <marker date="1546939952112" expanded="true" signature="6159:6197" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ProcessData.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="83" column="16" lean-forward="true" selection-start-line="83" selection-start-column="16" selection-end-line="94" selection-end-column="17" />
+          <folding>
+            <marker date="1547115113796" expanded="true" signature="1111:1178" ph="SELECT value... configuration" />
+            <marker date="1547115113796" expanded="true" signature="2075:2170" ph="UPDATE confi... " />
+            <marker date="1547115113796" expanded="true" signature="2763:3164" ph="INSERT INTO pull_report... " />
+            <marker date="1547115113796" expanded="true" signature="3204:3339" ph="INSERT INTO id_mapping... " />
+            <marker date="1547115113796" expanded="true" signature="3764:4110" ph="UPDATE pull_... " />
+            <marker date="1547115113796" expanded="true" signature="4492:4504" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="5786:5946" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="7134:7205" ph="UPDATE confi... " />
+            <marker date="1547115113796" expanded="true" signature="7247:7315" ph="UPDATE confi... " />
+            <marker date="1547115113796" expanded="true" signature="7695:7782" ph="UPDATE id_ma... " />
+            <marker date="1547115113796" expanded="true" signature="8450:8475" ph="SELECT * fro... push_report" />
+            <marker date="1547115113796" expanded="true" signature="8559:8633" ph="SELECT * fro... pull_report" />
+            <marker date="1547115113796" expanded="true" signature="8861:8930" ph="SELECT value... configuration" />
+            <marker date="1547115113796" expanded="true" signature="9065:9130" ph="SELECT value... configuration" />
+            <marker date="1547115113796" expanded="true" signature="10476:10573" ph="UPDATE confi... " />
+            <marker date="1547115113796" expanded="true" signature="10963:10973" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="11479:11629" ph="SELECT * fro... pull_report" />
+            <marker date="1547115113796" expanded="true" signature="11766:11778" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="12207:12304" ph="UPDATE confi... " />
+            <marker date="1547115113796" expanded="true" signature="12915:12925" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="13035:13045" ph="..." />
+            <marker date="1547115113796" expanded="true" signature="13236:13605" ph="INSERT INTO push_report... " />
+            <marker date="1547115113796" expanded="true" signature="13667:14064" ph="UPDATE push_... " />
+            <marker date="1547115113796" expanded="true" signature="14395:14476" ph="SELECT id_fl... id_mapping" />
+            <marker date="1547115113796" expanded="true" signature="18243:18296" ph="INSERT INTO error_log... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>

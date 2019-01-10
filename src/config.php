@@ -5,14 +5,14 @@ if(php_sapi_name() != 'cli'){
 
 require_once dirname(__FILE__) . '/../vendor/autoload.php';
 
-define('IN_SERVER',false);
+define('IN_SERVER',true);
 define('DEBUG_MODE',true);
 
 // WARNING: Take note of the trailing slash, its needed
-define('PARAM_ROOT_PATH','/galooli/galooli-fleetio-integration/');
+define('PARAM_ROOT_PATH','/app/');
 
 define( 'LOGIN_USER' , IN_SERVER ? 'project' : 'galooli' );
-define( 'LOGIN_PASSWORD' , IN_SERVER ? : 'galooli' );
+define( 'LOGIN_PASSWORD' , IN_SERVER ? 'skynet123' : 'galooli' );
 
 function path($path){
 	return PARAM_ROOT_PATH . $path;

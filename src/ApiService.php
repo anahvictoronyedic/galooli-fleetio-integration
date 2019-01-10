@@ -31,8 +31,8 @@ class ApiService {
          
          if($appType == 'fleetio') {
             $headers = [
-               'Authorization: Token 855b72c85c06431a388dbda45155651ecc2f7d0e',
-               'Account-Token: 1cfafff6e0',
+               'Authorization: Token 59f181f3e1f421c05cc96660134e9b7d1e008520',
+               'Account-Token: a24faf79f8',
                'Accept: */*',
                'Accept-Encoding: gzip, deflate',
                'content-type: application/json'
@@ -52,7 +52,7 @@ class ApiService {
          curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 10);
          curl_setopt($curl, CURLOPT_TIMEOUT, 10);
          $this->returnedData = curl_exec($curl);
-         if ($this->returnedData === false) 
+         if ($this->returnedData === false || $this->returnedData == null) 
             $this->returnedData = curl_error($curl);
       } catch(Exception $exception) {
          echo "Exception Occured: ".$exception."<br/>";
