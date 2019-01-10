@@ -127,9 +127,6 @@ class ProcessData {
         // Import PHPMailer classes into the global namespace
         // These must be at the top of your script, not inside a function
 
-        //Load Composer's autoloader
-        require 'vendor/autoload.php';
-
         $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
         try {
             //Server settings
