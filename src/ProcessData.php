@@ -1,5 +1,8 @@
 <?php
 date_default_timezone_set("Africa/Lagos");
+error_reporting(-1);
+ini_set('display_errors', 'On');
+set_error_handler("var_dump");
 
 require_once 'config.php';
 require_once "ApiService.php";
