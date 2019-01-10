@@ -15,12 +15,10 @@ function make_select_options($def = null){
 require_login();
 
 if(isset($_POST['action'])){
-  $cron1 = new Cron('/usr/bin/php /var/www/project.matrixvtrack.com/app/src/pullcron.php >> /var/log/galooli-fleetio.log 2>&1' 
-    , 'PULL_CRON_INTERVAL_MINUTES');
+  $cron1 = new Cron('/usr/bin/php /var/www/project.matrixvtrack.com/app/src/pullcron.php >> /var/log/galooli-fleetio.log 2>&1' , 'PULL_CRON_INTERVAL_MINUTES');
   $cron1->updateCron($_POST['pull-interval']);
 
-  $cron2 = new Cron('/usr/bin/php /var/www/project.matrixvtrack.com/app/src/checkcron.php >> /var/log/galooli-fleetio.log 2>&1'
-    , 'CHECK_CHANGE_CRON_INTERVAL_MINUTES');
+  $cron2 = new Cron('/usr/bin/php /var/www/project.matrixvtrack.com/app/src/checkcron.php >> /var/log/galooli-fleetio.log 2>&1', 'CHECK_CHANGE_CRON_INTERVAL_MINUTES');
   $cron2->updateCron($_POST['check-change-interval']);
 
   $toast_message = 'Settings was updated successfully.';
