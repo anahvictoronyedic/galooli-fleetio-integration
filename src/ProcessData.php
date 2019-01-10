@@ -122,18 +122,19 @@ class ProcessData {
         $to = "cekpunobi@matrixvtrack.com.ng";
         $subject = "Error Encountered While Fetching Data From Galooli";
         
-        $message = "<html><body><h3>{$message}</h3>";
-        $message .= "<b><a href='https://project.matrixvtrack.com/app'>Login</a> 
-                        into the web interface to know the integration status
-                    </b></body></html>";
-        
+//        $message = "<html><body><h3>{$message}</h3>";
+//        $message .= "<b><a href='https://project.matrixvtrack.com/app'>Login</a>
+//                        into the web interface to know the integration status
+//                    </b></body></html>";
+
+        $header = "To: cekpunobi@matrixvtrack.com.ng \r\n";
         $header = "From: tech@ecagon.com \r\n";
         $header .= "Cc: isykaal4saviour@gmail.com  \r\n";
-        $header .= "Cc: israelchukwuemeka@ecagon.com  \r\n";
+//        $header .= "Cc: israelchukwuemeka@ecagon.com  \r\n";
         $header .= "MIME-Version: 1.0\r\n";
         $header .= "Content-type: text/html\r\n";
         
-        $mailStatus = mail ($to, $subject, $message, $header);
+        $mailStatus = mail($to, $subject, $message, $header);
         
         if( $mailStatus == true ) {
             echo "Mail Message sent successfully...";
