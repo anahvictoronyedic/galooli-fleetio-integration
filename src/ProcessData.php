@@ -100,7 +100,6 @@ class ProcessData {
             }
             if ($pullUpdated > 0) {
                 echo "<p style='color: green'>Data From Galooli Saved to Databse</p><br/>";
-                $this->sendErrorNotificationMail("Test Mail, Data from Galooli Pulled Successfully");
             } else {
                 $this->logError("Error Saving Galooli Data To Database");
             }
@@ -152,10 +151,14 @@ class ProcessData {
             $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name*/
 
             //Content
+            $messageBody = "<h3>{$message}</h3>";
+            $messageBody .= "<b><a href='https://project.matrixvtrack.com/app'>Login</a>
+                            into the web interface to know the integration status
+                        </b>";
             $mail->isHTML(true);                                  // Set email format to HTML
-            $mail->Subject = 'Error Encountered While Fetching Data From Galooli';
-            $mail->Body    = $message;
-            $mail->AltBody = $message;
+            $mail->Subject = 'Error Encountered While Updating Data in Fleetio Servers';
+            $mail->Body    = $messageBody;
+            $mail->AltBody = $messageBody;
             $mailStatus = $mail->send();
             if($mailStatus) {
                 echo "Error Mail Message sent successfully...";
