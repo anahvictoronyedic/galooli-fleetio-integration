@@ -6,4 +6,5 @@
  * Time: 2:41 PM
  */
 require_once 'utils.php';
-   if(DEBUG_MODE) phpinfo();
+   if(DEBUG_MODE)
+       phpinfo();
