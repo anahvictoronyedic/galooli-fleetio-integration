@@ -59,39 +59,22 @@ class Cron{
 		$d = floor(($ss%2592000)/86400);
 		$M = floor($ss/2592000);
 
+		$abs_command = sprintf("%s %s %s %s %s %s",
 
-		if(false){
+			$m >= 1 ? ( $ss >= 3600 ? '' : '*/' ) .$m : ( $ss >= 3600 ? '0' : '*' ) , 
+			$h >= 1 ? ( $ss >= 86400 ? '' : '*/' ) .$h : ( $ss >= 86400 ? '0' : '*' ) , 
+			$d >= 1 ? ( $ss >= 2592000 ? '' : '*/' ) . $d : ( $ss >= 2592000 ? '0' : '*' ) , 
 
-			$job = new Job();
+			// update conditions later
+			$M >= 1 ? '*/' . $M : '*',
+			'*',
 
-			if( $m >= 1 ){
-				$job->setMinute('*/'.$m);
-			}
+			$this->command
 
-			if( $h >= 1 ){
-				$job->setHour('*/'.$h);
-			}
+		);
 
-			if( $d >= 1 ){
-				$job->setDayOfMonth('*/'.$d);
-			}
-
-			if( $M >= 1 ){
-				$job->setMonth('*/'.$M);
-			}
-
-			$job->setCommand($this->command);
-		}
-
-		/*
-		This construction style is used to elude a bug that causes job->getHash() incorrect matching, which corrupts the linux cron file configuration
-		*/
-		else{
-			$job = Job::parse(sprintf("%s %s %s %s * %s",$m >= 1 ? '*/'.$m : '*' , $h >= 1 ? '*/'.$h : '*' , 
-				$d >= 1 ? '*/'. $d : '*' , $M >= 1 ? '*/' . $M : '*',$this->command));
-		}
+		$job = Job::parse($abs_command);
 
 		return $job;
 	}
 }
-
