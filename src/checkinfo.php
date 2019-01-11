@@ -5,5 +5,5 @@
  * Date: 1/10/2019
  * Time: 2:41 PM
  */
-
-   phpinfo();
+require_once 'utils.php';
+   if(DEBUG_MODE) phpinfo();
