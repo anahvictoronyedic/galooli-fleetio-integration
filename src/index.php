@@ -39,9 +39,7 @@
                     if ($pullError != NULL && $pullError > 3) {
                         echo "<i class=\"material-icons red-text darken-4\">warning</i>
                         Network or Server Error Occurred When Fetching Data from Galooli Servers, 
-                        Wait for re-trial or use the manual override button
-                        <a class=\"btn btn-large teal darken-4 waves-light waves-effect\" target=\"_blank\"
-                          href=\"ProcessData.php?call_function=pullGalooli\">Pull From Galooli</a>";
+                        Wait for re-trial or use the manual override button below";
                     } else {
                         echo "No Fetch Errors";
                         echo "<h6 class=\"teal-text\">All Galooli Fetch Data up to date</h6>";
@@ -49,9 +47,11 @@
                     ?>
                 </p>
             <p>
+              <a class="btn btn-large teal darken-4 waves-light waves-effect" target="_blank"
+               href="ProcessData.php?call_function=pullGalooli">Pull From Galooli</a>
               <strong>
                 <i class="material-icons orange-text darken-4">warning</i>
-                  The Manual Fetch button will appear here if there is a Galooli Data Fetch error message
+                  The Manual Fetch button should mainly be used if there is a Galooli Data Fetch error message
               </strong>
             </p>
           </div>
@@ -85,10 +85,7 @@
                     if ($pushError != NULL && $pushError > 3) {
                         echo "<i class=\"material-icons red-text darken-4\">warning</i>
                             Network or Server Error Occurred When Pushing Data to Fleetio Servers, 
-                            Wait for re-trial or use the manual override button
-                            <a class=\"btn btn-large orange darken-4 waves-light waves-effect\" target=\"_blank\"
-                            href=\"ProcessData.php?call_function=pushfleetio\">Push To Fleetio</a>
-                            Only use this manual update button if there is an error message";
+                            Wait for re-trial or use the manual override button";
                     } else {
                         echo "No Update Errors";
                         echo "<h6 class=\"teal-text\">All Fleetio Update Data up to date</h6>";
@@ -97,9 +94,12 @@
                 ?>
 
             </p>
-            <p><strong>
-              <i class="material-icons orange-text darken-4">warning</i>
-              The Manual update button will appear here if there is a Fleetio Update error message</strong>
+            <p>
+                <a class="btn btn-large orange darken-4 waves-light waves-effect" target="_blank"
+                   href="ProcessData.php?call_function=pushfleetio">Push To Fleetio</a>
+                <strong>
+                  <i class="material-icons orange-text darken-4">warning</i>
+                  The Manual update button should mainly be used if there is a Fleetio Update error message</strong>
             </p>
           </div>
         </div>

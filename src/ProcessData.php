@@ -51,7 +51,7 @@ class ProcessData {
         // echo "lastPullTime : ".$lastPullTime;
         $this->apiURL = "https://sdk.galooli-systems.com/galooliSDKService.svc/json/Assets_Report?userName=matrixvtrack&password=matv123?&requestedPropertiesStr=u.id,u.name,ac.status,ac.latitude,ac.longitude,ac.distance,ac.main_fuel_tank_level&lastGmtUpdateTime=".str_replace(" ","%20",$lastPullTime);
         $get_data = $this->_apiService->callAPI('GET', $this->apiURL, false, 'galooli');
-        $this->currentDateTime = date("Y-m-d h:i:s");
+        $this->currentDateTime = date("Y-m-d H:i:s");
         $this->returnedData = json_decode($get_data, true);
 
         //var_dump($this->returnedData['CommonResult']['DataSet']);
