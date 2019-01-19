@@ -143,7 +143,7 @@ class ProcessData {
             $mail->addAddress('fleetio@matrixvtrack.com.ng', 'Matrixvtrack');     // Add a recipient
             $mail->addAddress('israelchukwuemeka@ecagon.com');               // Name is optional
             $mail->addReplyTo('do_not_reply@matrixvtrack.com.ng', 'Matixvtrack');
-//            $mail->addCC('isyel4saviour@gmail.com');
+            $mail->addCC('isyel4saviour@gmail.com');
 //            $mail->addBCC('bcc@example.com');
 
             //Attachments
