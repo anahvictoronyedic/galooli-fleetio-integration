@@ -49,9 +49,10 @@
             <p>
               <a class="btn btn-large teal darken-4 waves-light waves-effect" target="_blank"
                href="ProcessData.php?call_function=pullGalooli">Pull From Galooli</a>
+                <br/>
               <strong>
                 <i class="material-icons orange-text darken-4">warning</i>
-                  The Manual Fetch button should mainly be used if there is a Galooli Data Fetch error message
+                  The Manual Fetch button should preferrably be used if there is a Galooli Data Fetch error message
               </strong>
             </p>
           </div>
@@ -97,9 +98,10 @@
             <p>
                 <a class="btn btn-large orange darken-4 waves-light waves-effect" target="_blank"
                    href="ProcessData.php?call_function=pushfleetio">Push To Fleetio</a>
+                <br/>
                 <strong>
                   <i class="material-icons orange-text darken-4">warning</i>
-                  The Manual update button should mainly be used if there is a Fleetio Update error message</strong>
+                  The Manual update button should preferrably be used if there is a Fleetio Update error message</strong>
             </p>
           </div>
         </div>

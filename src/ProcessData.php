@@ -139,11 +139,11 @@ class ProcessData {
             $mail->Port = 587;                                    // TCP port to connect to
 
             //Recipients
-            $mail->setFrom('tech@ecagon.com', 'Ecagon Support');
-            $mail->addAddress('cekpunobi@matrixvtrack.com.ng', 'Ekpunobi Chigozie');     // Add a recipient
+            $mail->setFrom('do_not_reply@matrixvtrack.com.ng', 'Ecagon Support');
+            $mail->addAddress('fleetio@matrixvtrack.com.ng', 'Matrixvtrack');     // Add a recipient
             $mail->addAddress('israelchukwuemeka@ecagon.com');               // Name is optional
-            $mail->addReplyTo('israelchukwuemeka@ecagon.com', 'Israel Chukwuemeka');
-            $mail->addCC('isyel4saviour@gmail.com');
+            $mail->addReplyTo('do_not_reply@matrixvtrack.com.ng', 'Matixvtrack');
+//            $mail->addCC('isyel4saviour@gmail.com');
 //            $mail->addBCC('bcc@example.com');
 
             //Attachments
@@ -151,7 +151,9 @@ class ProcessData {
             $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name*/
 
             //Content
-            $messageBody = "<h3>{$message}</h3>";
+            $messageBody = "<h3>Some Vehicle's odometer, Could not be update to FLEETIO Records.<br>
+                            Here are the list of Vehicles Below.</h3>";
+            $messageBody .= "{$message}";
             $messageBody .= "<b><a href='https://project.matrixvtrack.com/app'>Login</a>
                             into the web interface to know the integration status
                         </b>";
@@ -229,24 +231,14 @@ class ProcessData {
             $query = "SELECT value from configuration where name = 'difference_in_odometer'";
             $tableRow = Database::getSingleRow($query);
             $odometerDifference = $tableRow["value"];
-            $query = "SELECT value from configuration where name = 'difference_in_fuel'";
-            $tableRow = Database::getSingleRow($query);
-            $fuelDifference = $tableRow["value"];
             for($i = 0; $i < count($galooliTableRows);  $i++) {
                 $distanceTest = $galooliTableRows[$i]['distance'] - $fleetioTableRows[$i]['distance'];
-                $fuelTest = $galooliTableRows[$i]['fuel_report'] - $fleetioTableRows[$i]['fuel_report'];
-                // if($galooliTableRows[$i]['fuel_report'] == 0)  {
-                //     echo "Error in Galooli Data: fuel report is Zero";
-                //     continue; 
-                // }
                 echo "<br><br>Status: ".$galooliTableRows[$i]['unit_name'];
                 echo "<br>Status: ".$galooliTableRows[$i]['active_status'];
                 echo "<br>Difference in odometer: ".$distanceTest;
                 if(($distanceTest >= $odometerDifference) &&
                     (strcasecmp($galooliTableRows[$i]['active_status'], "Off") == 0))  {
                     echo "<br>Conditions Met<br>";
-                    //save to fleetio table
-                    $this->saveToFleetioTable($galooliTableRows[$i]);
                     $this->processDataBeforePush($galooliTableRows[$i]);
                 } 
             }
@@ -272,15 +264,13 @@ class ProcessData {
     // to be anything of 30 mins interval
     function checkforChangeWithinLastHour() {
         //NB: if decided that only changed rows should be pushed then use push_report table
-        $query = "SELECT * from pull_report where modified_at >= DATE_SUB(NOW(), INTERVAL 1 HOUR) OR 
-                    created_at >= DATE_SUB(NOW(), INTERVAL 1 HOUR)";
+        $query = "SELECT * from pull_report";
 
         $galooliTableRows = Database::selectFromTable($query);
         if($galooliTableRows) {
             echo "<br/><br/><p style='color: green'>Change has occured within last hour </p><br/>";
             foreach($galooliTableRows as $galooliRow) {
                 //save to fleetio table
-                $this->saveToFleetioTable($galooliRow);
                 $this->processDataBeforePush($galooliRow);
             }
             if ($this->fleetioUpdate && $this->pushUpdated > 0) {
@@ -298,10 +288,46 @@ class ProcessData {
                 $this->logError("Error Saving New Data To Fleetio Table");
                 echo "<br/><p style='color: red'>No Change In Data to Update</p><br/>";
             }
+            $this->processMailReporting();
         } else {
             echo "<br/><br/><p style='color: red'>No Change has occured within last hour </p><br/>";
         }
-    } 
+    }
+
+    function processMailReporting() {
+        //send mail with all vehicles that has not been updated
+        $query = "SELECT * from push_report where active_status = 'false'";
+        $fleetioErrorRows = Database::selectFromTable($query);
+        $message = "<table>";
+        $message .= "<thead>
+                        <tr>
+                          <th>No</th>
+                          <th>Registration #</th>
+                          <th>Galiooli meter</th>
+                          <th>Fleetio meter</th>
+                          <th>Last Updated</th>
+                        </tr>
+                    </thead>";
+        $count = 0;
+        foreach($fleetioErrorRows as $errorRows) {
+            $count++;
+            //save to fleetio table
+            $query = "SELECT distance from pull_report where unit_name = '".$errorRows['unit_name']."'";
+            $tableRow = Database::getSingleRow($query);
+            $currentOdometer = $tableRow["distance"];
+            $message .= "<tr>
+                            <td>{$count}</td>
+                            <td>{$errorRows['unit_name']}</td>
+                            <td>{$currentOdometer}</td>
+                            <td>{$errorRows['distance']}</td>
+                            <td>{$errorRows['modified_at']}</td>
+                         </tr>";
+        }
+        $message .= "</table>";
+        if(IN_SERVER) {
+            $this->sendErrorNotificationMail($message);
+        }
+    }
 
     function saveToFleetioTable($galooliRow) {
         if ($this->isInitialization) {
@@ -332,7 +358,6 @@ class ProcessData {
     function pushDataToFeetio($data_array, $fleetioID)
     {
         /*
-        TODO: push latitude and longitude to /location_entries
             push odometer and engine hours to /meter_entries
             push fuel_report to /fuel_entries
         */
@@ -348,16 +373,22 @@ class ProcessData {
             $response = json_decode($return_data, true);
             if (isset($response['errors'])) {
                 $this->fleetioUpdate = false;
+                //change status to false
+                $query = "UPDATE push_report SET active_status='false' where unit_id = '{$data_array['unit_id']}'";
+                if (Database::updateOrInsert($query)) {
+                    echo "Vehicle could not be updated in fleetio, status set as FALSE<br/><br/>";
+                } else {
+                    echo "Error updating record: " . mysqli_error($GLOBALS['db_server'])."<br/>";
+                }
                 $message = "Meter Record For ".$data_array['unit_name']." 
                             could not be updated in Fleetio Servers, Current odometer is ".$data_array['distance'];
                 echo "Error: <br>$message<br/>";
                 $this->logError($message);
-                if(IN_SERVER) {
-                    $this->sendErrorNotificationMail($message);
-                }
                 $this->updateErrorData('push_error_time', $this->currentDateTime);
             } else {
                 $this->fleetioUpdate = true;
+                //save to fleetio table
+                $this->saveToFleetioTable($data_array);
                 echo 'Meter Data for '.$data_array['unit_name'].' updated successfully<br/><br/>';
                 $this->updateErrorData('push_error_time', 0);
             }
@@ -384,17 +415,6 @@ class ProcessData {
             }
 
         }
-        
-
-        //PUSH FUEL ENTRIES DATA
-        // $latitude = $data_array['latitude'];
-        // $longitude = $data_array['longitude'];
-        // $jsonDataArray = '{"vehicle_id": {$fleetioID}, "contact_id": "","meter_type": "",
-        //                     "date": {$this->currentDateTime}, "latitude": {$latitude}, "longitude": {$longitude}}';
-        // $this->apiURL = "https://secure.fleetio.com/api/v1/meter_entries";
-        // $return_data = $this->_apiService->callAPI('POST', $this->apiURL, $jsonDataArray, 'fleetio');
-        // $response = json_decode($return_data, true);
-        // var_dump($response);
     }
 
     function logError($errorData)
