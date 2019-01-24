@@ -151,14 +151,13 @@ class ProcessData {
             $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name*/
 
             //Content
-            $messageBody = "<h3>Some Vehicle's odometer, Could not be update to FLEETIO Records.<br>
-                            Here are the list of Vehicles Below.</h3>";
-            $messageBody .= "{$message}";
-            $messageBody .= "<b><a href='https://project.matrixvtrack.com/app'>Login</a>
+
+            $messageBody = "{$message}";
+            $messageBody .= "<br/><b><a href='https://project.matrixvtrack.com/app'>Login</a>
                             into the web interface to know the integration status
                         </b>";
             $mail->isHTML(true);                                  // Set email format to HTML
-            $mail->Subject = 'Error Encountered While Updating Data in Fleetio Servers';
+            $mail->Subject = 'Error Encountered While Integrating Data from Galooli Server to Fleetio Server';
             $mail->Body    = $messageBody;
             $mail->AltBody = $messageBody;
             $mailStatus = $mail->send();
@@ -298,34 +297,38 @@ class ProcessData {
         //send mail with all vehicles that has not been updated
         $query = "SELECT * from push_report where active_status = 'false'";
         $fleetioErrorRows = Database::selectFromTable($query);
-        $message = "<table>";
-        $message .= "<thead>
-                        <tr>
-                          <th>No</th>
-                          <th>Registration #</th>
-                          <th>Galiooli meter</th>
-                          <th>Fleetio meter</th>
-                          <th>Last Updated</th>
-                        </tr>
-                    </thead>";
-        $count = 0;
-        foreach($fleetioErrorRows as $errorRows) {
-            $count++;
-            //save to fleetio table
-            $query = "SELECT distance from pull_report where unit_name = '".$errorRows['unit_name']."'";
-            $tableRow = Database::getSingleRow($query);
-            $currentOdometer = $tableRow["distance"];
-            $message .= "<tr>
-                            <td>{$count}</td>
-                            <td>{$errorRows['unit_name']}</td>
-                            <td>{$currentOdometer}</td>
-                            <td>{$errorRows['distance']}</td>
-                            <td>{$errorRows['modified_at']}</td>
-                         </tr>";
-        }
-        $message .= "</table>";
-        if(IN_SERVER) {
-            $this->sendErrorNotificationMail($message);
+        if ($fleetioErrorRows != 0) {
+            $message = "<h3>Some Vehicle's odometer, Could not be updated to FLEETIO Records.<br>
+                                Here are the list of Vehicles Below.</h3><br/>";
+            $message .= "<table>";
+            $message .= "<thead>
+                            <tr>
+                            <th>No</th>
+                            <th>Registration #</th>
+                            <th>Galiooli meter</th>
+                            <th>Fleetio meter</th>
+                            <th>Last Updated</th>
+                            </tr>
+                        </thead>";
+            $count = 0;
+            foreach($fleetioErrorRows as $errorRows) {
+                $count++;
+                //save to fleetio table
+                $query = "SELECT distance from pull_report where unit_name = '".$errorRows['unit_name']."'";
+                $tableRow = Database::getSingleRow($query);
+                $currentOdometer = $tableRow["distance"];
+                $message .= "<tr>
+                                <td>{$count}</td>
+                                <td>{$errorRows['unit_name']}</td>
+                                <td>{$currentOdometer}</td>
+                                <td>{$errorRows['distance']}</td>
+                                <td>{$errorRows['modified_at']}</td>
+                            </tr>";
+            }
+            $message .= "</table>";
+            if(IN_SERVER) {
+                $this->sendErrorNotificationMail($message);
+            }
         }
     }
 
